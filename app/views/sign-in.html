@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "start"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action='debt-overview' method='post' class='form' autocomplete='off'>
+
+        <h1 class="govuk-heading-xl">
+          Sign in to {{ serviceName }}
+        </h1>
+
+        <p class="govuk-body-l">Enter the username and password in the letter we sent you.</p>
+
+        {{ govukInput({
+          label: {
+            text: 'Username',
+            isPageHeading: false
+          },
+          hint: {
+            text: ''
+          },
+          id: 'username',
+          name: 'username',
+          classes: 'govuk-input--width-20'
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: 'Password',
+            isPageHeading: false
+          },
+          hint: {
+            text: ''
+          },
+          id: 'password',
+          name: 'password',
+          classes: 'govuk-input--width-20'
+        }) }}
+
+        {{ govukButton({
+          text: "Sign in",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+      </form>
+
+      <h2 class="govuk-heading-m">Problems signing in</h2>
+
+      <p>Call us for help with signing in.</p>
+
+      <p>Telephone: 0845 850 0293<br>
+        Monday to Friday 8am to 7.30pm<br>
+        Saturday 9am to 4pm</p>
+
+    </div>
+  </div>
+{% endblock %}
