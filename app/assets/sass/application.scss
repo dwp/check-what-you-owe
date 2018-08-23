@@ -13,19 +13,4 @@ $govuk-global-styles: true;
 @import "components/cookie-banner";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
-
-
-
-
-// Move sign out link to top right
-@include govuk-media-query($from: desktop) {
-  .govuk-header__navigation-item:last-of-type {
-    position: absolute;
-    top: 10px;
-    right: 0;
-  }
-  .govuk-header__navigation {
-    margin-bottom: 0;
-  }
-}
+@import "components/navigation";

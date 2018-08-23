@@ -38,14 +38,10 @@
     homepageUrl: "/",
     serviceName: serviceName,
     serviceUrl: "start",
-    containerClasses: "govuk-width-container",
-    navigation: [
-      {
-        href: "/signout",
-        text: "Sign out"
-      }
-    ]
+    containerClasses: "govuk-width-container"
   }) }}
+
+  {% include "includes/navigation.html" %}
 {% endblock %}
 
 {% if useAutoStoreData %}

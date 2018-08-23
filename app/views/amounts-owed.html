@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% set navActive = "owed" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Amounts owed
+      </h1>
+
+      {% from 'inset-text/macro.njk' import govukInsetText %}
+
+      {{ govukInsetText({
+        text: 'Total owed: £48',
+        classes: 'govuk-!-font-size-27'
+      }) }}
+
+      {{ govukButton({
+        text: 'Make a payment',
+        href: '#0',
+        classes: ''
+      }) }}
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Item"
+          },
+          {
+            text: "What you owe"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='debt-details'>Universal Credit advance (new claim)</a>"
+            },
+            {
+              text: "£46"
+            }
+          ]
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+{% endblock %}
