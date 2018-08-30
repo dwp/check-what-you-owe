@@ -10,17 +10,23 @@
         Amounts owed
       </h1>
 
-      {% from 'inset-text/macro.njk' import govukInsetText %}
-
-      {{ govukInsetText({
-        text: 'Total owed: £48',
-        classes: 'govuk-!-font-size-27'
-      }) }}
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to pay: £90</p>
 
       {{ govukButton({
-        text: 'Make a payment',
+        text: 'View repayment options',
         href: '#0',
         classes: ''
+      }) }}
+
+      {{ govukInsetText({
+        html: '<a href="#0">Contact us</a> if you want to discuss the amount you owe.',
+        classes: ''
+      }) }}
+
+      {{ govukWarningText({
+        classes: '',
+        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or contact a debt recovery service.',
+        iconFallbackText: 'Warning'
       }) }}
 
       {{ govukTable({
@@ -39,7 +45,7 @@
               html: "<a href='debt-details'>Universal Credit advance (new claim)</a>"
             },
             {
-              text: "£46"
+              text: "£90"
             }
           ]
         ]

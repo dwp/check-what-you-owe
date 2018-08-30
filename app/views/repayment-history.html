@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "repayments"
+  }) }}
+{% endblock %}
+
+{% set navActive = "repayments" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Repayment history
+      </h1>
+
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid: £40</p>
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to pay: £90</p>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date"
+          },
+          {
+            text: "Amount"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "1 Aug 2018"
+            },
+            {
+              text: "£10"
+            }
+          ],
+          [
+            {
+              text: "29 Aug 2018"
+            },
+            {
+              text: "£10"
+            }
+          ],
+          [
+            {
+              text: "26 Sep 2018"
+            },
+            {
+              text: "£10"
+            }
+          ],
+          [
+            {
+              text: "24 Oct 2018"
+            },
+            {
+              text: "£10"
+            }
+          ]
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
