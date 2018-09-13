@@ -16,13 +16,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action='amounts-owed' method='post' class='form' autocomplete='off'>
+      <form action='account-home' method='post' class='form' autocomplete='off'>
 
         <h1 class="govuk-heading-xl">
-          Sign in to {{ serviceName }}
+          Sign in
         </h1>
-
-        <p class="govuk-body-l">Enter the username and password in the letter we sent you.</p>
 
         {{ govukInput({
           label: {
@@ -59,11 +57,12 @@
 
       <h2 class="govuk-heading-m">Problems signing in</h2>
 
-      <p>Call us for help with signing in.</p>
-
-      <p>Telephone: 0800 916 0614<br>
-        Monday to Friday 8am to 7.30pm<br>
-        Saturday 9am to 4pm</p>
+      <ul class="govuk-list">
+        <li><a href="#0">Help with signing in</a></li>
+        <li><a href="#0">I have forgotten my password</a></li>
+        <li><a href="#0">I have forgotten my username</a></li>
+        <li><a href="#0">I have forgotten my username and password</a></li>
+      </ul>
 
     </div>
   </div>

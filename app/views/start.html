@@ -34,15 +34,17 @@
       <p>Use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>get details of benefit overpayments, advances and loans that
-        you have to pay back</li>
-        <li>make one off payments</li>
+        you have to repay</li>
+        <li>make payments</li>
         <li>send messages to DWP Debt Management</li>
       </ul>
+
+      <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
 
       {% from 'inset-text/macro.njk' import govukInsetText %}
 
       {{ govukInsetText({
-        html: 'You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.',
+        html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.',
         classes: ''
       }) }}
 
@@ -52,17 +54,11 @@
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
-      <h2 class="govuk-heading-m">Before you start</h2>
-
-      <p>You do not need to sign in if you just want to <a href="#0">make a repayment</a>.</p>
-
-      <p>If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.</p>
-
       <h2 class="govuk-heading-m">Other ways to check what you owe</h2>
 
       <p>You can get information and make payments by phone.</p>
 
-      <p>Telephone: 0800 916 0614<br>
+      <p>Telephone: 0800 916 0647<br>
         Monday to Friday 8am to 7.30pm<br>
         Saturday 9am to 4pm</p>
 

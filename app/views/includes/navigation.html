@@ -1,23 +1,21 @@
 <nav class="navigation-global">
   <ul>
     <li>
-      <a {% if navActive == "owed" %}class="active"{% endif %} href="amounts-owed">Amounts owed</a>
+      <a {% if navActive == "home" %}class="active"{% endif %} href="account-home">Account home</a>
     </li>
 
-    <li>
-      <a {% if navActive == "repayments" %}class="active"{% endif %} href="repayments">Repayments</a>
-    </li>
+    <div class="nav-items-right">
+      <li>
+        <a {% if navActive == "messages" %}class="active"{% endif %} href="#0">Messages</a>
+      </li>
 
-    <li>
-      <a {% if navActive == "messages" %}class="active"{% endif %} href="#0">Messages</a>
-    </li>
+      <li>
+        <a {% if navActive == "account" %}class="active"{% endif %} href="#0">Your account</a>
+      </li>
 
-    <li>
-      <a {% if navActive == "account" %}class="active"{% endif %} href="#0">Your account</a>
-    </li>
-
-    <li>
-      <a href="signout">Sign out</a>
-    </li>
+      <li>
+        <a href="signout">Sign out</a>
+      </li>
+    </div>
   </ul>
 </nav>
