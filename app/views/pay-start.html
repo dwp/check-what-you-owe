@@ -3,10 +3,9 @@
 {{ govukHeader() }} {% endblock %} {% block beforeContent %} {{ govukBreadcrumbs({ items: [ { text:'Home', href: '#0' }, { text:'Section', href: '#0' }, { text: serviceName } ] }) }} {% endblock %} {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-        {{ serviceName }}
-      </h1>
-        <p>Use this service to:</p>
+        <h1 class="govuk-heading-xl">Pay what you owe</h1>
+        </h1>
+        <!-- <p>Use this service to:</p>
         <ul class="govuk-list govuk-list--bullet">
             <li>get details of benefit overpayments, advances and loans that you have to repay</li>
             <li>make payments</li>
@@ -14,7 +13,7 @@
         </ul>
         <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
         {% from 'inset-text/macro.njk' import govukInsetText %}
-        <p>You do not need to sign in if you just want to repay your <a href="/pay-start">balance in full.</a></p>
+        <p>"You do not need to sign in if you just want to repay your <a href="">balance in full.</a>"</p>
         {{ govukInsetText({ html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.', classes: '' }) }} {{ govukButton({ text: 'Start', href: "sign-in", classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" }) }}
         <h2 class="govuk-heading-m">Other ways to check what you owe</h2>
         <p>You can get information and make payments by phone.</p>
@@ -32,10 +31,10 @@
                     <li>
                         <a href="https://www.moneyadviceservice.org.uk/en/tools/debt-advice-locator">
                 Get debt advice
-              </a>
-                    </li>
-                </ul>
-            </nav>
+              </a> -->
+        </li>
+        </ul>
+        </nav>
         </aside>
     </div>
 </div>
