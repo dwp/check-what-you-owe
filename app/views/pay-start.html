@@ -4,20 +4,19 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Pay what you owe</h1>
-        </h1>
-        <!-- <p>Use this service to:</p>
+        <p>Use this service if you owe money to DWP, no longer get benefits from DWP, and want to repay your balance in full.</p>
+        <p>You'll need:</p>
         <ul class="govuk-list govuk-list--bullet">
-            <li>get details of benefit overpayments, advances and loans that you have to repay</li>
-            <li>make payments</li>
-            <li>send messages to DWP Debt Management</li>
+            <li>a debit or credit card</li>
+            <li>your National Insurance number</li>
+            <li>the access code on the letter we sent you</li>
         </ul>
-        <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
-        {% from 'inset-text/macro.njk' import govukInsetText %}
-        <p>"You do not need to sign in if you just want to repay your <a href="">balance in full.</a>"</p>
-        {{ govukInsetText({ html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.', classes: '' }) }} {{ govukButton({ text: 'Start', href: "sign-in", classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" }) }}
-        <h2 class="govuk-heading-m">Other ways to check what you owe</h2>
-        <p>You can get information and make payments by phone.</p>
-        <p>Telephone: 0800 916 0647
+        <!--  {{ govukInsetText({ html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.', classes: '' }) }} -->{{ govukButton({ text: 'Start', href: "access", classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" }) }}
+        <h2 class="govuk-heading-m">Other ways to check and pay what you owe</h2>
+        <p>Check what you owe and see your repayment history online using the
+            <a href="/start">Check what you owe</a> service.</p>
+        <p>You can get information, make payments, and arrange repayment plans by phone.</p>
+        <p>Telephone: 0800 916 0614
             <br> Monday to Friday 8am to 7.30pm
             <br> Saturday 9am to 4pm</p>
     </div>
@@ -29,12 +28,11 @@
             <nav role="navigation" aria-labelledby="subsection-title">
                 <ul class="govuk-list govuk-!-font-size-16">
                     <li>
-                        <a href="https://www.moneyadviceservice.org.uk/en/tools/debt-advice-locator">
-                Get debt advice
-              </a> -->
-        </li>
-        </ul>
-        </nav>
+                        <a href="https://www.moneyadviceservice.org.uk/en/tools/debt-advice-locator"> Get debt advice
+</a>
+                    </li>
+                </ul>
+            </nav>
         </aside>
     </div>
 </div>

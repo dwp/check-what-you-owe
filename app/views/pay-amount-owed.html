@@ -1,0 +1,20 @@
+{% extends "layout.html" %} {% block header %}
+<!-- Blank header with no service name for the sign in page -->
+{{ govukHeader() }} {% endblock %} {% block beforeContent %} {% endblock %} {% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action='account-home' method='post' class='form' autocomplete='off'>
+            <h1 class="govuk-heading-l">
+          Amount owed
+        </h1>
+            <h2 class="govuk-heading-xl">£90</h2> </h2> {{ govukButton({ text: "Pay the full amount", href: "https://www.payments.service.gov.uk/card_details/77fe4f46q18l4fcflqgpleni53", classes: "govuk-!-margin-bottom-8" }) }}
+        </form>
+        <!-- <ul class="govuk-list">
+    <li><a href="#0">Help with signing in</a></li>
+    <li><a href="#0">I have forgotten my password</a></li>
+    <li><a href="#0">I have forgotten my username</a></li>
+    <li><a href="#0">I have forgotten my username and password</a></li>
+</ul> -->
+    </div>
+</div>
+{% endblock %}
