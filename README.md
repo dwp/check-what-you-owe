@@ -1,5 +1,5 @@
 # Check what you owe prototype
-(https://check-what-you-owe.herokuapp.com/)
+https://check-what-you-owe.herokuapp.com/
 
 # GOV.UK Prototype Kit · [![Greenkeeper badge](https://badges.greenkeeper.io/alphagov/govuk-prototype-kit.svg)](https://greenkeeper.io/)
 
