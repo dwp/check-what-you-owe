@@ -3,6 +3,15 @@
 {% block header %}
   <!-- Blank header with no service name for the index page -->
   {{ govukHeader() }}
+
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+      tag: {
+      text: "Prototype"
+      },
+      html: "This is a test site – if you’ve arrived at this page by mistake, go to <a href=\"https://www.gov.uk/\" class=\"govuk-link\">GOV.UK</a>"
+    }) }}
+  </div>
 {% endblock %}
 
 {% block content %}
@@ -10,12 +19,15 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        {{ serviceName }} prototype
+        {{ serviceName }}
+        prototype
       </h1>
 
       <h2 class="govuk-heading-l">Versions</h2>
       <ul>
-        <li><a href="01/start">Version 01</a></li>
+        <li>
+          <a href="01/start">Version 01</a>
+        </li>
       </ul>
 
       {# {{ govukButton({
