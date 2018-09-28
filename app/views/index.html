@@ -3,19 +3,18 @@
 {% block header %}
   <!-- Blank header with no service name for the index page -->
   {{ govukHeader() }}
+{% endblock %}
 
-  <div class="govuk-width-container">
+{% block beforeContent %}
     {{ govukPhaseBanner({
       tag: {
       text: "Prototype"
       },
       html: "This is a test site – if you’ve arrived at this page by mistake, go to <a href=\"https://www.gov.uk/\" class=\"govuk-link\">GOV.UK</a>"
     }) }}
-  </div>
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
@@ -34,5 +33,4 @@
       </ul>
     </div>
   </div>
-
 {% endblock %}
