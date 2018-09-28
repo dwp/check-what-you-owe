@@ -6,7 +6,23 @@
       </h1>
         <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £90</p>
         <p><a href="#0">Contact us</a> if you want to discuss the amount you owe.</p>
-        {{ govukButton({ text: 'View repayment options', href: 'repayments', classes: '' }) }} {{ govukWarningText({ classes: '', text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.', iconFallbackText: 'Warning' }) }} {{ govukTable({ firstCellIsHeader: false, head: [ { text: "Item" }, { text: "What you owe" } ], rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "£90" } ] ] }) }}
+        {{ govukButton({
+          text: 'View repayment options',
+          href: 'repayments',
+          classes: ''
+        }) }}
+
+        {{ govukWarningText({
+          classes: '',
+          text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.',
+          iconFallbackText: 'Warning'
+        }) }} 
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [ { text: "Item" }, { text: "What you owe" } ],
+          rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "£90" } ] ]
+        }) }}
     </div>
 </div>
 {% endblock %}
