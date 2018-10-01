@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukPhaseBanner({
+  {{ govukPhaseBanner({
       tag: {
       text: "Prototype"
       },
@@ -22,15 +22,26 @@
         prototype
       </h1>
 
-      <h2 class="govuk-heading-l">Versions</h2>
-      <ul>
-        <li>
-          <a href="01/start">Version 01</a>
-        </li>
-        <li>
-          <a href="02/start">Version 02</a>
-        </li>
+      <h2 class="govuk-heading-l">01</h2>
+      {{ govukButton({
+        text: "View prototype",
+        href: "01/start"
+      }) }}
+
+      <hr class="govuk-!-margin-bottom-6"/>
+
+      <h2 class="govuk-heading-l">02</h2>
+      <h3 class="govuk-heading-s">Change log</h3>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Whats changed</li>
+        <li>Whats changed</li>
+        <li>Whats changed</li>
       </ul>
+      {{ govukButton({
+        text: "View prototype",
+        href: "02/start"
+      }) }}
+
     </div>
   </div>
 {% endblock %}
