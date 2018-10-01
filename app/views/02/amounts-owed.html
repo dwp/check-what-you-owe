@@ -1,22 +1,19 @@
-{% extends "layout.html" %} {% set navActive = "owed" %} {% block content %}
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+{% block content %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-        Amounts owed
-      </h1>
+        <h1 class="govuk-heading-xl">Amounts owed</h1>
         <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £90</p>
-        <p><a href="#0">Contact us</a> if you want to discuss the amount you owe.</p>
+
         {{ govukButton({
-          text: 'View repayment options',
-          href: 'repayments',
+          text: 'Repay the total amount',
+          href: 'repay-total-amount',
           classes: ''
         }) }}
 
-        {{ govukWarningText({
-          classes: '',
-          text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.',
-          iconFallbackText: 'Warning'
-        }) }} 
+        <p><a href="contact-us">Contact us</a> to arrange a repayment plan or discuss what you owe.</p>
 
         {{ govukTable({
           firstCellIsHeader: false,
@@ -25,4 +22,5 @@
         }) }}
     </div>
 </div>
+
 {% endblock %}
