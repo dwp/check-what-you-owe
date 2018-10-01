@@ -7,7 +7,7 @@
 {% block beforeContent %}
   {{ govukBreadcrumbs({
     items: [ {
-        text:'Home', 
+        text:'Home',
         href: '#0' },
       {
         text:'Section',
@@ -25,26 +25,49 @@
       <p>Use this service to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>get details of benefit overpayments, advances and loans that you have to repay</li>
-        <li>make payments</li>
-        <li>send messages to DWP Debt Management</li>
+        <li>repay your balance in full</li>
       </ul>
       <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
       {% from 'inset-text/macro.njk' import govukInsetText %}
-      <p>You do not need to sign in if you just want to repay your
-        <a href="pay-start">balance in full.</a>
+      <p>If you just want to repay your balance in full, use the
+        <a href="pay-start">Pay what you owe service.</a>
       </p>
 
       {{ govukInsetText({ html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.', classes: '' }) }}
+
+      {{ govukWarningText({
+        classes: '',
+        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.',
+        iconFallbackText: 'Warning'
+      }) }}
+
       {{ govukButton({ text: 'Start', href: "sign-in", classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" }) }}
 
-      <h2 class="govuk-heading-m">Other ways to check what you owe</h2>
-      <p>You can get information and make payments by phone.</p>
-      <p>Telephone: 0800 916 0647
-        <br>
-        Monday to Friday 8am to 7.30pm
-        <br>
-        Saturday 9am to 4pm</p>
+      <h2 class="govuk-heading-m">Other ways to check and repay what you owe</h2>
+
+      <h3 class="govuk-heading-s">Repayments</h3>
+
+      <p>To arrange a repayment plan or repay the full amount, contact:</p>
+
+      <p>DWP Debt Management.<br />
+      Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm </p>
+
+      <p>You can also <a href="pay-start">repay the full amount online.</a></p>
+
+      <h3 class="govuk-heading-s">Information</h3>
+
+      <p>If you have any questions about how much you owe and why, contact:</p>
+
+      <p>Universal Credit<br />
+      Telephone: 0800 328 5644<br />
+      Textphone: 0800 328 1344<br />
+      Monday to Friday 8am to 6pm (closed on bank holidays)</p>
+
+
     </div>
+
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items" role="complementary">
         <h2 class="govuk-heading-m" id="subsection-title">
