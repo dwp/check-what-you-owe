@@ -55,6 +55,7 @@ $govuk-card-selected-foreground-colour : govuk-colour("white");
 .govuk-card--selectable:hover > .govuk-card__content > h3,
 .govuk-card--selectable:hover > .govuk-card__content > p,
 .govuk-card--selectable:hover > .govuk-card__content > h3 > a,
+.govuk-card--selectable:hover > .govuk-card__content > ul > li,
 .govuk-card--selectable:hover > .govuk-card__actions > ul > li > a {
   color: $govuk-card-selected-foreground-colour !important;
 }
