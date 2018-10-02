@@ -7,16 +7,16 @@
         <h1 class="govuk-heading-xl">Amounts owed</h1>
         <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £90</p>
 
-        {{ govukTable({
-          firstCellIsHeader: false,
-          head: [ { text: "Item" }, { text: "What you owe" } ],
-          rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "£90" } ] ]
-        }) }}
-
         {{ govukButton({
           text: 'Repay the total amount',
           href: 'repay-total-amount',
           classes: ''
+        }) }}
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [ { text: "Item" }, { text: "What you owe" } ],
+          rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "£90" } ] ]
         }) }}
 
         <p><a href="contact-us">Contact us</a> to arrange a repayment plan or discuss what you owe.</p>
