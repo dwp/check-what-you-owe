@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Amounts owed</h1>
+        <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £90</p>
+
+        {{ govukButton({
+          text: 'Repay the full amount',
+          href: 'pay-amount-owed',
+          classes: ''
+        }) }}
+
+        <p><a href="contact-us">Contact us</a> to arrange a repayment plan or discuss what you owe.</p>
+
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [ { text: "Item" }, { text: "What you owe" } ],
+          rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "£90" } ] ]
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}
