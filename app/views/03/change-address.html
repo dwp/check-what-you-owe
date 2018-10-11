@@ -1,14 +1,13 @@
 {% extends "layout.html" %}
 
-{% set navActive = "your-details" %}
-
 {% block content %}
 
   <h1 class="govuk-heading-xl">
     Report a change in address
   </h1>
-
-    {{ govukInput({
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInput({
       label: {
         html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
       },
@@ -16,7 +15,7 @@
       name: "address-line-1"
     }) }}
 
-    {{ govukInput({
+      {{ govukInput({
       label: {
         html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
       },
@@ -24,7 +23,7 @@
       name: "address-line-2"
     }) }}
 
-    {{ govukInput({
+      {{ govukInput({
       label: {
         text: "Town or city"
       },
@@ -33,7 +32,7 @@
       name: "address-town"
     }) }}
 
-    {{ govukInput({
+      {{ govukInput({
       label: {
         text: "County"
       },
@@ -42,7 +41,7 @@
       name: "address-county"
     }) }}
 
-    {{ govukInput({
+      {{ govukInput({
       label: {
         text: "Postcode"
       },
@@ -55,16 +54,21 @@
       }
     }) }}
 
-  {{ govukButton({
+      {{ govukButton({
     text: "Confirm address change",
     href:"confirm-address-change"
   }) }}
 
+    </div>
+  </div>
+
   <div class="notes">
-    <p><b>Notes</b></p>
+    <p>
+      <b>Notes</b>
+    </p>
     <ul class="govuk-list govuk-list--bullet">
       <li>
-        Can we do inline validation to flag errors if an incorrect postcode is given once clicking confirm?
+        Should we use inline validation to flag an incorrect postcode? What if its a new postcode?
       </li>
       <li>
         Should we be using a postcode lookup?
@@ -73,10 +77,9 @@
         Does this need any verification with DM? or are we happy to accept whatever they supply us with?
       </li>
       <li>
-        Is the address purely for letter comms if the user needs to be contacted about their debt?
+        Is the address purely for letter communications if the user needs to be contacted about their debt?
       </li>
     </ul>
   </div>
-
 
 {% endblock %}
