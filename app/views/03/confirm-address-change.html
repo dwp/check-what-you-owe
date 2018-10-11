@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% set navActive = "your-details" %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    This change has been reported
+  </h1>
+
+  <p>
+    Your address has been updated and can be viewed within your details.
+  </p>
+
+  {{ govukButton({
+    text: "Back to your details",
+    href:"your-details"
+  }) }}
+
+
+
+
+{% endblock %}
