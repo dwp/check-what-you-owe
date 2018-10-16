@@ -1,0 +1,50 @@
+{% macro addressLookup(params) %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#find-address").click(function(){
+        $("#address-results").show();
+    });
+
+    $("button").click(function(){
+        $("#postcode-lookup").hide();
+    });
+});
+</script>
+
+<div id="postcode-lookup">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="width-10">
+      Postcode
+    </label>
+    <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+  </div>
+
+  <button type="submit" class="govuk-button" id="find-address">
+    Find address
+  </button>
+</div>
+
+<div class="hidden" id="address-results">
+  <p class="govuk-heading-m govuk-!-margin-0">Postcode</p>
+  <p><b>SW1A 1AA </b><a href="#0"> Change</a></p>
+
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="sort">
+      Select an address
+    </label>
+    <select class="govuk-select govuk-!-width-one-third" id="sort" name="sort">
+      <option value="x addresses found">x addresses found</option>
+      <option value="published">1 address</option>
+      <option value="published">2 address</option>
+      <option value="published">3 address</option>
+      <option value="published">4 address</option>
+      <option value="published">5 address</option>
+    </select>
+  </div>
+</div>
+
+
+
+{% endmacro %}
