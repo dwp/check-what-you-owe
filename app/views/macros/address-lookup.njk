@@ -10,6 +10,14 @@ $(document).ready(function(){
     $("button").click(function(){
         $("#postcode-lookup").hide();
     });
+
+    $("#change-postcode").click(function(){
+        $("#postcode-lookup").show();
+    });
+
+    $("#change-postcode").click(function(){
+        $("#address-results").hide();
+    });
 });
 </script>
 
@@ -28,7 +36,7 @@ $(document).ready(function(){
 
 <div class="hidden" id="address-results">
   <p class="govuk-heading-m govuk-!-margin-0">Postcode</p>
-  <p><b>SW1A 1AA </b><a href="#0"> Change</a></p>
+  <p><b>SW1A 1AA </b><a href="#0" id="change-postcode"> Change</a></p>
 
   <div class="govuk-form-group">
     <label class="govuk-label" for="sort">
