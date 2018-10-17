@@ -47,15 +47,16 @@
         <li>repay your balance in full</li>
       </ul>
 
-      {# {{ govukInsetText({ html: 'This service is also available in Welsh <a href="#0">(Cymraeg)</a>.', classes: '' }) }} #}
-
       <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
 
       <p>If you just want to repay your balance in full, use the
         <a href="pay-start">Pay what you owe service.</a>
       </p>
 
-      {{ govukInsetText({ html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.', classes: '' }) }}
+      {{ govukInsetText({
+        html: 'If you&rsquo;re still getting Universal Credit, use the <a href="https://www.universal-credit.service.gov.uk/sign-in">Universal Credit online service</a> instead.',
+        classes: ''
+      }) }}
 
       {{ govukWarningText({
         classes: '',
@@ -67,30 +68,11 @@
         This service is also available in Welsh <a href="#0">(Cymraeg)</a>.
       </p>
 
-      {{ govukButton({ text: 'Start', href: "sign-in", classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" }) }}
-
-      {# <h2 class="govuk-heading-m">Other ways to check and repay what you owe</h2>
-
-      <h3 class="govuk-heading-s">Repayments</h3>
-
-      <p>To arrange a repayment plan or repay the full amount by telephone, contact:</p>
-
-      <p>DWP Debt Management<br />
-      Telephone: 0800 916 0614<br />
-      Textphone: 0345 604 6697<br />
-      Monday to Friday 8am to 7.30pm<br />
-      Saturday 9am to 4pm </p>
-
-      <p>You can also <a href="pay-start">repay the full amount online.</a></p>
-
-      <h3 class="govuk-heading-s">Information</h3>
-
-      <p>If you have any questions about how much you owe and why, contact:</p>
-
-      <p>Universal Credit<br />
-      Telephone: 0800 328 5644<br />
-      Textphone: 0800 328 1344<br />
-      Monday to Friday 8am to 6pm (closed on bank holidays)</p> #}
+      {{ govukButton({
+        text: 'Start',
+        href: "sign-in",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
 
       {% include "includes/contact-information.html" %}
 
