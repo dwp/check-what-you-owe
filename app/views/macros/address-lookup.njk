@@ -1,58 +1,111 @@
 {% macro addressLookup(params) %}
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-    $("#find-address").click(function(){
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <script>
+    $(document).ready(function () {
+      $("#find-address").click(function () {
         $("#address-results").show();
-    });
+      });
 
-    $("button").click(function(){
+      $("button").click(function () {
         $("#postcode-lookup").hide();
-    });
+      });
 
-    $("#change-postcode").click(function(){
+      $("#change-postcode").click(function () {
         $("#postcode-lookup").show();
-    });
+      });
 
-    $("#change-postcode").click(function(){
+      $("#change-postcode").click(function () {
         $("#address-results").hide();
+      });
     });
-});
-</script>
+  </script>
 
-<div id="postcode-lookup">
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="width-10">
-      Postcode
-    </label>
-    <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
-  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-  <button type="submit" class="govuk-button" id="find-address">
-    Find address
-  </button>
-</div>
+      <div id="postcode-lookup">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+            Postcode
+          </label>
+          <input class="govuk-input govuk-input--width-10" id="width-10" name="width-10" type="text">
+        </div>
 
-<div class="hidden" id="address-results">
-  <p class="govuk-heading-m govuk-!-margin-0">Postcode</p>
-  <p><b>SW1A 1AA </b><a href="#0" id="change-postcode"> Change</a></p>
+        <button type="submit" class="govuk-button" id="find-address">
+          Find address
+        </button>
 
-  <div class="govuk-form-group">
-    <label class="govuk-label" for="sort">
-      Select an address
-    </label>
-    <select class="govuk-select govuk-!-width-one-third" id="sort" name="sort">
-      <option value="x addresses found">1 address found</option>
-      <option value="published">Buckingham Palace, London, SW1A 1AA </option>
-    </select>
-  </div>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I live outside the UK
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <fieldset class="govuk-fieldset">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-1">
+                  Building and street
+                  <span class="govuk-visually-hidden">line 1 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-1" name="address-line-1" type="text">
+              </div>
 
-  <button type="submit" class="govuk-button">
-    Continue
-  </button>
-</div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-line-2">
+                  <span class="govuk-visually-hidden">Building and street line 2 of 2</span>
+                </label>
+                <input class="govuk-input" id="address-line-2" name="address-line-2" type="text">
+              </div>
 
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-town">
+                  Town or city
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text">
+              </div>
 
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-county">
+                  County
+                </label>
+                <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+              </div>
 
-{% endmacro %}
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="address-postcode">
+                  Postcode
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+              </div>
+            </fieldset>
+          </details>
+        </div>
+
+        <div class="hidden" id="address-results">
+          <p class="govuk-heading-m govuk-!-margin-0">Postcode</p>
+          <p><b>SW1A 1AA</b><a href="#0" id="change-postcode"> Change</a></p>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="sort">
+              Select an address
+            </label>
+            <select class="govuk-select govuk-!-width-one-half" id="sort" name="sort">
+              <option value="x addresses found">1 address found</option>
+              <option value="published">Buckingham Palace, London, SW1A 1AA
+              </option>
+            </select>
+            <p class="govuk-body govuk-!-margin-top-5">
+              <a href="#0">I can't find my address in the list</a>
+            </p>
+          </div>
+
+          <button type="submit" class="govuk-button">
+            Continue
+          </button>
+        </div>
+      </div>
+    </div>
+
+  {% endmacro %}
