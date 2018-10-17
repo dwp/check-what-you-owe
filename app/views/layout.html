@@ -42,7 +42,6 @@
     serviceUrl: "start",
     containerClasses: "govuk-width-container"
   }) }}
-
   {% include "includes/navigation.html" %}
 {% endblock %}
 
@@ -66,11 +65,9 @@
 {% endif %}
 
 {% block bodyEnd %}
-
   {% block scripts %}
     {% include "includes/scripts.html" %}
     {% block pageScripts %} {% endblock %}
   {% endblock %}
-
   <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}
