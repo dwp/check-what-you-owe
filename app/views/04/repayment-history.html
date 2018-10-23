@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% set navActive = "repayments" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Repayment history
+      </h1>
+
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid: £20</p>
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £26</p>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date"
+          },
+          {
+            text: "Type"
+          },
+          {
+            text: "Amount"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "1 Aug 2018"
+            },
+            {
+              text: "Deduction from benefit"
+            },
+            {
+              text: "£5"
+            }
+          ],
+          [
+            {
+              text: "29 Aug 2018"
+            },
+            {
+              text: "Deduction from benefit"
+            },
+            {
+              text: "£5"
+            }
+          ],
+          [
+            {
+              text: "26 Sep 2018"
+            },
+            {
+              text: "Deduction from benefit"
+            },
+            {
+              text: "£5"
+            }
+          ],
+          [
+            {
+              text: "24 Oct 2018"
+            },
+            {
+              text: "Deduction from benefit"
+            },
+            {
+              text: "£5"
+            }
+          ]
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
