@@ -9,188 +9,143 @@
 
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Ashley Atherton</h1>
 
-      {# <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-          <span class="govuk-caption-xl">The amount you owe is:</span>
-          <h1 class="govuk-heading-xl">£26</h1>
-        </div>
-
-        <div class="govuk-grid-column-one-half">
-          <span class="govuk-caption-xl">The amount you have repaid is:</span>
-          <h1 class="govuk-heading-xl">£20</h1>
-        </div>
-      </div> #}
-
       <hr class="govuk-section-break govuk-section-break--l">
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You still owe</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">£26</h2>
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You still owe</h2>
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-5">£26</h2>
+      <table class="govuk-table">
+        <thead class="govuk-table__head govuk-table__head--mobile">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Item</th>
+            <th class="govuk-table__header" scope="col">Date</th>
+            <th class="govuk-table__header" scope="col">Amount owed</th>
+          </tr>
+        </thead>
 
-          {# {{ govukTable({
-              firstCellIsHeader: false,
-              head: [ { text: "Item" }, { text: "Date" }, { text: "Amount owed" } ],
-              rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "13 Oct 2018" }, { text: "£26" } ] ]
-            }) }} #}
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell govuk-table__cell--mobile">
+              <span class="govuk-table__head--span">
+                <b>Item:
+                </b>
+              </span>
+              <a href="debt-details">Universal Credit advance</a>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--mobile ">
+              <span class="govuk-table__head--span">
+                <b>Date:
+                </b>
+              </span>13 Oct 2018</td>
+            <td class="govuk-table__cell govuk-table__cell--mobile ">
+              <span class="govuk-table__head--span">
+                <b>Amount owed:
+                </b>
+              </span>£26</td>
+          </tr>
+        </tbody>
+      </table>
 
-          <table class="govuk-table">
+      <hr class="govuk-section-break govuk-section-break--xl">
 
-            <thead class="govuk-table__head govuk-table__head--mobile">
-              <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col">Item</th>
-                <th class="govuk-table__header" scope="col">Date</th>
-                <th class="govuk-table__header" scope="col">Amount owed</th>
-              </tr>
-            </thead>
+      <div style="background-color:#f8f8f8; border:1px solid #bfc1c3; padding:20px 20px 0px 20px;">
+        <h2 class="govuk-heading-l">Make a repayment</h2>
 
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell govuk-table__cell--mobile">
-                  <span class="govuk-table__head--span">
-                    <b>Item:
-                    </b>
-                  </span>
-                  <a href="debt-details">Universal Credit advance</a>
-                </td>
-                <td class="govuk-table__cell govuk-table__cell--mobile ">
-                  <span class="govuk-table__head--span">
-                    <b>Date:
-                    </b>
-                  </span>13 Oct 2018</td>
-                <td class="govuk-table__cell govuk-table__cell--mobile ">
-                  <span class="govuk-table__head--span">
-                    <b>Amount owed:
-                    </b>
-                  </span>£26</td>
-              </tr>
-            </tbody>
+        {{ govukButton({
+            text: "Repay the full amount online",
+            href: "https://products.payments.service.gov.uk/pay/21b2c65157054d89b3582922c93aa435",
+            classes: ""
+          }) }}
 
-          </table>
+        {{ govukDetails({
+          summaryText: "Bank transfer",
+          html: "<p>Call your bank or sign into your bank account. Use these details to repay the full amount by the date shown on the letter we sent you:</p>
 
-        </div>
+                    <p>Sort code: 40 34 18<br/>
+                      Account number: 51826107</p>
+                    <p>Use your National Insurance number as the reference, for example<br/>
+                      QQ 12 34 56 A</p>"
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Telephone",
+          html: "<p>Call Debt Management to repay the full amount or arrange a repayment plan. Do this by the date shown on the letter we sent you.</p>
+
+                    <p>Telephone: 0800 916 0614<br/>
+                      Textphone: 0345 604 6697<br/>
+                      Monday to Friday 8am to 7.30pm<br/>
+                      Saturday 9am to 4pm</p>
+
+                    <p>You can also call us if you cannot afford to repay.</p>"
+        }) }}
       </div>
 
-      <hr class="govuk-section-break govuk-section-break--l">
+      <hr class="govuk-section-break govuk-section-break--xl">
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-          {# <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Your repayment history</h2> #}
-          <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You've repaid</h2>
-          <h2 class="govuk-heading-xl govuk-!-margin-bottom-5">£20</h2>
-          {# <span class="govuk-caption-m govuk-!-margin-bottom-6">£20 in total</span> #}
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You've repaid</h2>
+      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">£20</h2>
 
-          {{ govukTable({
-              firstCellIsHeader: false,
-              head: [
-                {
-                  text: "Date"
-                },
-                {
-                  text: "Type"
-                },
-                {
-                  text: "Amount paid"
-                }
-              ],
-              rows: [
-                [
-                  {
-                    text: "1 Aug 2018"
-                  },
-                  {
-                    text: "Deduction from benefit"
-                  },
-                  {
-                    text: "£5"
-                  }
-                ],
-                [
-                  {
-                    text: "29 Aug 2018"
-                  },
-                  {
-                    text: "Deduction from benefit"
-                  },
-                  {
-                    text: "£5"
-                  }
-                ],
-                [
-                  {
-                    text: "26 Sep 2018"
-                  },
-                  {
-                    text: "Deduction from benefit"
-                  },
-                  {
-                    text: "£5"
-                  }
-                ],
-                [
-                  {
-                    text: "24 Oct 2018"
-                  },
-                  {
-                    text: "Deduction from benefit"
-                  },
-                  {
-                    text: "£5"
-                  }
-                ]
-              ]
-            }) }}
-        </div>
-      </div>
+      {{ govukTable({
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: "Date"
+            },
+            {
+              text: "Type"
+            },
+            {
+              text: "Amount paid"
+            }
+          ],
+          rows: [
+            [
+              {
+                text: "24 Oct 2018"
+              },
+              {
+                text: "Deduction from benefit"
+              },
+              {
+                text: "£5"
+              }
+            ],
+            [
+              {
+                text: "26 Sept 2018"
+              },
+              {
+                text: "Deduction from benefit"
+              },
+              {
+                text: "£5"
+              }
+            ],
+            [
+              {
+                text: "29 Aug 2018"
+              },
+              {
+                text: "Deduction from benefit"
+              },
+              {
+                text: "£5"
+              }
+            ],
+            [
+              {
+                text: "1 Aug 2018"
+              },
+              {
+                text: "Deduction from benefit"
+              },
+              {
+                text: "£5"
+              }
+            ]
+          ]
+        }) }}
 
       <hr class="govuk-section-break govuk-section-break--l">
-
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <h2 class="govuk-heading-l">How to make a repayment</h2>
-
-          {{ govukButton({
-              text: "Pay the full amount online",
-              href: "https://products.payments.service.gov.uk/pay/21b2c65157054d89b3582922c93aa435",
-              classes: "govuk-!-margin-top-4"
-            }) }}
-
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-          <h3 class="govuk-heading-s">Bank transfer</h3>
-
-          <p>Call your bank or sign into your bank account. Use these details to repay the full amount by the date shown on the letter we sent you:</p>
-
-          <p>Sort code: 40 34 18<br/>
-            Account number: 51826107</p>
-          <p>Use your National Insurance number as the reference, for example<br/>
-            QQ 12 34 56 A</p>
-
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-          <h3 class="govuk-heading-s">Telephone</h3>
-
-          <p>Call Debt Management to repay the full amount or arrange a repayment plan. Do this by the date shown on the letter we sent you.</p>
-
-          <p>Telephone: 0800 916 0614<br/>
-            Textphone: 0345 604 6697<br/>
-            Monday to Friday 8am to 7.30pm<br/>
-            Saturday 9am to 4pm</p>
-
-          <p>You can also call us if you cannot afford to repay.</p>
-
-          {# <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-          <h2 class="govuk-heading-s">Repayment plans</h2>
-
-          <p>Call Debt Management to arrange a repayment plan if you cannot afford to repay.</p>
-
-          <p>Telephone: 0800 916 0614<br />
-          Textphone: 0345 604 6697<br />
-          Monday to Friday 8am to 7.30pm<br />
-          Saturday 9am to 4pm </p> #}
-        </div>
-      </div>
 
     </div>
   </div>
