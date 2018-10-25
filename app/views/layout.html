@@ -38,12 +38,30 @@
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
   {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: serviceName,
-    serviceUrl: "start",
-    containerClasses: "govuk-width-container"
+    homepageUrl: "#",
+    serviceName: "Check & pay your debt",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "#1",
+        text: "Account home",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Your details"
+      },
+      {
+        href: "#3",
+        text: "Contact us"
+      },
+      {
+        href: "#4",
+        text: "Sign out"
+      }
+    ]
   }) }}
-  {% include "includes/navigation.html" %}
+  {# {% include "includes/navigation.html" %} #}
 {% endblock %}
 
 {% if useAutoStoreData %}
