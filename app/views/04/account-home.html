@@ -10,44 +10,44 @@
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">Ashley Atherton</h1>
 
       <hr class="govuk-section-break govuk-section-break--l">
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You still owe</h2>
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">£26</h2>
 
-      <table class="govuk-table">
-        <thead class="govuk-table__head govuk-table__head--mobile">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col">Item</th>
-            <th class="govuk-table__header" scope="col">Date</th>
-            <th class="govuk-table__header" scope="col">Amount owed</th>
-          </tr>
-        </thead>
+      <div class="app--container">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You still owe</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">£26</h2>
 
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell govuk-table__cell--mobile">
-              <span class="govuk-table__head--span">
-                <b>Item:
-                </b>
-              </span>
-              <a href="debt-details">Universal Credit advance</a>
-            </td>
-            <td class="govuk-table__cell govuk-table__cell--mobile ">
-              <span class="govuk-table__head--span">
-                <b>Date:
-                </b>
-              </span>13 Oct 2018</td>
-            <td class="govuk-table__cell govuk-table__cell--mobile ">
-              <span class="govuk-table__head--span">
-                <b>Amount owed:
-                </b>
-              </span>£26</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="govuk-table">
+          <thead class="govuk-table__head app-table__head--mobile">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">Item</th>
+              <th class="govuk-table__header" scope="col">Date</th>
+              <th class="govuk-table__header" scope="col">Amount owed</th>
+            </tr>
+          </thead>
 
-      <hr class="govuk-section-break govuk-section-break--xl">
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell app-table__cell--mobile">
+                <span class="app-table__head--span">
+                  <b>Item</b>
+                </span>
+                <a href="debt-details">Universal Credit advance</a>
+              </td>
+              <td class="govuk-table__cell app-table__cell--mobile ">
+                <span class="app-table__head--span">
+                  <b>Date</b>
+                </span>13 Oct 2018</td>
+              <td class="govuk-table__cell app-table__cell--mobile ">
+                <span class="app-table__head--span">
+                  <b>Amount owed</b>
+                </span>£26</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-      <div style="background-color:#f8f8f8; border:1px solid #bfc1c3; padding:20px 20px 0px 20px;">
+      <hr class="govuk-section-break govuk-section-break--l">
+
+      <div class="app--container">
         <h2 class="govuk-heading-l">Make a repayment</h2>
 
         {{ govukButton({
@@ -79,12 +79,13 @@
         }) }}
       </div>
 
-      <hr class="govuk-section-break govuk-section-break--xl">
+      <hr class="govuk-section-break govuk-section-break--l">
 
-      <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You've repaid</h2>
-      <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">£20</h2>
+      <div class="app--container">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-2">You've repaid</h2>
+        <h2 class="govuk-heading-xl govuk-!-margin-bottom-2">£20</h2>
 
-      {{ govukTable({
+        {{ govukTable({
           firstCellIsHeader: false,
           head: [
             {
@@ -144,6 +145,8 @@
             ]
           ]
         }) }}
+
+      </div>
 
       <hr class="govuk-section-break govuk-section-break--l">
 
