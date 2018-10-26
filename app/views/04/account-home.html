@@ -27,20 +27,57 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell app-table__cell--mobile ">
-                <span class="app-table__head--span"><b>Date</b></span>13 Oct 2018
+                <span class="app-table__head--span">
+                  <b>Date</b>
+                </span>13 Oct 2018
               </td>
               <td class="govuk-table__cell app-table__cell--mobile">
-                <span class="app-table__head--span"><b>Item</b></span>
+                <span class="app-table__head--span">
+                  <b>Item</b>
+                </span>
                 <a href="debt-details">Universal Credit advance</a>
               </td>
               <td class="govuk-table__cell app-table__cell--mobile ">
-                <span class="app-table__head--span"><b>Amount owed</b></span>£26
+                <span class="app-table__head--span">
+                  <b>Amount owed</b>
+                </span>£26
               </td>
             </tr>
           </tbody>
         </table>
 
-        <p class="govuk-body">You can <a href="#0">repay the full amount online</a>.</p>
+        <h4 class="govuk-heading-m">How to repay:</h4>
+
+        <ul class="govuk-list">
+          <li class="govuk-!-margin-bottom-4">
+            <a class="govuk-link" href="#">Repay the full amount online</a>
+          </li>
+          <li>
+            {{ govukDetails({
+              summaryText: "Bank transfer",
+              html: "<p>Call your bank or sign into your bank account. Use these details to repay the full amount by the date shown on the letter we sent you:</p>
+
+                        <p>Sort code: 40 34 18<br/>
+                          Account number: 51826107</p>
+                        <p>Use your National Insurance number as the reference, for example<br/>
+                          QQ 12 34 56 A</p>",
+              classes: "govuk-!-margin-bottom-2"
+            }) }}
+          </li>
+          <li>
+            {{ govukDetails({
+              summaryText: "Telephone",
+              html: "<p>Call Debt Management to repay the full amount or arrange a repayment plan. Do this by the date shown on the letter we sent you.</p>
+
+                        <p>Telephone: 0800 916 0614<br/>
+                          Textphone: 0345 604 6697<br/>
+                          Monday to Friday 8am to 7.30pm<br/>
+                          Saturday 9am to 4pm</p>
+
+                        <p>You can also call us if you cannot afford to repay.</p>"
+            }) }}
+          </li>
+        </ul>
 
         {# {{ govukButton({
             text: "Repay the full amount online",
@@ -71,7 +108,6 @@
 
                     <p>You can also call us if you cannot afford to repay.</p>"
         }) }} #}
-
 
       </div>
 
