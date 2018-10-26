@@ -122,3 +122,10 @@ $govuk-card-selected-foreground-colour : govuk-colour("white");
 .hidden {
   display: none;
 }
+
+
+.app--container {
+  background-color:#f8f8f8;
+  border-bottom:3px solid #005ea5;
+  padding:20px 20px 0px 20px;
+}
