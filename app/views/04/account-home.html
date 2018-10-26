@@ -39,6 +39,40 @@
             </tr>
           </tbody>
         </table>
+
+        <p class="govuk-body">You can <a href="#0">repay the full amount online</a>.</p>
+
+        {# {{ govukButton({
+            text: "Repay the full amount online",
+            href: "https://products.payments.service.gov.uk/pay/21b2c65157054d89b3582922c93aa435",
+            classes: ""
+        }) }} #}
+
+        {# <p class="govuk-body"><a href="#0">Other ways to make a repayment</a></p> #}
+
+        {# {{ govukDetails({
+          summaryText: "Bank transfer",
+          html: "<p>Call your bank or sign into your bank account. Use these details to repay the full amount by the date shown on the letter we sent you:</p>
+
+                    <p>Sort code: 40 34 18<br/>
+                      Account number: 51826107</p>
+                    <p>Use your National Insurance number as the reference, for example<br/>
+                      QQ 12 34 56 A</p>"
+        }) }}
+
+        {{ govukDetails({
+          summaryText: "Telephone",
+          html: "<p>Call Debt Management to repay the full amount or arrange a repayment plan. Do this by the date shown on the letter we sent you.</p>
+
+                    <p>Telephone: 0800 916 0614<br/>
+                      Textphone: 0345 604 6697<br/>
+                      Monday to Friday 8am to 7.30pm<br/>
+                      Saturday 9am to 4pm</p>
+
+                    <p>You can also call us if you cannot afford to repay.</p>"
+        }) }} #}
+
+
       </div>
 
       <hr class="govuk-section-break govuk-section-break--l">
@@ -111,7 +145,7 @@
 
       <hr class="govuk-section-break govuk-section-break--l">
 
-      <div class="app--container">
+      {# <div class="app--container">
         <h2 class="govuk-heading-l">Make a repayment</h2>
 
         {{ govukButton({
@@ -141,7 +175,7 @@
 
                     <p>You can also call us if you cannot afford to repay.</p>"
         }) }}
-      </div>
+      </div> #}
 
       <hr class="govuk-section-break govuk-section-break--l">
 
