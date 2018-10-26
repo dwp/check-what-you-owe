@@ -50,37 +50,108 @@
         <div class="govuk-card govuk-card--contained">
           <a href="repayments"></a>
           <div class="govuk-card__content">
-            <h3 class="govuk-heading-m">Repayments</h3>
+            <h3 class="govuk-heading-l">Make a repayment</h3>
+
+            {{ govukButton({
+                text: "Repay the full amount online",
+                href: "https://products.payments.service.gov.uk/pay/21b2c65157054d89b3582922c93aa435",
+                classes: ""
+              }) }}
+
+
+            {{ govukDetails({
+              summaryText: "Bank transfer",
+              html: "<p>Call your bank or sign into your bank account. Use these details to repay the full amount by the date shown on the letter we sent you:</p>
+
+                        <p>Sort code: 40 34 18<br/>
+                          Account number: 51826107</p>
+                        <p>Use your National Insurance number as the reference, for example<br/>
+                          QQ 12 34 56 A</p>"
+            }) }}
+
+            {{ govukDetails({
+              summaryText: "Telephone",
+              html: "<p>Call Debt Management to repay the full amount or arrange a repayment plan. Do this by the date shown on the letter we sent you.</p>
+
+                        <p>Telephone: 0800 916 0614<br/>
+                          Textphone: 0345 604 6697<br/>
+                          Monday to Friday 8am to 7.30pm<br/>
+                          Saturday 9am to 4pm</p>
+
+                        <p>You can also call us if you cannot afford to repay.</p>"
+            }) }}
           </div>
-          <div class="govuk-card__actions">
-            <ul class="govuk-list govuk-!-mb-r0">
-              <li>
-                <a href="pay-amount-owed">Repay the full amount</a>
-              </li>
-              <li>
-                <a href="contact-us">Arrange a repayment plan</a>
-              </li>
-              <li>
-                <a href="repayment-history">See your repayment history</a>
-              </li>
-            </ul>
-          </div>
+
         </div>
       </div>
 
+
       <div class="govuk-card__flex-item govuk-grid-column-one-third">
-        <div class="govuk-card govuk-card--contained govuk-card--selectable">
-          <a href="contact-us"></a>
+        <div class="govuk-card govuk-card--contained">
           <div class="govuk-card__content">
-            <h3 class="govuk-heading-m">
-              <a href="contact-us">Contact us</a>
-            </h3>
-            <p class="govuk-body">Contact us if:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>you want to arrange a repayment plan</li>
-              <li>you have questions about why you owe this amount</li>
-              <li>you cannot afford to repay</li>
-            </ul>
+            <h3 class="govuk-heading-l">You've repaid £20</h3>
+
+            {{ govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Date"
+                },
+                {
+                  text: "Type"
+                },
+                {
+                  text: "Amount paid"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "24 Oct 2018"
+                  },
+                  {
+                    text: "Deduction from benefit"
+                  },
+                  {
+                    text: "£5"
+                  }
+                ],
+                [
+                  {
+                    text: "26 Sept 2018"
+                  },
+                  {
+                    text: "Deduction from benefit"
+                  },
+                  {
+                    text: "£5"
+                  }
+                ],
+                [
+                  {
+                    text: "29 Aug 2018"
+                  },
+                  {
+                    text: "Deduction from benefit"
+                  },
+                  {
+                    text: "£5"
+                  }
+                ],
+                [
+                  {
+                    text: "1 Aug 2018"
+                  },
+                  {
+                    text: "Deduction from benefit"
+                  },
+                  {
+                    text: "£5"
+                  }
+                ]
+              ]
+            }) }}
+
           </div>
         </div>
       </div>
