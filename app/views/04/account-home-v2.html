@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% set navActive = "home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Ashley Atherton</h1>
+
+    <div class="govuk-card__flex-container govuk-grid-row">
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-third">
+        <div class="govuk-card govuk-card--contained">
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-l">You still owe £26</h3>
+            <table class="govuk-table">
+              <thead class="govuk-table__head app-table__head--mobile">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">Item</th>
+                  <th class="govuk-table__header" scope="col">Date</th>
+                  <th class="govuk-table__header" scope="col">Amount owed</th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell app-table__cell--mobile">
+                    <span class="app-table__head--span">
+                      <b>Item</b>
+                    </span>
+                    <a href="debt-details">Universal Credit advance</a>
+                  </td>
+                  <td class="govuk-table__cell app-table__cell--mobile ">
+                    <span class="app-table__head--span">
+                      <b>Date</b>
+                    </span>13 Oct 2018</td>
+                  <td class="govuk-table__cell app-table__cell--mobile ">
+                    <span class="app-table__head--span">
+                      <b>Amount owed</b>
+                    </span>£26</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-third">
+        <div class="govuk-card govuk-card--contained">
+          <a href="repayments"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m">Repayments</h3>
+          </div>
+          <div class="govuk-card__actions">
+            <ul class="govuk-list govuk-!-mb-r0">
+              <li>
+                <a href="pay-amount-owed">Repay the full amount</a>
+              </li>
+              <li>
+                <a href="contact-us">Arrange a repayment plan</a>
+              </li>
+              <li>
+                <a href="repayment-history">See your repayment history</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-third">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="contact-us"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m">
+              <a href="contact-us">Contact us</a>
+            </h3>
+            <p class="govuk-body">Contact us if:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>you want to arrange a repayment plan</li>
+              <li>you have questions about why you owe this amount</li>
+              <li>you cannot afford to repay</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
