@@ -1,30 +1,32 @@
 // Applying custom styles required for mobile view of tables
-.govuk-table__cell--mobile {
 
-  @include govuk-media-query($until: tablet) {
+.app-table__cell--mobile {
     width: 100%;
     display: block;
     border-bottom: none;
-    padding-bottom:govuk-spacing(1);
-    padding-top:govuk-spacing(1);
+    padding-bottom: govuk-spacing(1);
+    padding-top: govuk-spacing(1);
 
     &:last-of-type {
-      border-bottom: 1px solid #bfc1c3;
+      //border-bottom: 1px solid #bfc1c3;
       padding-bottom:govuk-spacing(3);
     }
-  }
+
 }
 
 
-.govuk-table__head--mobile {
+.app-table__head--mobile {
 
-  @include govuk-media-query($until: tablet) {
+//  @include govuk-media-query($until: tablet) {
     display: none;
-  }
+//  }
 }
 
-.govuk-table__head--span {
-  @include govuk-media-query($from: tablet) {
-    display: none;
-  }
+.app-table__head--span {
+
+  display: block;
+
+//  @include govuk-media-query($from: tablet) {
+//    display: none;
+//  }
 }
