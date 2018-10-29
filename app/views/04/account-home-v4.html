@@ -11,9 +11,12 @@
     <div class="govuk-card__flex-container govuk-grid-row">
 
       <div class="govuk-card__flex-item govuk-grid-column-one-half">
-        <div class="govuk-card govuk-card--contained">
-          <div class="govuk-card__content">
-            <h3 class="govuk-heading-l">You still owe £26</h3>
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="amounts-owed"></a>
+            <div class="govuk-card__content">
+              <h3 class="govuk-heading-l"><a href="amounts-owed">You still owe £26</a></h3>
+              <p class="govuk-body">Find out why you owe this money.</p>
+            </div>
             <!-- <table class="govuk-table">
               <thead class="govuk-table__head app-table__head--mobile">
                 <tr class="govuk-table__row">
@@ -44,12 +47,13 @@
             </table> -->
           </div>
         </div>
-      </div>
 
       <div class="govuk-card__flex-item govuk-grid-column-one-half">
-        <div class="govuk-card govuk-card--contained">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="repayment-history"></a>
           <div class="govuk-card__content">
-            <h3 class="govuk-heading-l">You've repaid £20</h3>
+            <h3 class="govuk-heading-l"><a href="repayment-history">You've repaid £20</a></h3>
+            <p>See your repayment history.</p>
 
             <!-- {{ govukTable({
               firstCellIsHeader: false,
