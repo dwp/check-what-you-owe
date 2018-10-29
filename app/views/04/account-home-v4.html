@@ -14,7 +14,7 @@
         <div class="govuk-card govuk-card--contained govuk-card--selectable">
           <a href="amounts-owed"></a>
             <div class="govuk-card__content">
-              <h3 class="govuk-heading-l"><a href="amounts-owed">You still owe £26</a></h3>
+              <h3 class="govuk-heading-m"><a href="amounts-owed">You still owe £26</a></h3>
               <p class="govuk-body">Find out why you owe this money.</p>
             </div>
             <!-- <table class="govuk-table">
@@ -52,7 +52,7 @@
         <div class="govuk-card govuk-card--contained govuk-card--selectable">
           <a href="repayment-history"></a>
           <div class="govuk-card__content">
-            <h3 class="govuk-heading-l"><a href="repayment-history">You've repaid £20</a></h3>
+            <h3 class="govuk-heading-m"><a href="repayment-history">You've repaid £20</a></h3>
             <p>See your repayment history.</p>
 
             <!-- {{ govukTable({
@@ -121,10 +121,11 @@
       </div>
 
       <div class="govuk-card__flex-item govuk-grid-column-one-half">
-        <div class="govuk-card govuk-card--contained">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
           <a href="repayments"></a>
           <div class="govuk-card__content">
-            <h3 class="govuk-heading-l">Make a repayment</h3>
+            <h3 class="govuk-heading-m"><a href="repayments">Make a repayment</a></h3>
+            <p class="govuk-body">Repay the full amount, or arrange to make a repayment plan.</p>
 
             <!-- {{ govukButton({
                 text: "Repay the full amount online",
@@ -160,10 +161,15 @@
       </div>
 
       <div class="govuk-card__flex-item govuk-grid-column-one-half">
-        <div class="govuk-card govuk-card--contained">
-          <a href="repayments"></a>
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="contact-us"></a>
           <div class="govuk-card__content">
-            <h3 class="govuk-heading-l">Contact us</h3>
+            <h3 class="govuk-heading-m"><a href="contact-us">Contact us</a></h3>
+            <p class="govuk-body">Contact us if:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>you have questions about why you owe this amount</li>
+              <li>you cannot afford to repay</li>
+            </ul>
           </div>
 
         </div>
