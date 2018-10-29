@@ -1,6 +1,30 @@
 {% extends "layout.html" %}
 
-{% set navActive = "home" %}
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Check and pay what you owe",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home",
+        text: "Account home",
+        active: true
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {# {% include "includes/navigation.html" %} #}
+{% endblock %}
 
 {% block content %}
 
@@ -12,9 +36,9 @@
 
       <div class="govuk-card__flex-item govuk-grid-column-one-half">
         <div class="govuk-card govuk-card--contained govuk-card--selectable">
-          <a href="amounts-owed"></a>
+          <a href="debt-details"></a>
             <div class="govuk-card__content">
-              <h3 class="govuk-heading-m"><a href="amounts-owed">You still owe £26</a></h3>
+              <h3 class="govuk-heading-m"><a href="debt-details">You still owe £26</a></h3>
               <p class="govuk-body">Find out why you owe this money.</p>
             </div>
             <!-- <table class="govuk-table">
