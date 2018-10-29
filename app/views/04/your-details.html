@@ -1,6 +1,30 @@
 {% extends "layout.html" %}
 
-{% set navActive = "your-details" %}
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Check and pay what you owe",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-v4",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details",
+        active: true
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {# {% include "includes/navigation.html" %} #}
+{% endblock %}
 
 {% block content %}
 
