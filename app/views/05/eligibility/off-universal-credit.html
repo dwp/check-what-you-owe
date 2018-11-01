@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/04/eligibility/what-would-you-like-to-do-answer" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-fieldset__heading">
+              What would you like to do?
+            </h2>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-would-you-like-to-do-no" name="what-would-you-like-to-do" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="what-would-you-like-to-do-no">
+                Check what I owe
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-would-you-like-to-do-yes" name="what-would-you-like-to-do" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="what-would-you-like-to-do-yes">
+                Repay what I owe
+              </label>
+            </div>
+            {# <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="what-would-you-like-to-do-repayment" name="what-would-you-like-to-do" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="what-would-you-like-to-do-repayment">
+                Set up a repayment plan
+              </label>
+            </div> #}
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
