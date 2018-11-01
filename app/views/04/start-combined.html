@@ -32,15 +32,9 @@
         <li>repay your balance in full</li>
       </ul>
 
-      {{ govukWarningText({
-        classes: '',
-        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.',
-        iconFallbackText: 'Warning'
-      }) }}
-
       {{ govukButton({
         text: 'Start',
-        href: "eligibility-1",
+        href: "eligibility/",
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
@@ -53,6 +47,12 @@
       </p>
 
       {# {% include "includes/contact-information.html" %} #}
+
+      {{ govukWarningText({
+        classes: '',
+        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.',
+        iconFallbackText: 'Warning'
+      }) }}
 
     </div>
 
