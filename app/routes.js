@@ -15,7 +15,7 @@ router.get('/examples/template-data', function (req, res) {
 })
 
 // Branching
-router.post('/04/eligibility/universal-credit-answer', function (req, res) {
+router.post('/05/eligibility/universal-credit-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -23,14 +23,14 @@ router.post('/04/eligibility/universal-credit-answer', function (req, res) {
   let UniversalCredit = req.session.data['universal-credit']
 
   if (UniversalCredit === 'false') {
-    res.redirect('/04/eligibility/off-universal-credit')
+    res.redirect('/05/eligibility/off-universal-credit')
   } else {
-    res.redirect('/04/eligibility/on-universal-credit')
+    res.redirect('/05/eligibility/on-universal-credit')
   }
 })
 
 // Branching
-router.post('/04/eligibility/what-would-you-like-to-do-answer', function (req, res) {
+router.post('/05/eligibility/what-would-you-like-to-do-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -38,14 +38,14 @@ router.post('/04/eligibility/what-would-you-like-to-do-answer', function (req, r
   let WhatWouldYouLikeToDo = req.session.data['what-would-you-like-to-do']
 
   if (WhatWouldYouLikeToDo === 'false') {
-    res.redirect('/04/eligibility/check-what-you-owe')
+    res.redirect('/05/eligibility/check-what-you-owe')
   } else {
-    res.redirect('/04/eligibility/pay-what-you-owe')
+    res.redirect('/05/eligibility/pay-what-you-owe')
   }
 })
 
 // Branching
-router.post('/04/eligibility/repayment-answer', function (req, res) {
+router.post('/05/eligibility/repayment-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
@@ -53,13 +53,13 @@ router.post('/04/eligibility/repayment-answer', function (req, res) {
   let RepaymentOptions = req.session.data['repayment-options']
 
   if (RepaymentOptions === 'full') {
-    res.redirect('/04/eligibility/full')
+    res.redirect('/05/eligibility/full')
   }
   if (RepaymentOptions === 'partial') {
-    res.redirect('/04/eligibility/partial')
+    res.redirect('/05/eligibility/partial')
   }
   if (RepaymentOptions === 'plan') {
-    res.redirect('/04/eligibility/plan')
+    res.redirect('/05/eligibility/plan')
   }
 })
 
