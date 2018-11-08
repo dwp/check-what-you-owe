@@ -27,22 +27,25 @@
 {% endblock %}
 
 {% block content %}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Amounts owed</h1>
-        {# <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Amount to repay: £1,420</p> #}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Amounts owed</h1>
+      {# <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Amount to repay: £1,420</p> #}
 
-        {# {{ govukButton({
+      {# {{ govukButton({
           text: 'Repay the full amount',
           href: 'pay-amount-owed',
           classes: ''
         }) }} #}
 
-        {% from "table/macro.njk" import govukTable %}
+      {% from "table/macro.njk" import govukTable %}
 
-{{ govukTable({
+      {{ govukTable({
   firstCellIsHeader: false,
   head: [
+    {
+      text: "Date"
+    },
     {
       text: "What you owe"
     },
@@ -54,6 +57,9 @@
   rows: [
     [
       {
+        text: "03 Dec 17"
+      },
+      {
         html: "<a href='debt-details'>Universal Credit new claim advance</a>"
       },
       {
@@ -62,6 +68,9 @@
       }
     ],
     [
+      {
+        text: "24 Jun 18"
+      },
       {
         html: "<a href='#0'>Universal Credit new claim advance</a>"
       },
@@ -72,6 +81,9 @@
     ],
     [
       {
+        text: "03 Jul 18"
+      },
+      {
         html: "<a href='#0'>Universal Credit hardship payment</a>"
       },
       {
@@ -81,6 +93,9 @@
     ],
     [
       {
+        text: "03 Aug 18"
+      },
+      {
         html: "<a href='#0'>Universal Credit hardship payment</a>"
       },
       {
@@ -90,6 +105,9 @@
     ],
     [
       {
+        text: "03 Sep 18"
+      },
+      {
         html: "<a href='#0'>Universal Credit hardship payment</a>"
       },
       {
@@ -98,6 +116,9 @@
       }
     ],
     [
+      {
+        text: "03 Nov 18"
+      },
       {
         html: "<a href='#0'>Housing benefit overpayment</a>"
       },
@@ -107,6 +128,9 @@
       }
     ],
     [
+      {
+        text: "03 Nov 18"
+      },
       {
         html: "<a href='#0'>Tax credit overpayment</a>"
       },
@@ -129,6 +153,6 @@
       </div>
 
     </div>
-</div>
+  </div>
 
 {% endblock %}
