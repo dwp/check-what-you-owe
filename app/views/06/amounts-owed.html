@@ -30,7 +30,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Amounts owed</h1>
-        <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £26</p>
+        <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £1,420</p>
 
         {{ govukButton({
           text: 'Repay the full amount',
@@ -38,11 +38,67 @@
           classes: ''
         }) }}
 
-        {{ govukTable({
-          firstCellIsHeader: false,
-          head: [ { text: "Item" }, { text: "Date" }, { text: "What you owe" } ],
-          rows: [ [ { html: "<a href='debt-details'>Universal Credit advance</a>" }, { text: "13th Oct 18" }, { text: "£26" } ] ]
-        }) }}
+        {% from "table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Item"
+    },
+    {
+      text: "What you owe",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: "<a href='debt-details'>Universal Credit new claim advance</a>"
+      },
+      {
+        text: "£160",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        html: "<a href='#0'>Universal Credit new claim advance</a>"
+      },
+      {
+        text: "£360",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        html: "<a href='#0'>Universal Credit hardship payment</a>"
+      },
+      {
+        text: "£300",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        html: "<a href='#0'>Universal Credit hardship payment</a>"
+      },
+      {
+        text: "£300",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        html: "<a href='#0'>Universal Credit hardship payment</a>"
+      },
+      {
+        text: "£300",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
 
     </div>
 </div>
