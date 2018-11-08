@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "off-universal-credit"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/05/eligibility/repayment-answer" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-fieldset__heading">
+              How do you want to repay?
+            </h2>
+          </legend>
+          <div class="govuk-radios ">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="repayment-full" name="repayment-options" type="radio" value="full">
+              <label class="govuk-label govuk-radios__label" for="repayment-full">
+                Repay the full amount
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="repayment-partial" name="repayment-options" type="radio" value="partial">
+              <label class="govuk-label govuk-radios__label" for="repayment-partial">
+                Make a partial repayment
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="repayment-plan" name="repayment-options" type="radio" value="plan">
+              <label class="govuk-label govuk-radios__label" for="repayment-plan">
+                Arrange a repayment plan
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
