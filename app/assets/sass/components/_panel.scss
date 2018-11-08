@@ -1,4 +1,12 @@
 .govuk-panel--amount-owed {
-    color: #ffffff;
+    color: govuk-colour("white") !important;
     background: #267CAE;
+
+    .govuk-body {
+      color: govuk-colour("white");
+
+      a {
+        color: govuk-colour("white");
+      }
+    }
 }
