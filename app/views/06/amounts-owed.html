@@ -1,6 +1,14 @@
 {% extends "layout.html" %}
 {% set navActive = "owed" %}
 
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-v5"
+  }) }}
+{% endblock %}
+
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
@@ -30,15 +38,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">Amounts owed</h1>
-      {# <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Amount to repay: £1,420</p> #}
-
-      {# {{ govukButton({
-          text: 'Repay the full amount',
-          href: 'pay-amount-owed',
-          classes: ''
-        }) }} #}
-
-      {% from "table/macro.njk" import govukTable %}
 
       {{ govukTable({
   firstCellIsHeader: false,
@@ -60,7 +59,7 @@
         text: "03 Dec 17"
       },
       {
-        html: "<a href='debt-details'>Universal Credit new claim advance</a>"
+        html: "<a href='uc-advance'>Universal Credit new claim advance</a>"
       },
       {
         text: "£160",
@@ -72,7 +71,7 @@
         text: "24 Jun 18"
       },
       {
-        html: "<a href='#0'>Universal Credit new claim advance</a>"
+        html: "<a href='uc-advance'>Universal Credit new claim advance</a>"
       },
       {
         text: "£360",
@@ -142,7 +141,7 @@
   ]
 }) }}
 
-      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold" style="text-align:right;">Amount to repay: £2,320</p>
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold" style="text-align:right;">Total amount: £2,320</p>
 
       <div style="float:right;">
         {{ govukButton({
