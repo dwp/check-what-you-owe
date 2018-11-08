@@ -30,13 +30,13 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Amounts owed</h1>
-        <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Still to repay: £1,420</p>
+        {# <p class="govuk-!-font-size-27 govuk-!-font-weight-bold">Amount to repay: £1,420</p> #}
 
-        {{ govukButton({
+        {# {{ govukButton({
           text: 'Repay the full amount',
           href: 'pay-amount-owed',
           classes: ''
-        }) }}
+        }) }} #}
 
         {% from "table/macro.njk" import govukTable %}
 
@@ -44,10 +44,10 @@
   firstCellIsHeader: false,
   head: [
     {
-      text: "Item"
+      text: "What you owe"
     },
     {
-      text: "What you owe",
+      text: "Amount you owe",
       format: "numeric"
     }
   ],
@@ -96,9 +96,37 @@
         text: "£300",
         format: "numeric"
       }
+    ],
+    [
+      {
+        html: "<a href='#0'>Housing benefit overpayment</a>"
+      },
+      {
+        text: "£500",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        html: "<a href='#0'>Tax credit overpayment</a>"
+      },
+      {
+        text: "£400",
+        format: "numeric"
+      }
     ]
   ]
 }) }}
+
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold" style="text-align:right;">Amount to repay: £2,320</p>
+
+      <div style="float:right;">
+        {{ govukButton({
+          text: 'Repay the full amount',
+          href: 'pay-amount-owed',
+          classes: ''
+        }) }}
+      </div>
 
     </div>
 </div>
