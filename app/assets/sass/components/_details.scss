@@ -1,0 +1,7 @@
+.app-details__amounts-owed {
+  margin-bottom: govuk-spacing(3);
+
+  @include govuk-media-query($from: desktop) {
+    margin-bottom: govuk-spacing(0);
+  }
+}
