@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [ {
+      text:'Home',
+      href: '#0' },
+      { text:'Section',
+      href: '#0' },
+      { text: 'Pay what you owe' } ]
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Arrange a repayment plan</h1>
+
+      <h2 class="govuk-heading-l">Contact us</h2>
+
+      <p>Telephone: 0800 916 0614<br />
+      Textphone: 0345 604 6697<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm </p>
+
+      <p>You can also call us if you cannot afford to repay.</p>
+
+      <p class="govuk-body"><a href="../start-combined">Start again</a></p>
+
+  </div>
+</div>
+{% endblock %}

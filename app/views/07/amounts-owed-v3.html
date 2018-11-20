@@ -1,0 +1,123 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-v5"
+  }) }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Check what you owe",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-v5",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {# {% include "includes/navigation.html" %} #}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Amounts owed</h1>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Universal Credit new claim advance</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Advance made on 3 Dec 2017<br />
+            Still to repay: <b>£160</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Universal Credit new claim advance</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Advance made on 24 Jun 2018<br />
+            Still to repay: <b>£360</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Recoverable Hardship Payment</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Hardship payment received in Jul 2018<br />
+            Still to repay: <b>£300</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Recoverable Hardship Payment</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Hardship payment received in Aug 2018<br />
+            Still to repay: <b>£300</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Recoverable Hardship Payment</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Hardship payment received in Sep 2018<br />
+            Still to repay: <b>£300</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Housing Benefit overpayment</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Overpayment was referred on 3 Nov 2018<br />
+            Still to repay: <b>£500</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="app-panel app-panel--border govuk-card--selectable">
+        <a href="#0"></a>
+        <div class="govuk-card__content govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <h3 class="govuk-heading-m"><a href="#0">Tax credit overpayment</a></h3>
+          <p class="govuk-body govuk-!-margin-bottom-0">Overpayment occurred in the 2017-18 financial year<br />
+            Still to repay: <b>£400</b>
+          </p>
+        </div>
+      </div>
+
+      <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Total amount: £2,320</p>
+
+      {{ govukButton({
+        text: 'Repay the full amount',
+        href: 'repayments',
+        classes: ''
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

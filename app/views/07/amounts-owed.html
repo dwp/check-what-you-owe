@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-v5"
+  }) }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Check what you owe",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-v5",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+  {# {% include "includes/navigation.html" %} #}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-xl">Amounts owed</h1>
+
+      {{ govukTable({
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Date"
+    },
+    {
+      text: "What you owe"
+    },
+    {
+      text: "Amount you owe",
+      format: "numeric"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "03 Dec 17"
+      },
+      {
+        html: "<a href='uc-advance-1'>Universal Credit new claim advance</a>"
+      },
+      {
+        text: "£160",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "24 Jun 18"
+      },
+      {
+        html: "<a href='uc-advance-2'>Universal Credit new claim advance</a>"
+      },
+      {
+        text: "£360",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Jul 18"
+      },
+      {
+        html: "<a href='hardship-payment-1'>Recoverable Hardship Payment</a>"
+      },
+      {
+        text: "£300",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Aug 18"
+      },
+      {
+        html: "<a href='hardship-payment-2'>Recoverable Hardship Payment</a>"
+      },
+      {
+        text: "£300",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Sep 18"
+      },
+      {
+        html: "<a href='hardship-payment-3'>Recoverable Hardship Payment</a>"
+      },
+      {
+        text: "£300",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "03 Nov 18"
+      },
+      {
+        html: "<a href='housing-benefit-overpayment'>Housing benefit overpayment</a>"
+      },
+      {
+        text: "£500",
+        format: "numeric"
+      }
+    ],
+    [
+      {
+        text: "Financial year 2017-18"
+      },
+      {
+        html: "<a href='tax-credit-overpayment'>Tax credit overpayment</a>"
+      },
+      {
+        text: "£400",
+        format: "numeric"
+      }
+    ]
+  ]
+}) }}
+
+      <p class="govuk-!-font-size-27 govuk-!-font-weight-bold" style="text-align:right;">Total amount: £2,320</p>
+
+      <div style="float:right;">
+        {{ govukButton({
+          text: 'Repay the full amount',
+          href: 'repayments',
+          classes: ''
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
