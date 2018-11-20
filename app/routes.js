@@ -14,7 +14,8 @@ router.get('/examples/template-data', function (req, res) {
   res.render('examples/template-data', { 'name': 'Foo' })
 })
 
-// Branching
+
+// Branching for eligibility questions on 05 prototype
 router.post('/05/eligibility/universal-credit-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -29,7 +30,7 @@ router.post('/05/eligibility/universal-credit-answer', function (req, res) {
   }
 })
 
-// Branching
+// Branching for eligibility questions on 05 prototype
 router.post('/05/eligibility/what-would-you-like-to-do-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -44,22 +45,41 @@ router.post('/05/eligibility/what-would-you-like-to-do-answer', function (req, r
   }
 })
 
-// Branching
-router.post('/05/eligibility/repayment-answer', function (req, res) {
+
+
+
+// Branching for eligibility questions on 07 prototype
+router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let RepaymentOptions = req.session.data['repayment-options']
+  let InitialPayment = req.session.data['initial-payment']
 
-  if (RepaymentOptions === 'full') {
-    res.redirect('/05/eligibility/full')
+  if (InitialPayment === 'false') {
+    res.redirect('/07/repayment-plan/initial-payment-amount')
+  } else {
+    res.redirect('/07/repayment-plan/what-is-your-salary')
   }
-  if (RepaymentOptions === 'partial') {
-    res.redirect('/05/eligibility/partial')
-  }
-  if (RepaymentOptions === 'plan') {
-    res.redirect('/05/eligibility/plan')
+})
+
+
+
+
+//
+// Branching for 07 repayment plan Prototype
+//
+router.post('/05/eligibility/universal-credit-answer', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let UniversalCredit = req.session.data['universal-credit']
+
+  if (UniversalCredit === 'false') {
+    res.redirect('/05/eligibility/off-universal-credit')
+  } else {
+    res.redirect('/05/eligibility/on-universal-credit')
   }
 })
 
