@@ -14,6 +14,12 @@
   {{serviceName}}
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "initial-payment" })
+  }}
+{% endblock %}
 
 {% block content %}
 
@@ -26,7 +32,7 @@
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              What is your salary?
+              What is your take home pay?
             </h2>
           </legend>
           <div class="govuk-radios">
