@@ -59,7 +59,7 @@ router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
   if (InitialPayment === 'false') {
     res.redirect('/07/repayment-plan/initial-payment-amount')
   } else {
-    res.redirect('/07/repayment-plan/what-is-your-salary')
+    res.redirect('/07/repayment-plan/what-is-your-take-home-pay')
   }
 })
 
