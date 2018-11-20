@@ -45,10 +45,22 @@ router.post('/05/eligibility/what-would-you-like-to-do-answer', function (req, r
   }
 })
 
+// Branching for eligibility questions on 05 prototype
+router.post('/05/eligibility/repayment-answer', function (req, res) {
+  let RepaymentOptions = req.session.data['repayment-options']
+  if (RepaymentOptions === 'full') {
+    res.redirect('/05/eligibility/full')
+  }
+  if (RepaymentOptions === 'partial') {
+    res.redirect('/05/eligibility/partial')
+  }
+  if (RepaymentOptions === 'plan') {
+    res.redirect('/05/eligibility/plan')
+  }
+})
 
 
-
-// Branching for eligibility questions on 07 prototype
+// Branching for 07 repayment plan
 router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -62,30 +74,6 @@ router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
     res.redirect('/07/repayment-plan/what-is-your-take-home-pay')
   }
 })
-
-
-
-
-//
-// Branching for 07 repayment plan Prototype
-//
-router.post('/05/eligibility/universal-credit-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let UniversalCredit = req.session.data['universal-credit']
-
-  if (UniversalCredit === 'false') {
-    res.redirect('/05/eligibility/off-universal-credit')
-  } else {
-    res.redirect('/05/eligibility/on-universal-credit')
-  }
-})
-
-
-
-
 
 // Add your routes above the module.exports line
 module.exports = router
