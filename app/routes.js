@@ -48,6 +48,7 @@ router.post('/05/eligibility/what-would-you-like-to-do-answer', function (req, r
 // Branching for eligibility questions on 05 prototype
 router.post('/05/eligibility/repayment-answer', function (req, res) {
   let RepaymentOptions = req.session.data['repayment-options']
+
   if (RepaymentOptions === 'full') {
     res.redirect('/05/eligibility/full')
   }
@@ -62,16 +63,27 @@ router.post('/05/eligibility/repayment-answer', function (req, res) {
 
 // Branching for 07 repayment plan
 router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
   let InitialPayment = req.session.data['initial-payment']
 
   if (InitialPayment === 'false') {
     res.redirect('/07/repayment-plan/initial-payment-amount')
   } else {
     res.redirect('/07/repayment-plan/what-is-your-take-home-pay')
+  }
+})
+
+// Branching for eligibility questions on 05 prototype
+router.post('/07/repayment-plan/what-is-your-take-home-pay-answer', function (req, res) {
+  let TakeHomePay = req.session.data['take-home-pay']
+
+  if (TakeHomePay === 'take-home-pay-1') {
+    res.redirect('/07/repayment-plan/how-much-1')
+  }
+  if (TakeHomePay === 'take-home-pay-2') {
+    res.redirect('/07/repayment-plan/how-much-2')
+  }
+  if (TakeHomePay === 'take-home-pay-3') {
+    res.redirect('/07/repayment-plan/how-much-3')
   }
 })
 
