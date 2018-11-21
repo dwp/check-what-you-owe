@@ -101,15 +101,15 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', funct
   const submitted = req.session.data;
 
   if (submitted['take-home-pay'] === 'take-home-pay-1') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-1')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-1')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-2') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-2')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-2')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-3') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-3')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-3')
   }
 })
 
@@ -131,17 +131,17 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', funct
 
 
 // Branching for 07 repayment plan
-router.post('/prototypes/07/views/take-home-pay/what-is-your-take-home-pay--lump-sum-answer', function (req, res) {
+router.post('/prototypes/07/views/what-is-your-take-home-pay/lump-sum', function (req, res) {
   let TakeHomePay = req.session.data['take-home-pay']
 
   if (TakeHomePay === 'take-home-pay-1') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-1--lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-1')
   }
   if (TakeHomePay === 'take-home-pay-2') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-2--lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-2')
   }
   if (TakeHomePay === 'take-home-pay-3') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-3--lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-3')
   }
 })
 
