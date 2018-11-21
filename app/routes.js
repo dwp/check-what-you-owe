@@ -72,7 +72,7 @@ router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
   }
 })
 
-// Branching for eligibility questions on 05 prototype
+// Branching for 07 repayment plan
 router.post('/07/repayment-plan/what-is-your-take-home-pay-answer', function (req, res) {
   let TakeHomePay = req.session.data['take-home-pay']
 
