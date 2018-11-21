@@ -24,11 +24,13 @@ const prototypes = fs.readdirSync(search).filter(file => {
 
 // Multiple prototypes
 for (const directory of prototypes) {
- const prototype = require(`${search}${directory}`)
+  const prototype = require(`${search}${directory}`)
+
   // Prototype static assets
- prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
+  prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
+
   // Prototype router
- router.use(`/${directory}`, prototype)
+  router.use(`/${directory}`, prototype)
 }
 
 // Sign out clears session storage and goes back to start

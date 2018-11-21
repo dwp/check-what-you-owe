@@ -1,4 +1,5 @@
 // Core dependencies
+const fs = require('fs')
 const path = require('path')
 
 // NPM dependencies
@@ -92,6 +93,11 @@ var appViews = [
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ]
+
+// Allow views in nested prototypes
+for (const directory of fs.readdirSync(path.join(__dirname, '/app/views/prototypes'))) {
+  appViews.push(path.join(__dirname, '/app/views/prototypes', directory, '/views'))
+}
 
 var nunjucksConfig = {
   autoescape: true,
@@ -345,11 +351,5 @@ app.use(function (err, req, res, next) {
 
 console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
-
-
-// // Allow views in nested prototypes
-// for (const directory of fs.readdirSync(path.join(__dirname, '/app/views/prototypes'))) {
-//   appViews.push(path.join(__dirname, '/app/views/prototypes', directory, '/views'))
-// }
 
 module.exports = app
