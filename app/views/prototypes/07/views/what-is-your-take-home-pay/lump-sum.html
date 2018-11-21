@@ -17,8 +17,8 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "off-universal-credit"
-  }) }}
+    href: "../initial-payment-amount" })
+  }}
 {% endblock %}
 
 {% block content %}
@@ -26,32 +26,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/05/eligibility/repayment-answer" method="post" class="form">
+      <form action="/prototypes/07/views/what-is-your-take-home-pay/what-is-your-take-home-pay--lump-sum-answer" method="post" class="form">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              How do you want to repay?
+              What is your take home pay?
             </h2>
           </legend>
-          <div class="govuk-radios ">
+          <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="repayment-full" name="repayment-options" type="radio" value="full">
-              <label class="govuk-label govuk-radios__label" for="repayment-full">
-                Repay the full amount
+              <input class="govuk-radios__input" id="take-home-pay-1" name="take-home-pay" type="radio" value="take-home-pay-1">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-1">
+                1st option
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="repayment-partial" name="repayment-options" type="radio" value="partial">
-              <label class="govuk-label govuk-radios__label" for="repayment-partial">
-                Make a partial repayment
+              <input class="govuk-radios__input" id="take-home-pay-2" name="take-home-pay" type="radio" value="take-home-pay-2">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-2">
+                2nd option
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="repayment-plan" name="repayment-options" type="radio" value="plan">
-              <label class="govuk-label govuk-radios__label" for="repayment-plan">
-                Arrange a repayment plan
+              <input class="govuk-radios__input" id="take-home-pay-3" name="take-home-pay" type="radio" value="take-home-pay-3">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-3">
+                3rd option
               </label>
             </div>
           </div>

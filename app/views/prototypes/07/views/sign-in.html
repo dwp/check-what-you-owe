@@ -6,16 +6,19 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({ text: "Back", href: "start" }) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "start" })
+  }}
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action='account-home-v5' method='post' class='form' autocomplete='off'>
+    <form action="initial-payment" method="post" class="form">
       <h1 class="govuk-heading-xl">
-          Sign in
-        </h1>
+        Sign in
+      </h1>
       <p>Enter the username and password in the letter we sent you.</p>
 
       {{ govukInput({
@@ -43,7 +46,8 @@
 
       {{ govukButton({
         text: "Sign in",
-        classes: "govuk-!-margin-bottom-8" })
+        classes: "govuk-!-margin-bottom-8"
+       })
       }}
     </form>
 

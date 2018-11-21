@@ -82,59 +82,47 @@ router.post('/05/eligibility/repayment-answer', function (req, res) {
   }
 })
 
-
-// // Branching for 07 repayment plan
-// router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
-//   let InitialPayment = req.session.data['initial-payment']
-//
-//   if (InitialPayment === 'false') {
-//     res.redirect('/07/repayment-plan/initial-payment-amount')
-//   } else {
-//     res.redirect('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--no-lump-sum')
-//   }
-// })
-
 // Branching for 07 repayment plan
-router.post('/07/repayment-plan/initial-payment', function (req, res) {
+router.post('/prototypes/07/views/initial-payment', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['initial-payment'] === 'false') {
-    res.redirect('/07/repayment-plan/initial-payment-amount')
+    res.redirect('/prototypes/07/views/initial-payment-amount')
   }
 
   if (submitted['initial-payment'] === 'true') {
-    res.redirect('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--no-lump-sum')
+    res.redirect('/prototypes/07/views/take-home-pay/no-lump-sum')
   }
 })
 
 // Branching for 07 repayment plan
-router.post('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--no-lump-sum-answer', function (req, res) {
+router.post('/prototypes/07/views/take-home-pay/what-is-your-take-home-pay--no-lump-sum-answer', function (req, res) {
   let TakeHomePay = req.session.data['take-home-pay']
 
   if (TakeHomePay === 'take-home-pay-1') {
-    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-1--no-lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-1--no-lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-2') {
-    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-2--no-lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-2--no-lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-3') {
-    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-3--no-lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-3--no-lump-sum')
   }
 })
 
 
 // Branching for 07 repayment plan
-router.post('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--lump-sum-answer', function (req, res) {
+router.post('/prototypes/07/views/take-home-pay/what-is-your-take-home-pay--lump-sum-answer', function (req, res) {
   let TakeHomePay = req.session.data['take-home-pay']
 
   if (TakeHomePay === 'take-home-pay-1') {
-    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-1--lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-1--lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-2') {
-    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-2--lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-2--lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-3') {
-    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-3--lump-sum')
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/take-home-pay-3--lump-sum')
   }
 })
 

@@ -17,33 +17,34 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "off-universal-credit"
-  }) }}
+    href: "initial-payment" })
+  }}
 {% endblock %}
 
-{% block content %}
 
+{% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/05/access" method="post" class="form">
+      <form action="/prototypes/07/views/take-home-pay/lump-sum" method="post" class="form">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              How much would you like to pay?
+              How much?
             </h2>
           </legend>
+
           {{ govukInput({
-            hint: {
-              type: "number",
-              text: "The minimum partial repayment is £50."
+            label: {
+              text: ""
             },
-            classes: "govuk-input--width-10",
-            id: "national-insurance-number",
-            name: "national-insurance-number"
+            classes: "govuk-input--width-10 govuk-!-margin-top-6",
+            id: "width-10",
+            name: "width-10"
           }) }}
+
           </fieldset>
         </div>
 
