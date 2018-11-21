@@ -1,19 +1,41 @@
 const express = require('express')
+const requireDir = require('require-dir')
 const router = express.Router()
 
-// Sign out clears session storage and goes back to start
-router.get('/signout', function (req, res) {
-  req.session.destroy()
-  res.redirect('start')
-})
-
-// Example routes
-
-// Passing data into a page
-router.get('/examples/template-data', function (req, res) {
-  res.render('examples/template-data', { 'name': 'Foo' })
-})
-
+// // Add your routes here - above the module.exports line
+// router.use(require('./middleware/locals'))
+//
+// // Data sources
+// router.all('/data/:data/source/:source', (req, res) => {
+//  const { data, source } = req.params
+//  res.json(require(`./data/${data}/source/${source}`))
+// })
+//
+// // Remove trailing slashes
+// router.all('\\S+/$', (req, res) => {
+//  res.redirect(301, req.path.slice(0, -1) + req.url.slice(req.path.length))
+// })
+//
+// // Find prototypes here
+// const search = `${__dirname}/views/prototypes/`
+// const prototypes = fs.readdirSync(search).filter(file => {
+//  return fs.statSync(`${search}/${file}`).isDirectory()
+// })
+//
+// // Multiple prototypes
+// for (const directory of prototypes) {
+//  const prototype = require(`${search}${directory}`)
+//   // Prototype static assets
+//  prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
+//   // Prototype router
+//  router.use(`/${directory}`, prototype)
+// }
+//
+// // Sign out clears session storage and goes back to start
+// router.get('/signout', function (req, res) {
+//   req.session.destroy()
+//   res.redirect('start')
+// })
 
 // Branching for eligibility questions on 05 prototype
 router.post('/05/eligibility/universal-credit-answer', function (req, res) {
@@ -61,13 +83,26 @@ router.post('/05/eligibility/repayment-answer', function (req, res) {
 })
 
 
-// Branching for 07 repayment plan
-router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
-  let InitialPayment = req.session.data['initial-payment']
+// // Branching for 07 repayment plan
+// router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
+//   let InitialPayment = req.session.data['initial-payment']
+//
+//   if (InitialPayment === 'false') {
+//     res.redirect('/07/repayment-plan/initial-payment-amount')
+//   } else {
+//     res.redirect('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--no-lump-sum')
+//   }
+// })
 
-  if (InitialPayment === 'false') {
+// Branching for 07 repayment plan
+router.post('/07/repayment-plan/initial-payment', function (req, res) {
+  const submitted = req.session.data;
+
+  if (submitted['initial-payment'] === 'false') {
     res.redirect('/07/repayment-plan/initial-payment-amount')
-  } else {
+  }
+
+  if (submitted['initial-payment'] === 'true') {
     res.redirect('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--no-lump-sum')
   }
 })
@@ -103,5 +138,5 @@ router.post('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--lump-s
   }
 })
 
-// Add your routes above the module.exports line
+
 module.exports = router
