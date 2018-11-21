@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../initial-payment-amount" })
+  }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/07/repayment-plan/what-is-your-take-home-pay--lump-sum-answer" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-fieldset__heading">
+              What is your take home pay?
+            </h2>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="take-home-pay-1" name="take-home-pay" type="radio" value="take-home-pay-1">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-1">
+                1st option
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="take-home-pay-2" name="take-home-pay" type="radio" value="take-home-pay-2">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-2">
+                2nd option
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="take-home-pay-3" name="take-home-pay" type="radio" value="take-home-pay-3">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-3">
+                3rd option
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
