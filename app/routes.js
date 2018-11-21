@@ -73,33 +73,33 @@ router.post('/07/repayment-plan/initial-payment-answer', function (req, res) {
 })
 
 // Branching for 07 repayment plan
-router.post('/07/repayment-plan/what-is-your-take-home-pay--no-lump-sum-answer', function (req, res) {
+router.post('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--no-lump-sum-answer', function (req, res) {
   let TakeHomePay = req.session.data['take-home-pay']
 
   if (TakeHomePay === 'take-home-pay-1') {
-    res.redirect('/07/repayment-plan/take-home-pay/take-home-pay-1--no-lump-sum')
+    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-1--no-lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-2') {
-    res.redirect('/07/repayment-plan/take-home-pay/take-home-pay-2--no-lump-sum')
+    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-2--no-lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-3') {
-    res.redirect('/07/repayment-plan/take-home-pay/take-home-pay-3--no-lump-sum')
+    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-3--no-lump-sum')
   }
 })
 
 
 // Branching for 07 repayment plan
-router.post('/07/repayment-plan/what-is-your-take-home-pay--lump-sum-answer', function (req, res) {
+router.post('/07/repayment-plan/take-home-pay/what-is-your-take-home-pay--lump-sum-answer', function (req, res) {
   let TakeHomePay = req.session.data['take-home-pay']
 
   if (TakeHomePay === 'take-home-pay-1') {
-    res.redirect('/07/repayment-plan/take-home-pay/take-home-pay-1--lump-sum')
+    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-1--lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-2') {
-    res.redirect('/07/repayment-plan/take-home-pay/take-home-pay-2--lump-sum')
+    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-2--lump-sum')
   }
   if (TakeHomePay === 'take-home-pay-3') {
-    res.redirect('/07/repayment-plan/take-home-pay/take-home-pay-3--lump-sum')
+    res.redirect('/07/repayment-plan/how-much-do-you-want-to-repay/take-home-pay-3--lump-sum')
   }
 })
 
