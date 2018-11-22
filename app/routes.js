@@ -136,15 +136,15 @@ router.post('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/07/views/test-1')
+    res.redirect('/prototypes/07/views/hmdywtr-result/result-below-50')
   }
+  //
+  // if (answer <= 69) {
+  //   res.redirect('/prototypes/07/views/hmdywtr-result/result-between-50-70')
+  // }
 
-  if (answer <= 69) {
-    res.redirect('/prototypes/07/views/test-2')
-  }
-
-  if (answer >= 70) {
-    res.redirect('/prototypes/07/views/test-3')
+  if (answer >= 50) {
+    res.redirect('/prototypes/07/views/hmdywtr-result/result-more-than-50')
   }
 })
 
