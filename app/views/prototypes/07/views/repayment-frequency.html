@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../initial-payment" })
+  }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/prototypes/07/views/payment-frequency" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-fieldset__heading">
+              How often do you want payments to be taken from your bank account?
+            </h2>
+          </legend>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="payment-frequency-1" name="payment-frequency" type="radio" value="payment-frequency-1">
+              <label class="govuk-label govuk-radios__label" for="payment-frequency-1">
+                Monthly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="payment-frequency-2" name="payment-frequency" type="radio" value="payment-frequency-2">
+              <label class="govuk-label govuk-radios__label" for="payment-frequency-2">
+                Fortnightly
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="payment-frequency-3" name="payment-frequency" type="radio" value="payment-frequency-3">
+              <label class="govuk-label govuk-radios__label" for="take-home-pay-3">
+                Weekly
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: 'Continue',
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
