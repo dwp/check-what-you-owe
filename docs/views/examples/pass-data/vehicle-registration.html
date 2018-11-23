@@ -24,7 +24,10 @@
           <input class="govuk-input" id="registration-number" name="vehicle-registration" value="{{ data['vehicle-registration'] }}" type="text">
         </div>
 
-        <button class="govuk-button">Continue</button>
+        {{ govukButton({
+  text: 'Start',
+  classes: ""
+}) }}
 
       </form>
 
