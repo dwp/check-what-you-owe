@@ -14,25 +14,24 @@
         text:'Money and tax',
         href: 'https://www.gov.uk/browse/tax' },
       {
-        text: 'Set up a repayment plan online' } ] }) }}
+        text: 'Set a repayment plan' } ] }) }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">
-        Set up a repayment plan online
+        Set a repayment plan
       </h1>
-      <p>Use this service to:</p>
+
+      <p class="govuk-body">Use this service if you owe money to the Department of Work and Pensions and want to set a repayment plan.</p>
+
+      <p>You'll need:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>this</li>
-        <li>that</li>
+        <li>your bank account number and sort code</li>
+        <li>the username and password given to you in the letter from the Department of Work and Pensions</li>
       </ul>
-
-      <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
-
-      <p>This service is also available in Welsh <a href="#0">(Cymraeg)</a>.</p>
 
       {{ govukButton({
         text: 'Start',
@@ -42,20 +41,13 @@
 
       <!--  -->
 
-      <h2 class="govuk-heading-m">Other ways to set up a repayment plan</h2>
+      <h2 class="govuk-heading-m">Other ways to set a repayment plan</h2>
 
-      <p><b>Title</b><br />
-      Telephone: 0800 328 5644<br />
-      Textphone: 0800 328 1344<br />
-      Monday to Friday 8am to 6pm (closed on bank holidays)</p>
+      <p class="govuk-body">You can get information, make payments, and arrange repayment plans by phone.</p>
 
-      <hr class="govuk-section-break govuk-section-break--m">
-
-      {{ govukWarningText({
-        classes: '',
-        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay, or ask a debt collection agency to collect this money for us.',
-        iconFallbackText: 'Warning'
-      }) }}
+      <p>Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
 
     </div>
   </div>
