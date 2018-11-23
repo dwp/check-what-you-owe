@@ -32,9 +32,13 @@
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              How much?
+              How much would you like to pay today?
             </h2>
           </legend>
+
+          <p class="govuk-body">Your repayment plan amounts will be lower if you pay more today.</p>
+
+          <p class="govuk-body">This payment will be taken from your bank account within 3 - 5 days. Make sure you have enough money to cover this payment.</p>
 
           {{ govukInput({
             label: {
@@ -48,9 +52,15 @@
           </fieldset>
         </div>
 
-        <button class="govuk-button">Continue</button>
-
+        {{ govukButton({
+          text: 'Continue',
+          classes: ""
+        }) }}
       </form>
+
+      <p class="govuk-body">
+        <a href="#">Get help with this page</a>
+      </p>
 
     </div>
   </div>
