@@ -95,7 +95,6 @@ router.post('/prototypes/07/views/initial-payment', function (req, res) {
   }
 })
 
-
 // Branching for 07 repayment plan
 router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
   const submitted = req.session.data;
@@ -111,7 +110,16 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', funct
   if (submitted['take-home-pay'] === 'take-home-pay-3') {
     res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-3')
   }
+
+  if (submitted['take-home-pay'] === 'take-home-pay-4') {
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-4')
+  }
+
+  if (submitted['take-home-pay'] === 'take-home-pay-5') {
+    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-5')
+  }
 })
+
 
 // Branching for 07 repayment plan
 router.post('/prototypes/07/views/what-is-your-take-home-pay/lump-sum', function (req, res) {
@@ -127,6 +135,7 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/lump-sum', function
     res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-3')
   }
 })
+
 
 // Branch users to different page based on numerical amount
 router.post('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-1', function (req, res) {
