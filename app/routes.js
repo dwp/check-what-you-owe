@@ -149,4 +149,25 @@ router.post('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take
 })
 
 
+// Send users to contact us page if they type in under £50 twice
+router.post('/prototypes/07/views/hmdywtr-result/result-below-50', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['repayment-amount'] || 0)
+
+  if (answer <= 49) {
+    res.redirect('/prototypes/07/views/hmdywtr-result/contact-us')
+  }
+  //
+  // if (answer <= 69) {
+  //   res.redirect('/prototypes/07/views/hmdywtr-result/result-between-50-70')
+  // }
+
+  if (answer >= 50) {
+    res.redirect('/prototypes/07/views/hmdywtr-result/result-more-than-50')
+  }
+})
+
+
 module.exports = router
