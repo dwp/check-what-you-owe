@@ -164,19 +164,16 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
 })
 
 
-// Send users to contact us page if they type in under £50 twice
+// Check users affordability if they enter an amount under £50
 router.post('/prototypes/07/views/repayment-amount-result/result-below-50', function (req, res) {
   const submitted = req.session.data;
 
-  // Format answer as whole number
-  const answer = parseFloat(submitted['repayment-amount'] || 0)
-
-  if (answer <= 49) {
-    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
+  if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
+    res.redirect('/prototypes/07/views/repayment-amount/monthly')
   }
 
-  if (answer >= 50) {
-    res.redirect('/prototypes/07/views/repayment-amount-result/result-more-than-50')
+  if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
   }
 })
 
