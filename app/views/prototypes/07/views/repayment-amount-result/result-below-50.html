@@ -22,49 +22,44 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Your monthly payments</h1>
       <p class="govuk-body">Because of how much you earn, we would expect you to pay more.</p>
-      <p class="govuk-body">The minimum amount is £50.</p>
+      <p class="govuk-body govuk-!-font-weight-bold">The minimum amount is £50.</p>
 
       <hr class="govuk-section-break govuk-section-break--m">
 
       <form action="/prototypes/07/views/repayment-amount-result/result-below-50" method="post" class="form">
-        <div class="govuk-form-group">
 
-            <fieldset class="govuk-fieldset">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Can you pay this amount each month?
+                  </h1>
+                </legend>
 
-              {{ govukRadios({
-                idPrefix: "how-contacted-conditional",
-                name: "how-contacted",
-                fieldset: {
-                  legend: {
-                    text: "Can you pay this amount each month?",
-                    isPageHeading: true,
-                    classes: "govuk-fieldset__legend--m"
-                  }
-                },
-                items: [
-                  {
-                    value: "yes",
-                    text: "Yes",
-                    id:"can-you-pay-50-yes",
-                    name: "can-you-pay-50-yes",
-                    value: "can-you-pay-50"
-                  },
-                  {
-                    value: "no",
-                    text: "No",
-                    id:"can-you-pay-50-no",
-                    name: "can-you-pay-50-no",
-                    value: "can-you-pay-50"
-                  }
-                ]
-              }) }}
+                <div class="govuk-radios">
 
-            </fieldset>
-          </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="can-you-pay-50-yes" name="can-you-pay-50" type="radio" value="can-you-pay-50-yes">
+                    <label class="govuk-label govuk-radios__label" for="can-you-pay-50-yes">
+                      Yes
+                    </label>
+                  </div>
 
-          {{ govukButton({
-            text: "Continue"
-          }) }}
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="can-you-pay-50-no" name="can-you-pay-50" type="radio" value="can-you-pay-50-no">
+                    <label class="govuk-label govuk-radios__label" for="can-you-pay-50-no">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
       </form>
 
     </div>
