@@ -40,14 +40,19 @@
 
           <p class="govuk-body">You will need to ensure you have enough money in your bank account to cover each payment.</p>
 
-          {{ govukInput({
+          <!-- {{ govukInput({
             label: {
               text: ""
             },
             classes: "govuk-input--width-10 govuk-!-margin-top-6",
             id: "width-10",
             name: "repayment-amount"
-          }) }}
+          }) }} -->
+
+          <div id="example-question" class="form-group inline">
+            <span class="c-form-input-denote govuk-body">£</span>
+            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="text" name="repayment-amount">
+          </div>
 
           </fieldset>
         </div>

@@ -40,14 +40,11 @@
 
           <p class="govuk-body">This payment will be taken from your bank account within 3 - 5 days. Make sure you have enough money to cover this payment.</p>
 
-          {{ govukInput({
-            label: {
-              text: ""
-            },
-            classes: "govuk-input--width-10 govuk-!-margin-top-6",
-            id: "width-10",
-            name: "width-10"
-          }) }}
+
+          <div id="example-question" class="form-group inline">
+            <span class="c-form-input-denote govuk-body">£</span>
+            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" aria-labelledby="legend-heading" type="text" name="example">
+          </div>
 
           </fieldset>
         </div>
