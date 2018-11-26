@@ -155,17 +155,21 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/07/views/repayment-amount-result/result-below-50')
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low')
   }
 
-  if (answer >= 50) {
+  if (answer <= 74) {
     res.redirect('/prototypes/07/views/repayment-amount-result/repayment-plan-terms-and-conditions')
+  }
+
+  if (answer >= 75) {
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high')
   }
 })
 
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/prototypes/07/views/repayment-amount-result/result-below-50', function (req, res) {
+router.post('/prototypes/07/views/repayment-amount-result/amount-too-low', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -173,6 +177,20 @@ router.post('/prototypes/07/views/repayment-amount-result/result-below-50', func
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
+  }
+})
+
+
+// Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
+router.post('/prototypes/07/views/repayment-amount-result/amount-too-high', function (req, res) {
+  const submitted = req.session.data;
+
+  if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
+    res.redirect('/prototypes/07/views/repayment-amount-result/repayment-plan-terms-and-conditions')
+  }
+
+  if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
     res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
   }
 })
