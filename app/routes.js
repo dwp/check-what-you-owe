@@ -100,81 +100,101 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', funct
   const submitted = req.session.data;
 
   if (submitted['take-home-pay'] === 'take-home-pay-1') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-1')
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-2') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-2')
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-3') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-3')
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-4') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-4')
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-5') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-5')
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
 })
 
 
 // Branching for 07 repayment plan
 router.post('/prototypes/07/views/what-is-your-take-home-pay/lump-sum', function (req, res) {
-  let TakeHomePay = req.session.data['take-home-pay']
+  const submitted = req.session.data;
 
-  if (TakeHomePay === 'take-home-pay-1') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-1')
+  if (submitted['take-home-pay'] === 'take-home-pay-1') {
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
-  if (TakeHomePay === 'take-home-pay-2') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-2')
+
+  if (submitted['take-home-pay'] === 'take-home-pay-2') {
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
-  if (TakeHomePay === 'take-home-pay-3') {
-    res.redirect('/prototypes/07/views/how-much-do-you-want-to-repay/lump-sum/take-home-band-3')
+
+  if (submitted['take-home-pay'] === 'take-home-pay-3') {
+    res.redirect('/prototypes/07/views/repayment-frequency')
+  }
+
+  if (submitted['take-home-pay'] === 'take-home-pay-4') {
+    res.redirect('/prototypes/07/views/repayment-frequency')
+  }
+
+  if (submitted['take-home-pay'] === 'take-home-pay-5') {
+    res.redirect('/prototypes/07/views/repayment-frequency')
   }
 })
 
 
 // Branch users to different page based on numerical amount
-router.post('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-1', function (req, res) {
+router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/07/views/hmdywtr-result/result-below-50')
+    res.redirect('/prototypes/07/views/repayment-amount-result/result-below-50')
   }
-  //
-  // if (answer <= 69) {
-  //   res.redirect('/prototypes/07/views/hmdywtr-result/result-between-50-70')
-  // }
 
   if (answer >= 50) {
-    res.redirect('/prototypes/07/views/hmdywtr-result/result-more-than-50')
+    res.redirect('/prototypes/07/views/repayment-amount-result/result-more-than-50')
   }
 })
 
 
 // Send users to contact us page if they type in under £50 twice
-router.post('/prototypes/07/views/hmdywtr-result/result-below-50', function (req, res) {
+router.post('/prototypes/07/views/repayment-amount-result/result-below-50', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/07/views/hmdywtr-result/contact-us')
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
   }
-  //
-  // if (answer <= 69) {
-  //   res.redirect('/prototypes/07/views/hmdywtr-result/result-between-50-70')
-  // }
 
   if (answer >= 50) {
-    res.redirect('/prototypes/07/views/hmdywtr-result/result-more-than-50')
+    res.redirect('/prototypes/07/views/repayment-amount-result/result-more-than-50')
+  }
+})
+
+
+// Send user to montly weekly or fortnightly branch
+router.post('/prototypes/07/views/repayment-frequency', function (req, res) {
+  const submitted = req.session.data;
+
+  if (submitted['payment-frequency'] === 'payment-frequency-1') {
+    res.redirect('/prototypes/07/views/repayment-amount/monthly')
+  }
+
+  if (submitted['payment-frequency'] === 'payment-frequency-2') {
+    res.redirect('/prototypes/07/views/repayment-amount/fortnightly')
+  }
+
+  if (submitted['payment-frequency'] === 'payment-frequency-3') {
+    res.redirect('/prototypes/07/views/repayment-amount/weekly')
   }
 })
 
