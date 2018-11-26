@@ -159,7 +159,7 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/07/views/repayment-amount-result/repayment-plan-summary')
+    res.redirect('/prototypes/07/views/repayment-plan-summary')
   }
 
   if (answer >= 75) {
@@ -173,7 +173,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low', funct
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-amount-result/repayment-plan-summary')
+    res.redirect('/prototypes/07/views/repayment-plan-summary')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -187,7 +187,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-high', func
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/07/views/repayment-amount-result/repayment-plan-summary')
+    res.redirect('/prototypes/07/views/repayment-plan-summary')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
