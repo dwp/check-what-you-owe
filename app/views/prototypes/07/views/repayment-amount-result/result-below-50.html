@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your monthly payments</h1>
+      <h2 class="govuk-heading-m">Because of how much you earn, we would expect you to pay more.</h2>
+      <p class="govuk-body">The minimum amount is £50.</p>
+
+      <form action="/prototypes/07/views/hmdywtr-result/result-below-50" method="post" class="form">
+        <div class="govuk-form-group">
+
+            <fieldset class="govuk-fieldset">
+
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="can-you-pay-50-yes" name="can-you-pay-50" type="radio" value="can-you-pay-50-yes">
+                  <label class="govuk-label govuk-radios__label" for="can-you-pay-50-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="can-you-pay-50-no" name="can-you-pay-50" type="radio" value="can-you-pay-50-no">
+                  <label class="govuk-label govuk-radios__label" for="can-you-pay-50-no">
+                    No
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+
+        <button class="govuk-button" type="submit">Continue</button>
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--s">
+
+      <h2 class="govuk-heading-m">Title for users who feel they cannot afford the expected amount</h2>
+
+      <p>Telephone: 0800 916 0614<br />
+      Textphone: 0345 604 6697<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm </p>
+
+    </div>
+  </div>
+{% endblock %}

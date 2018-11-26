@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Please contact us</h1>
+      <p>The user has entered a number below the threshold twice, they need to start a conversation with an advisor to negotiate their repayment plan.</p>
+
+      {{ notes ({
+        content:"Could we include a reference number here to allow users to bring up their information with an advisor?"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
