@@ -23,7 +23,7 @@
         <h1 class="govuk-heading-xl">Your repayment plan </h1>
 
 
-        <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
+        <dl class='app-check-your-answers app-check-your-answers--long'>
           <div class='app-check-your-answers__contents'>
             <dt class='app-check-your-answers__question'>
               Amount you owe:
@@ -96,15 +96,16 @@
               <a href="#0"></a>
             </dd>
           </div>
-
         </dl>
 
+        <h3 class="govuk-heading-m">Additional payments to your plan</h3>
 
+        <p class="govuk-body">You can make an additional payment to your plan at any time.</p>
 
         {{ govukButton({
-          text: "Confirm",
+          text: "Make a payment",
           href: "/prototypes/07/views/confirmation.html",
-          classes: "govuk-!-margin-top-8"
+          classes: ""
         }) }}
 
     </div>
