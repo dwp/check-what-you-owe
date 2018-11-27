@@ -155,15 +155,15 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low')
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--monthly')
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/07/views/repayment-plan-summary')
+    res.redirect('/prototypes/07/views/repayment-plan-summary--monthly')
   }
 
   if (answer >= 75) {
-    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high')
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high--monthly')
   }
 })
 
@@ -209,15 +209,15 @@ router.post('/prototypes/07/views/repayment-amount/weekly', function (req, res) 
 
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/prototypes/07/views/repayment-amount-result/amount-too-low', function (req, res) {
+router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--monthly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary')
+    res.redirect('/prototypes/07/views/repayment-plan-summary--monthly')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us--monthly')
   }
 })
 
