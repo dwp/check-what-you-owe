@@ -7,43 +7,78 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukPanel({ headingLevel: 1, titleText: "Your repayment plan has been created.", classes: "outcome" }) }}
-      <h2 class="govuk-heading-m govuk-!-margin-top-7">Repayment plan summary</h2>
-      <p>Amount:
-        <br>
-        Repayment to: xx
-        <br>
-        Repayment for: xx
-        <br>
-        Repayment reference: xx
-        <br>
-        Date  of repayment: xx</p>
-        <p class="govuk-body"><a href="#0">Save this as a PDF</a></p>
+      {{ govukPanel ({
+        headingLevel: 1,
+        titleText: "Your repayment plan has been set.",
+        classes: "outcome"
+      }) }}
 
       <hr class="govuk-section-break govuk-section-break--m">
 
-      {# <h2 class="govuk-heading-m">What happens next</h2>
-      <p>You do not need to do anything else.</p>
-      <p>We've sent you a confirmation email. It may take a few days to process the payment.</p>
-      <!-- <p>If you need to contact us, visit <a href="start"> Check what you owe.</a></p> -->
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Amount you owe:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            £2,320
+          </dd>
+        </div>
 
-      <h2 class="govuk-heading-m">Contact us</h2>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment start date:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            15th December 2018
+          </dd>
+        </div>
 
-      <p>If you have questions about your repayment, contact:</p>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment frequency:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            Monthly
+          </dd>
+        </div>
 
-      <p>
-        <b>Debt Management</b><br/>
-        Telephone: 0800 916 0614<br/>
-        Textphone: 0345 604 6697<br/>
-        Monday to Friday 8am to 7.30pm<br/>
-        Saturday 9am to 4pm
-      </p> #}
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment day:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             15th
+          </dd>
+        </div>
 
-      <p>
-        <a href="#0">What did you think of this service?</a>
-        (takes 30 seconds)
-      </p>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment amount:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             46 payments of £50<br />
+             1 payment of £20
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Final payment date:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             15th November 2022
+          </dd>
+        </div>
+
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p class="govuk-body"><a href="#0">Print a PDF</a></p>
+
+      <p class="govuk-body">We've sent you a confirmation email. Your account will be updated within 24 hours with your repayment plan details.</p>
+
+      <p class="govuk-body">You can make an <a href="#0">additional payment</a> to your plan at any time.</p>
     </div>
   </div>
 {% endblock %}
