@@ -82,7 +82,7 @@ router.post('/05/eligibility/repayment-answer', function (req, res) {
   }
 })
 
-// Branching for 07 repayment plan
+// Branch users to lump sum or repayment plan only
 router.post('/prototypes/07/views/initial-payment', function (req, res) {
   const submitted = req.session.data;
 
@@ -95,7 +95,7 @@ router.post('/prototypes/07/views/initial-payment', function (req, res) {
   }
 })
 
-// Branching for 07 repayment plan
+// No lump sum what is your take home pay
 router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
@@ -121,7 +121,7 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/no-lump-sum', funct
 })
 
 
-// Branching for 07 repayment plan
+// Lump sum what is your take home pay
 router.post('/prototypes/07/views/what-is-your-take-home-pay/lump-sum', function (req, res) {
   const submitted = req.session.data;
 
@@ -164,6 +164,46 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
 
   if (answer >= 75) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high')
+  }
+})
+
+// Branch users to different page based on numerical amount
+router.post('/prototypes/07/views/repayment-amount/fortnightly', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['repayment-amount'] || 0)
+
+  if (answer <= 49) {
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--fortnightly')
+  }
+
+  if (answer <= 74) {
+    res.redirect('/prototypes/07/views/repayment-plan-summary--fortnightly')
+  }
+
+  if (answer >= 75) {
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high--fortnightly')
+  }
+})
+
+// Branch users to different page based on numerical amount
+router.post('/prototypes/07/views/repayment-amount/weekly', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['repayment-amount'] || 0)
+
+  if (answer <= 49) {
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--weekly')
+  }
+
+  if (answer <= 74) {
+    res.redirect('/prototypes/07/views/repayment-plan-summary--weekly')
+  }
+
+  if (answer >= 75) {
+    res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high--weekly')
   }
 })
 
