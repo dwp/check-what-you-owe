@@ -192,15 +192,15 @@ router.post('/prototypes/07/views/repayment-amount/fortnightly', function (req, 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer <= 49) {
+  if (answer <= 24) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--fortnightly')
   }
 
-  if (answer <= 74) {
+  if (answer <= 36) {
     res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly')
   }
 
-  if (answer >= 75) {
+  if (answer >= 37) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high--fortnightly')
   }
 })
