@@ -10,7 +10,6 @@
   }) }}
 {% endblock %}
 
-
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
@@ -28,7 +27,7 @@
       <p class="govuk-body">You will make:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>46 payments of £50</li>
+        <li>46 payments of <span>£{{ data['repayment-amount'] }}</span></li>
         <li>1 payment of £20</li>
       </ul>
 
