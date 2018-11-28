@@ -11,10 +11,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "#"
-  }) }}
+<a onclick="goBack()" href="#" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
