@@ -212,15 +212,15 @@ router.post('/prototypes/07/views/repayment-amount/weekly', function (req, res) 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer <= 49) {
+  if (answer <= 11) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--weekly')
   }
 
-  if (answer <= 74) {
+  if (answer <= 18) {
     res.redirect('/prototypes/07/views/repayment-plan-summary/weekly')
   }
 
-  if (answer >= 75) {
+  if (answer >= 19) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-high--weekly')
   }
 })
