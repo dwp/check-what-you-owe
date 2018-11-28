@@ -249,15 +249,15 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--weekly
 
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/prototypes/07/views/repayment-amount-result/amount-too-high', function (req, res) {
+router.post('/prototypes/07/views/repayment-amount-result/amount-too-high--monthly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/monthly')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us')
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us--monthly')
   }
 })
 
