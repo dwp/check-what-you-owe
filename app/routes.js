@@ -147,6 +147,24 @@ router.post('/prototypes/07/views/what-is-your-take-home-pay/lump-sum', function
 })
 
 
+// Send user to monthly, weekly or fortnightly branch
+router.post('/prototypes/07/views/repayment-frequency', function (req, res) {
+  const submitted = req.session.data;
+
+  if (submitted['payment-frequency'] === 'payment-frequency-1') {
+    res.redirect('/prototypes/07/views/repayment-amount/monthly')
+  }
+
+  if (submitted['payment-frequency'] === 'payment-frequency-2') {
+    res.redirect('/prototypes/07/views/repayment-amount/fortnightly')
+  }
+
+  if (submitted['payment-frequency'] === 'payment-frequency-3') {
+    res.redirect('/prototypes/07/views/repayment-amount/weekly')
+  }
+})
+
+
 // Branch users to different page based on numerical amount
 router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res) {
   const submitted = req.session.data;
@@ -159,7 +177,7 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/07/views/repayment-plan-summary--monthly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/monthly')
   }
 
   if (answer >= 75) {
@@ -179,7 +197,7 @@ router.post('/prototypes/07/views/repayment-amount/fortnightly', function (req, 
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/07/views/repayment-plan-summary--fortnightly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly')
   }
 
   if (answer >= 75) {
@@ -199,7 +217,7 @@ router.post('/prototypes/07/views/repayment-amount/weekly', function (req, res) 
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/07/views/repayment-plan-summary--weekly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly')
   }
 
   if (answer >= 75) {
@@ -261,23 +279,30 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-high--month
   }
 })
 
-
-// Send user to montly weekly or fortnightly branch
-router.post('/prototypes/07/views/repayment-frequency', function (req, res) {
+// Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
+router.post('/prototypes/07/views/repayment-amount-result/amount-too-high--fortnightly', function (req, res) {
   const submitted = req.session.data;
 
-  if (submitted['payment-frequency'] === 'payment-frequency-1') {
-    res.redirect('/prototypes/07/views/repayment-amount/monthly')
+  if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
+    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly')
   }
 
-  if (submitted['payment-frequency'] === 'payment-frequency-2') {
-    res.redirect('/prototypes/07/views/repayment-amount/fortnightly')
-  }
-
-  if (submitted['payment-frequency'] === 'payment-frequency-3') {
-    res.redirect('/prototypes/07/views/repayment-amount/weekly')
+  if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us--fortnightly')
   }
 })
 
+// Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
+router.post('/prototypes/07/views/repayment-amount-result/amount-too-high--weekly', function (req, res) {
+  const submitted = req.session.data;
+
+  if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
+    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly')
+  }
+
+  if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
+    res.redirect('/prototypes/07/views/repayment-amount-result/contact-us--weekly')
+  }
+})
 
 module.exports = router
