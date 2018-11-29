@@ -170,7 +170,7 @@ router.post('/prototypes/07/views/repayment-amount/monthly', function (req, res)
   const submitted = req.session.data;
 
   // Format answer as whole number
-  const answer = parseFloat(submitted['repayment-amount'] || 0)
+  const answer = parseFloat(submitted['repayment-amount--monthly'] || 0)
 
   if (answer <= 49) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--monthly')
@@ -190,7 +190,7 @@ router.post('/prototypes/07/views/repayment-amount/fortnightly', function (req, 
   const submitted = req.session.data;
 
   // Format answer as whole number
-  const answer = parseFloat(submitted['repayment-amount'] || 0)
+  const answer = parseFloat(submitted['repayment-amount--fortnightly'] || 0)
 
   if (answer <= 24) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--fortnightly')
@@ -210,7 +210,7 @@ router.post('/prototypes/07/views/repayment-amount/weekly', function (req, res) 
   const submitted = req.session.data;
 
   // Format answer as whole number
-  const answer = parseFloat(submitted['repayment-amount'] || 0)
+  const answer = parseFloat(submitted['repayment-amount--weekly'] || 0)
 
   if (answer <= 11) {
     res.redirect('/prototypes/07/views/repayment-amount-result/amount-too-low--weekly')
