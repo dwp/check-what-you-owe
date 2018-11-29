@@ -20,7 +20,7 @@
 {% block content %}
   <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">What date would you like the Direct Debit to be taken each month?</h1>
+        <h1 class="govuk-heading-xl">What date do you want the direct debit to be taken?</h1>
 
         {{ govukInput({
           label: {
@@ -36,10 +36,7 @@
 
         <hr class="govuk-section-break govuk-section-break--m">
 
-
-        <p class="govuk-body">agree a particular day of the month for the monies to come out of the customer’s account, for instance, just after they are paid their wages/salary; excluding the 29th, 30th and 31st and preferably discourage payments on the 1st due to processing large volumes.</p>
-
-        <p class="govuk-body">I can confirm that the first payment will come out of your account on DD/MM and on the same date each month thereafter. The description that will appear on your bank statement against the Direct Debit will be DWP CRG DD. You will be sent confirmation of this agreement within 3 working days or no later than ten working days before the first payment collection.”</p>
+        {# <p class="govuk-body">agree a particular day of the month for the monies to come out of the customer’s account, for instance, just after they are paid their wages/salary; excluding the 29th, 30th and 31st and preferably discourage payments on the 1st due to processing large volumes.</p> #}
 
         {{ govukButton({
           text: "Continue",

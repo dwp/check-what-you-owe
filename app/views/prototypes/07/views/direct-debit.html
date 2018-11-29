@@ -19,41 +19,27 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Set up a direct debit payment</h1>
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Set up a direct debit</h1>
 
-      <p class="govuk-body">Please can you confirm that you are the account holder and that you are an authorised signatory on your account and that your mandate does not require two or more signatories to set up a Direct Debit Instruction?</p>
+      <form action="#" method="post" class="form">
 
-      <div class="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="#" name="#" type="checkbox" value="#">
-          <label class="govuk-label govuk-checkboxes__label" for="#">
-            I confirm that I am the account holder and an authorised signature on my account
-          </label>
-        </div>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--m">
-
-      <h3 class="govuk-heading-m">Bank account information</h3>
-
-      {% call govukFieldset({
-        legend: {
-          text: "",
-          classes: "",
-          isPageHeading: false
-        }
+        {% call govukFieldset({
+          legend: {
+            text: "",
+            classes: "",
+            isPageHeading: false
+          }
         }) %}
 
         {{ govukInput({
           label: {
-            text: "Account name"
+            text: "Name on the account"
           },
           id: "width-10",
           name: "name",
           classes: "govuk-input--width-20"
         }) }}
-
 
         {{ govukInput({
           label: {
@@ -61,7 +47,7 @@
           },
           id: "width-10",
           name: "name",
-          classes: "govuk-input--width-20"
+          classes: "govuk-input--width-10"
         }) }}
 
         {{ govukInput({
@@ -70,24 +56,58 @@
           },
           id: "width-10",
           name: "name",
-          classes: "govuk-input--width-20"
+          classes: "govuk-input--width-10"
         }) }}
 
-        <hr class="govuk-section-break govuk-section-break--m">
+        {% endcall %}
 
-        <h3 class="govuk-heading-m">DD guarantee</h3>
+        <div class="govuk-fieldset govuk-!-margin-top-4">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Are you allowed to authorise Direct Debits on this account?
+            </h1>
+          </legend>
 
-        <p class="govuk-body">“In the future, if there is a change to the date, amount or frequency of your Direct Debit, we will always give you 10 working days’ notice in advance of your account being debited. In the event of an error, you are entitled to an immediate refund from your bank or building society. You have the right to cancel at any time and this guarantee is offered by all the banks and building societies that accept instructions to pay Direct Debits. A copy of the safeguards under the Direct Debit Guarantee will be sent to you with our confirmation letter.”</p>
+          <div class="govuk-radios govuk-!-margin-bottom-7">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="authorisde-direct-debit-yes" name="authorisde-direct-debit" type="radio" value="authorisde-direct-debit-yes">
+              <label class="govuk-label govuk-radios__label" for="authorisde-direct-debit-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="authorisde-direct-debit-no" name="authorisde-direct-debit" type="radio" value="authorisde-direct-debit-no">
+              <label class="govuk-label govuk-radios__label" for="authorisde-direct-debit-no">
+                No
+              </label>
+            </div>
+          </div>
 
+          {{ govukInput({
+            label: {
+              text: "Email address"
+            },
+            hint: {
+              text: "We’ll send your Direct Debit details and Mandate reference number to this address"
+            },
+            classes: "govuk-input--width-10",
+            id: "email-address",
+            name: "email-address"
+          }) }}
+
+        </div>
 
 
         {{ govukButton({
           text: "Continue",
-          href: "/prototypes/07/views/direct-debit--date.html"
+          href: "/prototypes/07/views/direct-debit--date.html",
+          classes: ""
         }) }}
 
-
-      {% endcall %}
-
+      </div>
     </div>
+
+  </form>
+
+</div>
 {% endblock %}
