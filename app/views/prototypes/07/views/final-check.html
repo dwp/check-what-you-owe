@@ -19,7 +19,7 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Check your details are correct</h1>
 
 
@@ -124,6 +124,7 @@
         <img src="https://dd-payment-pages.cloudapps.digital/public/images/directdebit.png" class="govuk-!-margin-bottom-2 govuk-!-margin-top-4" alt="">
 
         <p class="govuk-link">Your payments are protected by the <a href="#">Direct Debit guarantee</a>.</p>
-
     </div>
+  {% include "includes/payment-summary--dd.html" %}
+  </div>
 {% endblock %}

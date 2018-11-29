@@ -28,3 +28,11 @@
 .app-panel--border {
   border: 1px solid  $govuk-border-colour;
 }
+
+
+.app-panel__payment-summary {
+  border: 10px solid #DEE0E2;
+  background-color: #F8F8F8;
+  padding: govuk-spacing(3);
+  margin-top: govuk-spacing(6);
+}
