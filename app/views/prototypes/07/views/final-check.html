@@ -28,7 +28,7 @@
               Name on the account:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              Ashley Atherton
+              {{ data['name-on-account'] }}
             </dd>
           </div>
 
@@ -37,7 +37,7 @@
               Sort code:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              40 05 00
+              {{ data['sort-code'] }}
             </dd>
           </div>
 
@@ -46,7 +46,16 @@
               Account number:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              12345678
+              {{ data['account-number'] }}
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Email address:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              {{ data['email-address'] }}
             </dd>
           </div>
         </dl>
