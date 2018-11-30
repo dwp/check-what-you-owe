@@ -21,29 +21,32 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Which day would you like the Direct Debit to be taken every month?</h1>
 
-      {{ govukInput({
-        label: {
-          text: ""
-        },
-        hint: {
-          text: "For example, for the third day of the month write 03"
-        },
-        classes: "govuk-input--width-10",
-        id: "national-insurance-number",
-        name: "national-insurance-number"
-      }) }}
+      <form action="/prototypes/07/views/final-check" method="post" class="form">
 
-      <p class="govuk-body">Please note that we are unable to process payments made on the 29th, 30th and 31st days of the month.</p>
+        {{ govukInput({
+          label: {
+            text: ""
+          },
+          hint: {
+            text: "For example, for the third day of the month write 03"
+          },
+          classes: "govuk-input--width-10",
+          id: "national-insurance-number",
+          name: "national-insurance-number"
+        }) }}
 
-      <p class="govuk-body">You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment is collected from your account.</p>
+        <p class="govuk-body">Please note that we are unable to process payments made on the 29th, 30th and 31st days of the month.</p>
 
-      <hr class="govuk-section-break govuk-section-break--m">
+        <p class="govuk-body">You will be sent confirmation of this agreement within 3 working days or no later than 10 working days before the first payment is collected from your account.</p>
 
-      {{ govukButton({
-        text: "Continue",
-        href: "/prototypes/07/views/final-check.html"
-      }) }}
-    </div>
+        <hr class="govuk-section-break govuk-section-break--m">
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </div>
+
+    </form>
 
     <div class="govuk-grid-column-one-third">
       {% include "includes/payment-summary--dd.html" %}
