@@ -46,11 +46,7 @@
     </div>
 
     <div class="govuk-grid-column-one-third">
-      {{ appPaymentSummary({
-        frequency: "monthly",
-        endDate: "End date: 15 Nov 22",
-        amount: "50"
-      }) }}
+      {% include "includes/payment-summary--dd.html" %}
     </div>
 
   </div>
