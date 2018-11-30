@@ -38,24 +38,25 @@
 
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payment-frequency-1" name="payment-frequency" type="radio" value="payment-frequency-1">
-              <label class="govuk-label govuk-radios__label" for="payment-frequency-1">
+              <input class="govuk-radios__input" id="monthly" name="payment-frequency" type="radio" value="monthly" {{ checked("payment-frequency", "monthly") }}>
+              <label class="govuk-label govuk-radios__label" for="monthly">
                 Monthly
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payment-frequency-2" name="payment-frequency" type="radio" value="payment-frequency-2">
-              <label class="govuk-label govuk-radios__label" for="payment-frequency-2">
+              <input class="govuk-radios__input" id="fortnightly" name="payment-frequency" type="radio" value="fortnightly" {{ checked("payment-frequency", "fortnightly") }}>
+              <label class="govuk-label govuk-radios__label" for="fortnightly">
                 Fortnightly
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="payment-frequency-3" name="payment-frequency" type="radio" value="payment-frequency-3">
-              <label class="govuk-label govuk-radios__label" for="take-home-pay-3">
+              <input class="govuk-radios__input" id="weekly" name="payment-frequency" type="radio" value="weekly" {{ checked("payment-frequency", "weekly") }}>
+              <label class="govuk-label govuk-radios__label" for="weekly">
                 Weekly
               </label>
             </div>
           </div>
+
           </fieldset>
         </div>
 
