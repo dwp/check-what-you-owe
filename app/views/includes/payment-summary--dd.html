@@ -2,8 +2,8 @@
   <h2 class="govuk-heading-m">Repayment summary</h2>
   <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid {{ data['payment-frequency'] }}</p>
   <p class="govuk-body govuk-!-font-size-16">
-     test<br />
-     test
+     First payment: {{ data['direct-debit-date'] }} Dec 18<br />
+     Final payment: {{ data['direct-debit-date'] }} November 2022
   </p>
   <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-font-size-16">Amount:</p>
   <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£{{ data['repayment-amount'] }} <!-- <span class="govuk-!-font-weight-regular govuk-body govuk-!-font-size-16">per month</span>--></p>
