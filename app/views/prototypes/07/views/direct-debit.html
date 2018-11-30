@@ -97,15 +97,21 @@
 
         </div>
 
-
         {{ govukButton({
           text: "Continue",
           href: "/prototypes/07/views/direct-debit--date.html",
           classes: ""
         }) }}
-
       </div>
-    {% include "includes/payment-summary--dd.html" %}
+
+      <div class="govuk-grid-column-one-third">
+        {{ appPaymentSummary({
+          frequency: "Monthly",
+          endDate: "End date: 15 Nov 22",
+          amount: "50"
+        }) }}
+      </div>
+      
   </div>
 
   </form>
