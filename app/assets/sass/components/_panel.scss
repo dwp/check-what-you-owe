@@ -34,5 +34,11 @@
   border: 10px solid #DEE0E2;
   background-color: #F8F8F8;
   padding: govuk-spacing(3);
-  margin-top: govuk-spacing(6);
+  // margin-top: govuk-spacing(6);
+}
+
+.app-panel__sticky-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
 }

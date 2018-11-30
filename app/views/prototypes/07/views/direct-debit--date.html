@@ -2,7 +2,6 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
     serviceName: "",
@@ -19,29 +18,27 @@
 
 {% block content %}
   <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">What date do you want the direct debit to be taken?</h1>
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">What date do you want the direct debit to be taken?</h1>
 
-        {{ govukInput({
-          label: {
-            text: ""
-          },
-          hint: {
-            text: "For example, 03"
-          },
-          classes: "govuk-input--width-10",
-          id: "national-insurance-number",
-          name: "national-insurance-number"
-        }) }}
+      {{ govukInput({
+        label: {
+          text: ""
+        },
+        hint: {
+          text: "For example, 03"
+        },
+        classes: "govuk-input--width-10",
+        id: "national-insurance-number",
+        name: "national-insurance-number"
+      }) }}
 
-        <hr class="govuk-section-break govuk-section-break--m">
+      <hr class="govuk-section-break govuk-section-break--m">
 
-        {# <p class="govuk-body">agree a particular day of the month for the monies to come out of the customer’s account, for instance, just after they are paid their wages/salary; excluding the 29th, 30th and 31st and preferably discourage payments on the 1st due to processing large volumes.</p> #}
-
-        {{ govukButton({
-          text: "Continue",
-          href: "/prototypes/07/views/final-check.html"
-        }) }}
+      {{ govukButton({
+        text: "Continue",
+        href: "/prototypes/07/views/final-check.html"
+      }) }}
     </div>
     {% include "includes/payment-summary--dd.html" %}
   </div>

@@ -2,7 +2,6 @@
 
 {% block header %}
   {% include "includes/cookie-banner.html" %}
-  {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
     serviceName: "",
@@ -22,7 +21,6 @@
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">Check your details are correct</h1>
 
-
         <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
 
           <div class='app-check-your-answers__contents'>
@@ -30,7 +28,7 @@
               Name on the account:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              Joe Bloggs
+              Ashley Atherton
             </dd>
           </div>
 
@@ -51,66 +49,10 @@
               12345678
             </dd>
           </div>
-
-          <div class='app-check-your-answers__contents'>
-            <dt class='app-check-your-answers__question'>
-              Amount you owe:
-            </dt>
-            <dd class='app-check-your-answers__answer'>
-              £2,320
-            </dd>
-          </div>
-
-          <div class='app-check-your-answers__contents'>
-            <dt class='app-check-your-answers__question'>
-              Payment start date:
-            </dt>
-            <dd class='app-check-your-answers__answer'>
-              15th December 2018
-            </dd>
-          </div>
-
-          <div class='app-check-your-answers__contents'>
-            <dt class='app-check-your-answers__question'>
-              Payment frequency:
-            </dt>
-            <dd class='app-check-your-answers__answer'>
-              Monthly
-            </dd>
-          </div>
-
-          <div class='app-check-your-answers__contents'>
-            <dt class='app-check-your-answers__question'>
-              Payment day:
-            </dt>
-            <dd class='app-check-your-answers__answer'>
-               15th
-            </dd>
-          </div>
-
-          <div class='app-check-your-answers__contents'>
-            <dt class='app-check-your-answers__question'>
-              Payment amount:
-            </dt>
-            <dd class='app-check-your-answers__answer'>
-               46 payments of <span>{{ data['repayment-amount--monthly'] }}</span><br />
-               1 payment of £20
-            </dd>
-          </div>
-
-          <div class='app-check-your-answers__contents'>
-            <dt class='app-check-your-answers__question'>
-              Final payment date:
-            </dt>
-            <dd class='app-check-your-answers__answer'>
-               15th November 2022
-            </dd>
-          </div>
-
         </dl>
 
         {{ govukInsetText({
-          html: "<b>‘MRN212836’</b> will appear on your bank statement"
+          html: "<b>‘DM212836’</b> will appear on your bank statement"
         }) }}
 
         {{ govukButton({
@@ -125,6 +67,18 @@
 
         <p class="govuk-link">Your payments are protected by the <a href="#">Direct Debit guarantee</a>.</p>
     </div>
-  {% include "includes/payment-summary--dd.html" %}
+
+    <div class="govuk-grid-column-one-third">
+      <div class="app-panel__payment-summary">
+        <h2 class="govuk-heading-m">Repayment summary</h2>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid monthly</p>
+        <p class="govuk-body govuk-!-font-size-16">
+           Start date: 15 Dec 18<br />
+           End date: 15 Nov 22
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-font-size-16">Amount:</p>
+        <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£50 <!-- <span class="govuk-!-font-weight-regular govuk-body govuk-!-font-size-16">per month</span>--></p>
+      </div>
+    </div>
   </div>
 {% endblock %}
