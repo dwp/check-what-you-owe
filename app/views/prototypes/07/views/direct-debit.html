@@ -22,44 +22,32 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Set up a direct debit</h1>
 
-      <form action="#" method="post" class="form">
+      <form action="/prototypes/07/views/direct-debit--date" method="post" class="form">
 
-        {% call govukFieldset({
-          legend: {
-            text: "",
-            classes: "",
-            isPageHeading: false
-          }
-        }) %}
+        <fieldset class="govuk-fieldset">
 
-        {{ govukInput({
-          label: {
-            text: "Name on the account"
-          },
-          id: "width-10",
-          name: "name",
-          classes: "govuk-input--width-20"
-        }) }}
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-10">
+              Name on the account
+            </label>
+            <input class="govuk-input govuk-input--width-20" id="name-on-account" type="text" name="name-on-account">
+          </div>
 
-        {{ govukInput({
-          label: {
-            text: "Sort code"
-          },
-          id: "width-10",
-          name: "name",
-          classes: "govuk-input--width-10"
-        }) }}
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-10">
+              Sort code
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="sort-code" type="text" name="sort-code">
+          </div>
 
-        {{ govukInput({
-          label: {
-            text: "Account number"
-          },
-          id: "width-10",
-          name: "name",
-          classes: "govuk-input--width-10"
-        }) }}
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-10">
+              Account number
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="account-number" type="text" name="account-number">
+          </div>
 
-        {% endcall %}
+        </fieldset>
 
         <div class="govuk-fieldset govuk-!-margin-top-4">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -99,20 +87,19 @@
 
         {{ govukButton({
           text: "Continue",
-          href: "/prototypes/07/views/direct-debit--date.html",
           classes: ""
         }) }}
 
         <p class="govuk-link">
           <a href="start">Cancel payment</a>
-          </p>
+        </p>
       </div>
 
       <div class="govuk-grid-column-one-third">
         {% include "includes/payment-summary--dd.html" %}
       </div>
 
-  </div>
+    </div>
 
   </form>
 
