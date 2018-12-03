@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+{% block beforeContent %}{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel ({
+        headingLevel: 1,
+        titleText: "Your repayment plan has been set.",
+        classes: "outcome"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Amount you owe:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            £2,320
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            First payment:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            15 December 2018
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment frequency:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            Monthly
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment day:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             15
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment breakdown:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             46 payments of £50<br />
+             1 payment of £20
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Final payment date:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             15 November 2022
+          </dd>
+        </div>
+
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p class="govuk-body"><a href="#0">Print a PDF</a></p>
+
+      <p class="govuk-body">We've sent you a confirmation email. Your account will be updated within 24 hours with your repayment plan details.</p>
+
+      <p class="govuk-body">You can make an <a href="#0">additional payment</a> to your plan at any time.</p>
+    </div>
+  </div>
+{% endblock %}
