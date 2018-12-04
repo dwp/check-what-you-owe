@@ -266,7 +266,7 @@ router.post('/prototypes/07/views/repayment-amount/fortnightly-lump-sum', functi
   }
 
   if (answer <= 36) {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly-lump-sum')
   }
 
   if (answer >= 37) {
@@ -306,7 +306,7 @@ router.post('/prototypes/07/views/repayment-amount/weekly-lump-sum', function (r
   }
 
   if (answer <= 18) {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly-lump-sum')
   }
 
   if (answer >= 19) {
