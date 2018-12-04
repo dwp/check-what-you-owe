@@ -1,5 +1,11 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
