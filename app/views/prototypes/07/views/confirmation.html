@@ -39,7 +39,7 @@
             Payment frequency:
           </dt>
           <dd class='app-check-your-answers__answer'>
-            Monthly
+            {{ data['payment-frequency'] }}
           </dd>
         </div>
 
@@ -48,7 +48,7 @@
             Payment day:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             15
+             {{ data['direct-debit-date'] }}
           </dd>
         </div>
 
@@ -57,7 +57,7 @@
             Payment breakdown:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             46 payments of £50<br />
+             46 payments of £{{ data['repayment-amount'] }} <br />
              1 payment of £20
           </dd>
         </div>
