@@ -18,6 +18,7 @@
       <h1 class="govuk-heading-xl">
         How much do you want to pay?
       </h1>
+
       <form action="#" method="post" class="form">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
@@ -26,12 +27,20 @@
               <span class="c-form-input-denote govuk-body">£</span>
               <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="text" name="repayment-amount">
             </div>
-            <button type="submit" class="govuk-button inline">
+            <button type="submit" class="govuk-button inline app-button--secondary">
               Update
             </button>
           </fieldset>
         </div>
       </form>
+
+      <p class="govuk-body-l">Your monthly repayments will be £50</p>
+
+      <p class="govuk-body-l">You will pay back what you owe in <b>November 2022</b>.</p>
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
     </div>
   </div>
