@@ -22,6 +22,27 @@
       <form action="#" method="post" class="form">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
+
+            {# <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-6'>
+              <div class='app-check-your-answers__contents'>
+                <dt class='app-check-your-answers__question'>
+                  Repayment amount:
+                </dt>
+                <dd class='app-check-your-answers__answer'>
+                  £50
+                </dd>
+              </div>
+
+              <div class='app-check-your-answers__contents'>
+                <dt class='app-check-your-answers__question'>
+                  Repayment frequency:
+                </dt>
+                <dd class='app-check-your-answers__answer'>
+                  Monthly
+                </dd>
+              </div>
+            </dl> #}
+
             <div id="example-question" class="form-group inline">
               <span class="c-form-input-denote govuk-body">£</span>
               <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="text" name="additional-payment">
@@ -33,16 +54,16 @@
         </div>
       </form>
 
-      <div class="app-panel__additional-payment">
-        <p class="govuk-body govuk-!-margin-bottom-0">If you make an additional payment, you will pay back what you owe in <br />
-          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">November 2022</span>
+      <div class="govuk-panel--amount-owed app-panel">
+        <p class="govuk-body govuk-!-margin-bottom-0">You will pay back what you owe in:<br />
+          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">July 2022</span>
         </p>
       </div>
 
       {{ govukButton({
         text: "Continue",
         href:"#",
-        classes: "govuk-!-margin-top-4"
+        classes: ""
       }) }}
 
     </div>
