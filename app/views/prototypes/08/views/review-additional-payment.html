@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "additional-payment/additional-payment-calculator"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Additional payment summary</h1>
+
+        <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Additional payment amount:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              £200
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Next Direct Debit payment:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              28 Dec 18
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Current end date:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              November 22
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              New end date:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              September 20
+            </dd>
+          </div>
+
+        </dl>
+
+        {{ govukButton({
+          text: "Continue",
+          href: "confirmation--additional-payment",
+          classes: "govuk-!-margin-top-6"
+        }) }}
+
+        <p class="govuk-link"><a href="#">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}
