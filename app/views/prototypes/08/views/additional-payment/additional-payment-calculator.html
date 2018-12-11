@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../make-additional-payment"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        How much do you want to pay?
+      </h1>
+
+      <form action="/prototypes/08/views/additional-payment/additional-payment-calculator" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-6'>
+              <div class='app-check-your-answers__contents'>
+                <dt class='app-check-your-answers__question'>
+                  Label:
+                </dt>
+                <dd class='app-check-your-answers__answer'>
+                  Content
+                </dd>
+              </div>
+
+              <div class='app-check-your-answers__contents'>
+                <dt class='app-check-your-answers__question'>
+                  Label:
+                </dt>
+                <dd class='app-check-your-answers__answer'>
+                  Content
+                </dd>
+              </div>
+            </dl>
+
+            <div class="form-group inline">
+              <span class="c-form-input-denote govuk-body">£</span>
+              <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="text" name="additional-payment">
+            </div>
+            <button type="submit" class="govuk-button inline app-button--secondary govuk-!-margin-bottom-0">
+              Update
+            </button>
+          </fieldset>
+        </div>
+      </form>
+
+      {# <div class="app-panel__additional-payment">
+        <p class="govuk-body govuk-!-margin-bottom-0">If you make an additional payment, you will pay back what you owe in <br />
+          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">November 2022</span>
+        </p>
+      </div> #}
+
+      {{ govukButton({
+        text: "Continue",
+        href:"#",
+        classes: "govuk-!-margin-top-4"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
