@@ -37,6 +37,8 @@ const router = express.Router()
 //   res.redirect('start')
 // })
 
+// 05 prototype routing
+
 // Branching for eligibility questions on 05 prototype
 router.post('/05/eligibility/universal-credit-answer', function (req, res) {
   // Get the answer from session data
@@ -81,6 +83,8 @@ router.post('/05/eligibility/repayment-answer', function (req, res) {
     res.redirect('/05/eligibility/plan')
   }
 })
+
+// 07 prototype routing
 
 // Branch users to lump sum or repayment plan only
 router.post('/prototypes/07/views/initial-payment', function (req, res) {
@@ -469,6 +473,28 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-high--weekl
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
     res.redirect('/prototypes/07/views/repayment-amount-result/contact-us--weekly')
+  }
+})
+
+// 08 prototype routing
+
+// Making an addition payment
+router.post('/prototypes/08/views/additional-payment/additional-payment-calculator', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['additional-payment'] || 0)
+
+  if (answer <= 50) {
+    res.redirect('/prototypes/08/views/additional-payment/test-1')
+  }
+
+  if (answer <= 100) {
+    res.redirect('/prototypes/08/views/additional-payment/test-2')
+  }
+
+  if (answer >= 200) {
+    res.redirect('/prototypes/08/views/additional-payment/test-3')
   }
 })
 
