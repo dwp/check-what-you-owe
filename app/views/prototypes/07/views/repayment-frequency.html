@@ -35,7 +35,9 @@
               How often do you want payments to be taken from your bank account?
             </h2>
           </legend>
-
+          <div class="govuk-inset-text">
+            If you choose to make monthly repayments, you will be able to select which day of the month the repayment will be made.
+          </div>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="monthly" name="payment-frequency" type="radio" value="monthly" {{ checked("payment-frequency", "monthly") }}>
