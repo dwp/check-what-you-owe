@@ -485,15 +485,15 @@ router.post('/prototypes/08/views/additional-payment/additional-payment-calculat
   // Format answer as whole number
   const answer = parseFloat(submitted['additional-payment'] || 0)
 
-  if (answer <= 50) {
+  if (answer <= 100) {
     res.redirect('/prototypes/08/views/additional-payment/test-1')
   }
 
-  if (answer <= 100) {
+  if (answer <= 250) {
     res.redirect('/prototypes/08/views/additional-payment/test-2')
   }
 
-  if (answer >= 200) {
+  if (answer >= 251) {
     res.redirect('/prototypes/08/views/additional-payment/test-3')
   }
 })
