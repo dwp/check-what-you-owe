@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-v5"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Set up a repayment plan</h1>
+
+      <p>You'll need your bank account number and sort code.</p>
+
+      {{ govukButton({
+        text: "Set up online",
+        href: "initial-payment"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m">Other ways to set up a repayment plan</h2>
+
+      <p class="govuk-body">You can get information, make payments, and arrange repayment plans by phone.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+      <!-- -->
+
+      <!-- <h2 class="govuk-heading-m">Other ways to check what you owe</h2> <p>If you have questions about why you owe this amount, contact:</p> <p><b>Universal Credit</b><br /> Telephone: 0800 328 5644<br /> Textphone: 0800 328 1344<br /> Monday to
+      Friday 8am to 6pm (closed on bank holidays)</p> -->
+
+    </div>
+  </div>
+{% endblock %}
