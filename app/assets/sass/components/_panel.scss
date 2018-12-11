@@ -37,6 +37,11 @@
   // margin-top: govuk-spacing(6);
 }
 
+.app-panel__additional-payment {
+  background-color: govuk-colour("grey-3");
+  padding: govuk-spacing(5);
+}
+
 .app-panel__sticky-container {
   display: flex;
   justify-content: space-around;
