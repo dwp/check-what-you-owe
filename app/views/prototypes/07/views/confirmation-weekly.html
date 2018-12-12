@@ -9,7 +9,7 @@
     <div class="govuk-grid-column-two-thirds">
       {{ govukPanel ({
         headingLevel: 1,
-        titleText: "Your repayment plan has been set.",
+        titleText: "Your repayment plan has been set",
         classes: "outcome"
       }) }}
 
@@ -30,7 +30,7 @@
             First payment:
           </dt>
           <dd class='app-check-your-answers__answer'>
-            15 December 2018
+            17 December 2018
           </dd>
         </div>
 
@@ -39,7 +39,7 @@
             Payment frequency:
           </dt>
           <dd class='app-check-your-answers__answer'>
-            Monthly
+            <span class="app-title-case">{{ data['payment-frequency'] }}</span>
           </dd>
         </div>
 
@@ -48,7 +48,7 @@
             Payment day:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             15
+             {{ data['direct-debit-date'] }}
           </dd>
         </div>
 
@@ -57,7 +57,7 @@
             Payment breakdown:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             46 payments of £50<br />
+             46 payments of £{{ data['repayment-amount'] }} <br />
              1 payment of £20
           </dd>
         </div>
@@ -67,7 +67,7 @@
             Expected final payment date:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             15 November 2022
+             17 December 2022
           </dd>
         </div>
 
@@ -76,7 +76,7 @@
 
       <p class="govuk-body"><a href="#0">Print a PDF</a></p>
 
-      <p class="govuk-body">We've sent you a confirmation email. Your account will be updated within 24 hours with your repayment plan details.</p>
+      <p class="govuk-body">We've sent you a confirmation email. Your account will be updated with your repayment plan details.</p>
 
       <p class="govuk-body">You can make an <a href="#0">additional payment</a> to your plan at any time.</p>
     </div>

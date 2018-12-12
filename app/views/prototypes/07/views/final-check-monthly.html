@@ -12,69 +12,73 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "additional-payment/additional-payment-calculator"
+    href: "/prototypes/07/views/direct-debit--date"
   }) }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Additional payment summary</h1>
+        <h1 class="govuk-heading-xl">Check your details are correct</h1>
 
-        <dl class='app-check-your-answers app-check-your-answers--long'>
+        <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
 
           <div class='app-check-your-answers__contents'>
             <dt class='app-check-your-answers__question'>
-              Additional payment amount:
+              Name on the account:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              £200
+              {{ data['name-on-account'] }}
             </dd>
           </div>
 
           <div class='app-check-your-answers__contents'>
             <dt class='app-check-your-answers__question'>
-              Next Direct Debit payment:
+              Sort code:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              28 Dec 18
+              {{ data['sort-code'] }}
             </dd>
           </div>
 
           <div class='app-check-your-answers__contents'>
             <dt class='app-check-your-answers__question'>
-              Current end date:
+              Account number:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              November 2022
+              {{ data['account-number'] }}
             </dd>
           </div>
 
           <div class='app-check-your-answers__contents'>
             <dt class='app-check-your-answers__question'>
-              New end date:
+              Email address:
             </dt>
             <dd class='app-check-your-answers__answer'>
-              September 20
+              {{ data['email-address'] }}
             </dd>
           </div>
-
         </dl>
 
-        <h3 class="govuk-heading-m">Changes to your Direct Debit</h3>
-        <p class="govuk-body">Making this payment now will mean we need to change your existing Direct Debit agreement. This is so you do not pay us more than you owe.</p>
-        <img src="https://dd-payment-pages.cloudapps.digital/public/images/directdebit.png" class="govuk-!-margin-bottom-2 govuk-!-margin-top-4" alt="">
-
-        <p class="govuk-link">Your payments are protected by the <a href="#">Direct Debit guarantee</a>.</p>
-
-        {{ govukButton({
-          text: "Continue",
-          href: "https://products.payments.service.gov.uk/pay/f392080aba6e4c41a3e10d74eba652e0",
-          classes: "govuk-!-margin-top-6"
+        {{ govukInsetText({
+          html: "<b>‘DWP CRG DD’</b> will appear on your bank statement"
         }) }}
 
-        <p class="govuk-link"><a href="#">Cancel</a></p>
+        {{ govukButton({
+          text: "Confirm mandate",
+          href: "/prototypes/07/views/confirmation-monthly.html",
+          classes: "govuk-!-margin-top-2"
+        }) }}
 
+        <p class="govuk-link"><a href="/prototypes/07/views/start">Cancel mandate</a></p>
+
+        <img src="https://dd-payment-pages.cloudapps.digital/public/images/directdebit.png" class="govuk-!-margin-bottom-2 govuk-!-margin-top-4" alt="">
+
+        <p class="govuk-body">Your payments are protected by the <a href="direct-debit-guarantee" class="govuk-link">Direct Debit guarantee</a>.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {% include "includes/payment-summary--dd.html" %}
     </div>
   </div>
 {% endblock %}

@@ -324,7 +324,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--monthl
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/monthly--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -337,7 +337,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--monthl
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/monthly-lump-sum')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/monthly-lump-sum--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -350,7 +350,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--fortni
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -363,7 +363,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--fortni
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly-lump-sum')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/fortnightly-lump-sum--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -376,7 +376,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--weekly
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -389,7 +389,7 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--weekly
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly-lump-sum')
+    res.redirect('/prototypes/07/views/repayment-plan-summary/weekly-lump-sum--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {

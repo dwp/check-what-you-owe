@@ -17,14 +17,14 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your weekly repayment plan</h1>
+      <h1 class="govuk-heading-xl">Your fortnightly repayment plan</h1>
 
       <p class="govuk-body govuk-!-font-weight-bold">You will pay back the money you owe by November 2022.</p>
 
       <p class="govuk-body">You will make:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>152 payments of <span>£{{ data['repayment-amount'] }}</span></li>
+        <li>92 payments of <span>£25</span></li>
         <li>1 payment of £20</li>
       </ul>
 
@@ -36,7 +36,7 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/prototypes/07/views/repayment-plan-terms-and-conditions-weekly.html"
+        href: "/prototypes/07/views/initial-payment-summary.html"
       }) }}
 
       <p class="govuk-body"><a href="#0">Pay it back sooner</a></p>
