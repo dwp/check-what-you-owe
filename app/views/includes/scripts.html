@@ -2,11 +2,20 @@
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/node_modules/govuk-frontend/all.js"></script>
 <script src="/public/javascripts/application.js"></script>
+<script src="/public/javascripts/calculate-payment-breakdown.js"></script>
 
 <script>
 function goBack() {
     window.history.back();
 }
+</script>
+
+<!-- calculation to work out payment breakdown -->
+<script type="text/javascript">
+  var x = 2320;
+  var y = {{ data['repayment-amount'] }};
+  var z = Math.round(x / y);
+  document.getElementById("payment-breakdown").innerHTML = z;
 </script>
 
 {% if useAutoStoreData %}
