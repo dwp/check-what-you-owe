@@ -6,5 +6,14 @@ const router = express.Router()
  */
 router.all('/', (req, res) => {
   req.session = {}
-  res.render(`${__dirname}/views/index`, { isStart: true })
+  res.render(`${__dirname}/views/start`)
 })
+
+/**
+ * View catch all
+ */
+router.all('/:view', (req, res) => {
+  res.render(`${__dirname}/views/${req.params.view}`)
+})
+
+module.exports = router
