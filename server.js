@@ -91,6 +91,7 @@ var appViews = [
   path.join(__dirname, '/node_modules/govuk-frontend/'),
   path.join(__dirname, '/node_modules/govuk-frontend/components'),
   path.join(__dirname, '/app/views/'),
+  path.join(__dirname, '/app/views/macros'),
   path.join(__dirname, '/lib/')
 ]
 
