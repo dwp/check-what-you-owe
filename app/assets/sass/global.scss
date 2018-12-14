@@ -1,0 +1,20 @@
+.inline {
+  display: inline-block !important;
+}
+
+.app-button--secondary {
+  background-color: govuk-colour("grey-3");
+  color:  govuk-colour("black");
+  box-shadow: 0 2px 0 govuk-colour("grey-2");
+
+  &:hover {
+    background-color: govuk-colour("grey-2");
+    color:  govuk-colour("black");
+    box-shadow: 0 2px 0 govuk-colour("grey-1");
+  }
+
+  @include govuk-media-query($until: tablet) {
+    width: 100%;
+    margin-top: govuk-spacing(2);
+  }
+}

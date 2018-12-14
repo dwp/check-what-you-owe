@@ -26,31 +26,35 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <form action="/prototypes/07/views/what-is-your-take-home-pay/lump-sum" method="post" class="form">
+      <form action="/prototypes/07/views/initial-payment-amount" method="post" class="form">
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              How much?
+              How much would you like to pay today?
             </h2>
           </legend>
 
-          {{ govukInput({
-            label: {
-              text: ""
-            },
-            classes: "govuk-input--width-10 govuk-!-margin-top-6",
-            id: "width-10",
-            name: "width-10"
-          }) }}
+          <p class="govuk-body">This payment will be taken from your bank account within 3 to 5 days. Make sure you have enough money to cover this payment.</p>
+
+          <div id="example-question" class="form-group inline">
+            <span class="c-form-input-denote govuk-body">£</span>
+            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" aria-labelledby="legend-heading" type="text" name="initial-amount">
+          </div>
 
           </fieldset>
         </div>
 
-        <button class="govuk-button">Continue</button>
-
+        {{ govukButton({
+          text: 'Continue',
+          classes: ""
+        }) }}
       </form>
+
+      <p class="govuk-body">
+        <a href="#">Get help with this page</a>
+      </p>
 
     </div>
   </div>

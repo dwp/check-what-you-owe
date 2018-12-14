@@ -15,7 +15,6 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -25,27 +24,31 @@
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              Would you like to make an initial payment?
+              What do you want to do?
             </h2>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="initial-payment-no" name="initial-payment" type="radio" value="false">
               <label class="govuk-label govuk-radios__label" for="initial-payment-no">
-                Yes
+                Make a payment today and set up a repayment plan
               </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">A payment today will reduce the amount in your repayment plan</span>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="initial-payment-yes" name="initial-payment" type="radio" value="true">
               <label class="govuk-label govuk-radios__label" for="initial-payment-yes">
-                No
+                Set up a repayment plan only
               </label>
             </div>
           </div>
           </fieldset>
         </div>
 
-        <button class="govuk-button">Continue</button>
+        {{ govukButton({
+          text: 'Continue',
+          classes: ""
+        }) }}
 
       </form>
 

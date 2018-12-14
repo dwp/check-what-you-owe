@@ -1,0 +1,13 @@
+{% macro appPaymentSummary (params) %}
+
+<div class="app-panel__payment-summary">
+  <h2 class="govuk-heading-m">Repayment summary</h2>
+  <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid {{ data['payment-frequency'] }}</p>
+  <p class="govuk-body govuk-!-font-size-16">
+     test<br />
+     test
+  </p>
+  <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-font-size-16">Amount:</p>
+  <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£{{ data['repayment-amount'] }} <!-- <span class="govuk-!-font-weight-regular govuk-body govuk-!-font-size-16">per month</span>--></p>
+</div>
+{% endmacro %}

@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Your repayment plan </h1>
+
+
+        <dl class='app-check-your-answers app-check-your-answers--long'>
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Amount you owe:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              £2,320
+            </dd>
+            <dd class='app-check-your-answers__answer'>
+              <a href="#0"></a>
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Payment start date:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              15th December 2018
+            </dd>
+            <dd class='app-check-your-answers__answer'>
+              <a href="#0"></a>
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Payment frequency:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              Monthly
+            </dd>
+            <dd class='app-check-your-answers__answer'>
+              <a href="#0">Change</a>
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Payment day:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+               15th
+            </dd>
+            <dd class='app-check-your-answers__answer'>
+              <a href="#0">Change</a>
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Payment amount:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+               46 payments of £50<br />
+               1 payment of £20
+            </dd>
+            <dd class='app-check-your-answers__answer'>
+              <a href="#0"></a>
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Expected final payment date:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+               15th November 2022
+            </dd>
+            <dd class='app-check-your-answers__answer'>
+              <a href="#0"></a>
+            </dd>
+          </div>
+        </dl>
+
+        <h3 class="govuk-heading-m">Additional payments to your plan</h3>
+
+        <p class="govuk-body">You can make an additional payment to your plan at any time.</p>
+
+        {{ govukButton({
+          text: "Make a payment",
+          href: "/prototypes/07/views/confirmation.html",
+          classes: ""
+        }) }}
+
+    </div>
+{% endblock %}
