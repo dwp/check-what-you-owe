@@ -1,5 +1,7 @@
 const url = require('url')
 
+/** Adding in locals.js /
+
 /**
  * Pass base path to views
  */

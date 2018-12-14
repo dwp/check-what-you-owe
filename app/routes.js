@@ -2,40 +2,42 @@ const express = require('express')
 const fs = require('fs')
 const router = express.Router()
 
-// // Add your routes here - above the module.exports line
-// router.use(require('./middleware/locals'))
-//
-// // Data sources
-// router.all('/data/:data/source/:source', (req, res) => {
-//  const { data, source } = req.params
-//  res.json(require(`./data/${data}/source/${source}`))
-// })
-//
-// // Remove trailing slashes
-// router.all('\\S+/$', (req, res) => {
-//  res.redirect(301, req.path.slice(0, -1) + req.url.slice(req.path.length))
-// })
-//
-// // Find prototypes here
-// const search = `${__dirname}/views/prototypes/`
-// const prototypes = fs.readdirSync(search).filter(file => {
-//  return fs.statSync(`${search}/${file}`).isDirectory()
-// })
-//
-// // Multiple prototypes
-// for (const directory of prototypes) {
-//  const prototype = require(`${search}${directory}`)
-//   // Prototype static assets
-//  prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
-//   // Prototype router
-//  router.use(`/${directory}`, prototype)
-// }
-//
-// // Sign out clears session storage and goes back to start
-// router.get('/signout', function (req, res) {
-//   req.session.destroy()
-//   res.redirect('start')
-// })
+// Add your routes here - above the module.exports line
+router.use(require('./middleware/locals'))
+
+// Data sources
+router.all('/data/:data/source/:source', (req, res) => {
+ const { data, source } = req.params
+ res.json(require(`./data/${data}/source/${source}`))
+})
+
+// Remove trailing slashes
+router.all('\\S+/$', (req, res) => {
+ res.redirect(301, req.path.slice(0, -1) + req.url.slice(req.path.length))
+})
+
+// Find prototypes here
+const search = `${__dirname}/views/prototypes/`
+const prototypes = fs.readdirSync(search).filter(file => {
+ return fs.statSync(`${search}/${file}`).isDirectory()
+})
+
+// Multiple prototypes
+for (const directory of prototypes) {
+  const prototype = require(`${search}${directory}`)
+
+  // Prototype static assets
+  prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
+
+  // Prototype router
+  router.use(`/${directory}`, prototype)
+}
+
+// Sign out clears session storage and goes back to start
+router.get('/signout', function (req, res) {
+  req.session.destroy()
+  res.redirect('start')
+})
 
 // 05 prototype routing
 
@@ -495,6 +497,26 @@ router.post('/prototypes/08/views/additional-payment/additional-payment-calculat
 
   if (answer >= 251) {
     res.redirect('/prototypes/08/views/additional-payment/large')
+  }
+})
+
+// Branch users to different page based on numerical amount
+router.post('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-1', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['repayment-amount'] || 0)
+
+  if (answer <= 49) {
+    res.redirect('/prototypes/07/views/test-1')
+  }
+
+  if (answer <= 69) {
+    res.redirect('/prototypes/07/views/test-2')
+  }
+
+  if (answer >= 70) {
+    res.redirect('/prototypes/07/views/test-3')
   }
 })
 
