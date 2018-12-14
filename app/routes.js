@@ -30,60 +30,13 @@ for (const directory of prototypes) {
   prototype.use(`/assets`, express.static(`${__dirname}/views/prototypes/${directory}/assets`))
 
   // Prototype router
-  router.use(`/${directory}`, prototype)
+  router.use(`/prototypes/${directory}`, prototype)
 }
 
 // Sign out clears session storage and goes back to start
 router.get('/signout', function (req, res) {
   req.session.destroy()
   res.redirect('start')
-})
-
-// 05 prototype routing
-
-// Branching for eligibility questions on 05 prototype
-router.post('/05/eligibility/universal-credit-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let UniversalCredit = req.session.data['universal-credit']
-
-  if (UniversalCredit === 'false') {
-    res.redirect('/05/eligibility/off-universal-credit')
-  } else {
-    res.redirect('/05/eligibility/on-universal-credit')
-  }
-})
-
-// Branching for eligibility questions on 05 prototype
-router.post('/05/eligibility/what-would-you-like-to-do-answer', function (req, res) {
-  // Get the answer from session data
-  // The name between the quotes is the same as the 'name' attribute on the input elements
-  // However in JavaScript we can't use hyphens in variable names
-
-  let WhatWouldYouLikeToDo = req.session.data['what-would-you-like-to-do']
-
-  if (WhatWouldYouLikeToDo === 'false') {
-    res.redirect('/05/eligibility/check-what-you-owe')
-  } else {
-    res.redirect('/05/eligibility/pay-what-you-owe')
-  }
-})
-
-// Branching for eligibility questions on 05 prototype
-router.post('/05/eligibility/repayment-answer', function (req, res) {
-  let RepaymentOptions = req.session.data['repayment-options']
-
-  if (RepaymentOptions === 'full') {
-    res.redirect('/05/eligibility/full')
-  }
-  if (RepaymentOptions === 'partial') {
-    res.redirect('/05/eligibility/partial')
-  }
-  if (RepaymentOptions === 'plan') {
-    res.redirect('/05/eligibility/plan')
-  }
 })
 
 // 07 prototype routing
@@ -320,7 +273,6 @@ router.post('/prototypes/07/views/repayment-amount/weekly-lump-sum', function (r
   }
 })
 
-
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
 router.post('/prototypes/07/views/repayment-amount-result/amount-too-low--monthly', function (req, res) {
   const submitted = req.session.data;
@@ -477,48 +429,5 @@ router.post('/prototypes/07/views/repayment-amount-result/amount-too-high--weekl
     res.redirect('/prototypes/07/views/repayment-amount-result/contact-us--weekly')
   }
 })
-
-// 08 prototype routing
-
-// Making an addition payment
-router.post('/prototypes/08/views/additional-payment/additional-payment-calculator', function (req, res) {
-  const submitted = req.session.data;
-
-  // Format answer as whole number
-  const answer = parseFloat(submitted['additional-payment'] || 0)
-
-  if (answer <= 100) {
-    res.redirect('/prototypes/08/views/additional-payment/small')
-  }
-
-  if (answer <= 250) {
-    res.redirect('/prototypes/08/views/additional-payment/medium')
-  }
-
-  if (answer >= 251) {
-    res.redirect('/prototypes/08/views/additional-payment/large')
-  }
-})
-
-// Branch users to different page based on numerical amount
-router.post('/prototypes/07/views/how-much-do-you-want-to-repay/no-lump-sum/take-home-band-1', function (req, res) {
-  const submitted = req.session.data;
-
-  // Format answer as whole number
-  const answer = parseFloat(submitted['repayment-amount'] || 0)
-
-  if (answer <= 49) {
-    res.redirect('/prototypes/07/views/test-1')
-  }
-
-  if (answer <= 69) {
-    res.redirect('/prototypes/07/views/test-2')
-  }
-
-  if (answer >= 70) {
-    res.redirect('/prototypes/07/views/test-3')
-  }
-})
-
 
 module.exports = router
