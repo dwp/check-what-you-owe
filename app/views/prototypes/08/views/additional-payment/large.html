@@ -8,7 +8,7 @@
 {% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "../account-home"
+    href: "../make-additional-payment"
   }) }}
 {% endblock %}
 
@@ -22,26 +22,6 @@
       <form action="#" method="post" class="form">
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-
-            {# <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-6'>
-              <div class='app-check-your-answers__contents'>
-                <dt class='app-check-your-answers__question'>
-                  Repayment amount:
-                </dt>
-                <dd class='app-check-your-answers__answer'>
-                  £50
-                </dd>
-              </div>
-
-              <div class='app-check-your-answers__contents'>
-                <dt class='app-check-your-answers__question'>
-                  Repayment frequency:
-                </dt>
-                <dd class='app-check-your-answers__answer'>
-                  Monthly
-                </dd>
-              </div>
-            </dl> #}
 
             <p class="govuk-body">The amount you pay now will affect the date of your final payment.  Enter an amount below and click “update” to see when your last payment will be.</p>
 
@@ -58,8 +38,12 @@
       </form>
 
       <div class="govuk-panel--amount-owed app-panel">
-        <p class="govuk-body govuk-!-margin-bottom-0">You will pay back what you owe in:<br />
-          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">March 19</span>
+        <p class="govuk-body govuk-!-margin-bottom-4">Your current pay back date is:<br />
+          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">July 22</span>
+        </p>
+
+        <p class="govuk-body govuk-!-margin-bottom-0">Your new pay back date is:<br />
+          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">August 19</span>
         </p>
         <p class="govuk-body-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">
           Please note that if you incur other loans or overpayments this end date may change.  We will contact you to rearrange repayment if this happens.
