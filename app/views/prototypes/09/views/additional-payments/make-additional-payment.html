@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Make an additional payment</h1>
+      <!-- <h2 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-4">£2,320</h2> -->
+
+      <p>You’ll need a debit or credit card.</p>
+
+      {{ govukButton({
+        text: "Pay online",
+        href: "additional-payment/additional-payment-calculator"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m">Other ways to make an additional payment</h2>
+
+      <p class="govuk-body">You can get information, make payments, and arrange payment plans by phone.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+      <!-- -->
+
+      <!-- <h2 class="govuk-heading-m">Other ways to check what you owe</h2> <p>If you have questions about why you owe this amount, contact:</p> <p><b>Universal Credit</b><br /> Telephone: 0800 328 5644<br /> Textphone: 0800 328 1344<br /> Monday to
+      Friday 8am to 6pm (closed on bank holidays)</p> -->
+
+    </div>
+  </div>
+{% endblock %}

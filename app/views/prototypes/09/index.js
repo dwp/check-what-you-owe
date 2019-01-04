@@ -16,6 +16,37 @@ router.all('/:view', (req, res) => {
   res.render(`${__dirname}/views/${req.params.view}`)
 })
 
+// Additional payment routing
+//
+//
+//
+
+// Making an additional payment
+router.post('/views/additional-payments/additional-payment/additional-payment-calculator', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['additional-payment'] || 0)
+
+  if (answer <= 100) {
+    res.redirect('/prototypes/09/views/additional-payments/additional-payment/small')
+  }
+
+  if (answer <= 250) {
+    res.redirect('/prototypes/09/views/additional-payments/additional-payment/medium')
+  }
+
+  if (answer >= 251) {
+    res.redirect('/prototypes/09/views/additional-payments/additional-payment/large')
+  }
+})
+
+
+// Repayment plan routing
+//
+//
+//
+
 // Branch users to lump sum or repayment plan only
 router.post('/views/repayment-plan/initial-payment', function (req, res) {
   const submitted = req.session.data;
