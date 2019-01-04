@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [ {
+        text:'Home',
+        href: 'https://www.gov.uk/' },
+      {
+        text:'Money and tax',
+        href: 'https://www.gov.uk/browse/tax' },
+      {
+        text: 'Set up a repayment plan' } ] }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Set up a repayment plan
+      </h1>
+
+      <p class="govuk-body">Use this service if you owe money to the Department of Work and Pensions and want to set up a repayment plan.</p>
+
+      <p>You'll need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your bank account number and sort code</li>
+        <li>the username and password given to you in the letter from the Department of Work and Pensions</li>
+      </ul>
+
+      {{ govukButton({
+        text: 'Start',
+        href: "initial-payment",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <!--  -->
+
+      <h2 class="govuk-heading-m">Other ways to set up a repayment plan</h2>
+
+      <p class="govuk-body">You can get information, make payments, and arrange repayment plans by phone.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+    </div>
+  </div>
+{% endblock %}
