@@ -17,7 +17,7 @@ router.all('/:view', (req, res) => {
 })
 
 // Branch users to lump sum or repayment plan only
-router.post('/views/initial-payment', function (req, res) {
+router.post('/views/repayment-plan/initial-payment', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['initial-payment'] === 'false') {
@@ -30,7 +30,7 @@ router.post('/views/initial-payment', function (req, res) {
 })
 
 // Branch users to lump sum or repayment plan only
-router.post('/views/initial-payment-amount', function (req, res) {
+router.post('/views/repayment-plan/initial-payment-amount', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -42,7 +42,7 @@ router.post('/views/initial-payment-amount', function (req, res) {
 })
 
 // No lump sum what is your take home pay
-router.post('/views/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['take-home-pay'] === 'take-home-pay-1') {
@@ -68,7 +68,7 @@ router.post('/views/what-is-your-take-home-pay/no-lump-sum', function (req, res)
 
 
 // Lump sum what is your take home pay
-router.post('/views/what-is-your-take-home-pay/lump-sum', function (req, res) {
+router.post('/views/repayment-plan/what-is-your-take-home-pay/lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['take-home-pay'] === 'take-home-pay-1') {
@@ -94,7 +94,7 @@ router.post('/views/what-is-your-take-home-pay/lump-sum', function (req, res) {
 
 
 // Send user to monthly, weekly or fortnightly branch
-router.post('/views/repayment-frequency', function (req, res) {
+router.post('/views/repayment-plan/repayment-frequency', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['payment-frequency'] === 'monthly') {
@@ -111,7 +111,7 @@ router.post('/views/repayment-frequency', function (req, res) {
 })
 
 // Send user to monthly, weekly or fortnightly branch after entering a lump sum
-router.post('/views/repayment-frequency-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-frequency-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['payment-frequency'] === 'monthly') {
@@ -129,7 +129,7 @@ router.post('/views/repayment-frequency-lump-sum', function (req, res) {
 
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-amount/monthly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount/monthly', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -149,7 +149,7 @@ router.post('/views/repayment-amount/monthly', function (req, res) {
 })
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-amount/monthly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -169,7 +169,7 @@ router.post('/views/repayment-amount/monthly-lump-sum', function (req, res) {
 })
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-amount/fortnightly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount/fortnightly', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -189,7 +189,7 @@ router.post('/views/repayment-amount/fortnightly', function (req, res) {
 })
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-amount/fortnightly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount/fortnightly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -209,7 +209,7 @@ router.post('/views/repayment-amount/fortnightly-lump-sum', function (req, res) 
 })
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-amount/weekly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount/weekly', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -229,7 +229,7 @@ router.post('/views/repayment-amount/weekly', function (req, res) {
 })
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-amount/weekly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount/weekly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -249,7 +249,7 @@ router.post('/views/repayment-amount/weekly-lump-sum', function (req, res) {
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-low--monthly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--monthly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -262,7 +262,7 @@ router.post('/views/repayment-amount-result/amount-too-low--monthly', function (
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-low--monthly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -275,7 +275,7 @@ router.post('/views/repayment-amount-result/amount-too-low--monthly-lump-sum', f
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-low--fortnightly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -288,7 +288,7 @@ router.post('/views/repayment-amount-result/amount-too-low--fortnightly', functi
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-low--fortnightly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -301,7 +301,7 @@ router.post('/views/repayment-amount-result/amount-too-low--fortnightly-lump-sum
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-low--weekly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--weekly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -314,7 +314,7 @@ router.post('/views/repayment-amount-result/amount-too-low--weekly', function (r
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-low--weekly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--weekly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
@@ -328,7 +328,7 @@ router.post('/views/repayment-amount-result/amount-too-low--weekly-lump-sum', fu
 
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-high--monthly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--monthly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
@@ -341,7 +341,7 @@ router.post('/views/repayment-amount-result/amount-too-high--monthly', function 
 })
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-high--monthly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--monthly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
@@ -354,7 +354,7 @@ router.post('/views/repayment-amount-result/amount-too-high--monthly-lump-sum', 
 })
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-high--fortnightly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--fortnightly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
@@ -367,7 +367,7 @@ router.post('/views/repayment-amount-result/amount-too-high--fortnightly', funct
 })
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-high--fortnightly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--fortnightly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
@@ -380,7 +380,7 @@ router.post('/views/repayment-amount-result/amount-too-high--fortnightly-lump-su
 })
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-high--weekly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--weekly', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
@@ -393,7 +393,7 @@ router.post('/views/repayment-amount-result/amount-too-high--weekly', function (
 })
 
 // Ask users if they can afford £75 after putting in a higher amount, send them to the relevant page based on answer.
-router.post('/views/repayment-amount-result/amount-too-high--weekly-lump-sum', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--weekly-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
