@@ -5,16 +5,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-
-  {{ govukBreadcrumbs({
-    items: [ {
-        text:'Home',
-        href: 'https://www.gov.uk/' },
-      {
-        text:'Money and tax',
-        href: 'https://www.gov.uk/browse/tax' },
-      {
-        text: 'Make an additional payment' } ] }) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../account-home"
+  }) }}
 {% endblock %}
 
 {% block content %}
