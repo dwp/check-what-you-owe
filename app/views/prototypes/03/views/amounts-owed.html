@@ -1,5 +1,29 @@
 {% extends "layout.html" %}
 {% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Check what you owe",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details",
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
