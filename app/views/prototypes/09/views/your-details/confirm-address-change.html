@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    This change has been reported
+  </h1>
+
+  <p>
+    We’ll update your details within 5 days.
+  </p>
+
+  {{ govukButton({
+    text: "Back to your details",
+    href:"your-details"
+  }) }}
+
+
+
+
+{% endblock %}

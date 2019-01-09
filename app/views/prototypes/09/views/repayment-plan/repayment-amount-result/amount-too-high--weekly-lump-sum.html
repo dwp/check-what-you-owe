@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/prototypes/09/views/repayment-plan/repayment-amount/weekly"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your weekly payments</h1>
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-regular">Before your plan is set we want to check you can afford <span class="govuk-!-font-weight-bold">£{{ data['repayment-amount'] }}</span>.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <form action="/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--weekly-lump-sum" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h1 class="govuk-fieldset__heading">
+                    Can you afford to pay this amount every week?
+                  </h1>
+                </legend>
+
+                <div class="govuk-radios">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="can-you-afford-this-yes" name="can-you-afford-this" type="radio" value="can-you-afford-this-yes">
+                    <label class="govuk-label govuk-radios__label" for="can-you-afford-this-yes">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="can-you-afford-this-no" name="can-you-afford-this" type="radio" value="can-you-afford-this-no">
+                    <label class="govuk-label govuk-radios__label" for="can-you-afford-this-no">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
