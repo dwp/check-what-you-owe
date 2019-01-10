@@ -32,18 +32,18 @@
           <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
             <h2 class="govuk-fieldset__heading">
-              Are still getting Universal credit?
+              Are you still getting Universal credit?
             </h2>
           </legend>
           <div class="govuk-radios govuk-radios--inline">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="on-uc-yes" name="universal-credit" type="radio" value="true">
+              <input class="govuk-radios__input" id="on-uc-yes" name="universal-credit" type="radio" value="on-uc-yes">
               <label class="govuk-label govuk-radios__label" for="on-uc-yes">
                 Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="on-uc-no" name="universal-credit" type="radio" value="false">
+              <input class="govuk-radios__input" id="on-uc-no" name="universal-credit" type="radio" value="on-uc-no">
               <label class="govuk-label govuk-radios__label" for="on-uc-no">
                 No
               </label>
@@ -53,9 +53,9 @@
         </div>
 
         {{ govukButton({
-  text: 'Start',
-  classes: ""
-}) }}
+          text: 'Continue',
+          classes: ""
+        }) }}
 
       </form>
 
