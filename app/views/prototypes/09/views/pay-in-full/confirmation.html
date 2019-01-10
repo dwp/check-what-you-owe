@@ -7,15 +7,18 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {{ govukPanel({ headingLevel: 1, titleText: "Your payment was successful", classes: "outcome" }) }}
+      {{ govukPanel({
+        headingLevel: 1,
+        titleText: "Your payment was successful",
+        html: "Your payment reference<br><strong>HDJ2123F</strong>",
+        classes: "outcome" }) }}
+
       <h2 class="govuk-heading-m govuk-!-margin-top-7">Payment summary</h2>
       <p>Amount: £2,320
         <br>
         Payment to: DWP Debt Management
         <br>
         Payment for: Repayment to DWP
-        <br>
-        Payment reference: TV45FR5KKT
         <br>
         Date of payment: 22 November 2018 – 10:01:29</p>
         <p class="govuk-body"><a href="#0">Save this as a PDF</a></p>
