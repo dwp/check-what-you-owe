@@ -2,7 +2,7 @@
 .app-check-your-answers {
   @include govuk-font(19);
   margin-top: 0;
-  @include govuk-responsive-margin(9, "bottom");
+  @include govuk-responsive-margin(7, "bottom");
   @include govuk-media-query($from: desktop) {
     display: table;
   }

@@ -367,7 +367,7 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--mont
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--monthly')
+    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly')
   }
 })
 
