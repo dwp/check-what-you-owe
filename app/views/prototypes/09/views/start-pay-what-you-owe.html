@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBreadcrumbs({ items: [ { text:'Home', href: '#0' }, { text:'Section', href: '#0' }, { text: 'Pay what you owe' } ] }) }}
+  {{ govukBreadcrumbs({ items: [ { text:'Home', href: '#0' }, { text:'Money and tax', href: '#0' }, { text: 'Pay what you owe' } ] }) }}
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
 
       {{ govukButton({
         text: 'Start',
-        href: "pay-in-full/access", 
+        href: "pay-in-full/access",
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
