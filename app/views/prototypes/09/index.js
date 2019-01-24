@@ -72,31 +72,44 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
   }
 })
 
-// No lump sum what is your take home pay
+// Hiding this as radio buttons aren't as user friendly as a free text field
+
+// // No lump sum what is your take home pay using radio buttons
+// router.post('/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
+//   const submitted = req.session.data;
+//
+//   if (submitted['take-home-pay'] === 'take-home-pay-1') {
+//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//   }
+//
+//   if (submitted['take-home-pay'] === 'take-home-pay-2') {
+//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//   }
+//
+//   if (submitted['take-home-pay'] === 'take-home-pay-3') {
+//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//   }
+//
+//   if (submitted['take-home-pay'] === 'take-home-pay-4') {
+//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//   }
+//
+//   if (submitted['take-home-pay'] === 'take-home-pay-5') {
+//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//   }
+// })
+
+// Branch users to different page based on numerical amount
 router.post('/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
-  if (submitted['take-home-pay'] === 'take-home-pay-1') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
-  }
+  // Format answer as whole number
+  const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (submitted['take-home-pay'] === 'take-home-pay-2') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-3') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-4') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-5') {
+  if (answer <= 9999999999) {
     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
   }
 })
-
 
 // Lump sum what is your take home pay
 router.post('/views/repayment-plan/what-is-your-take-home-pay/lump-sum', function (req, res) {
