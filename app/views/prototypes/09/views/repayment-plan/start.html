@@ -39,11 +39,24 @@
 
       <p class="govuk-body">Use this service if you owe money to the Department for Work and Pensions and want to set up a repayment plan by Direct Debit.</p>
 
-      <p>You'll need your bank account number and sort code.</p>
+      <p class="govuk-!-margin-top-6 govuk-!-margin-bottom-6"><b>The total amount you need to repay is £2,320.</b></p>
+
+      <!-- <p>You'll need your bank account number and sort code.</p> -->
+
+      <p>Before you start you'll need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your bank account number and sort code</li>
+        <li>to know how much you get paid in one month</li>
+      </ul>
 
       {{ govukInsetText({
-        html: "The amount you need to repay is <b>£2,320</b>."
+        html: "The minimum amount you can repay online each month is £50."
       }) }}
+
+      {# {{ govukInsetText({
+        html: "The total amount you need to repay is <b>£2,320</b>."
+      }) }} #}
 
       {{ govukButton({
         text: 'Start',
