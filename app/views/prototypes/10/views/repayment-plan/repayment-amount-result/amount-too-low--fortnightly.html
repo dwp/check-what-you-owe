@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/prototypes/09/views/repayment-plan/repayment-amount/fortnightly"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your fortnightly payments</h1>
+
+      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-regular">The minimum payment is £25.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <form action="/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly" method="post" class="form">
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h3 class="govuk-fieldset__heading">
+                    Can you afford to pay this amount every fortnight?
+                  </h3>
+                </legend>
+
+                <div class="govuk-radios">
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="can-you-pay-50-yes" name="can-you-pay-50" type="radio" value="can-you-pay-50-yes">
+                    <label class="govuk-label govuk-radios__label" for="can-you-pay-50-yes">
+                      Yes
+                    </label>
+                  </div>
+
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="can-you-pay-50-no" name="can-you-pay-50" type="radio" value="can-you-pay-50-no">
+                    <label class="govuk-label govuk-radios__label" for="can-you-pay-50-no">
+                      No
+                    </label>
+                  </div>
+
+                </div>
+              </fieldset>
+            </div>
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

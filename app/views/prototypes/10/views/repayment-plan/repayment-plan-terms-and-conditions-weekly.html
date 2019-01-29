@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  <a onclick="goBack()" href="#" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Keeping up with your payments</h1>
+      <p class="govuk-body">If you cannot make a payment you must contact us as soon as possible.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">If you miss a payment, we will:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>contact your employer to make deductions from your pay</li>
+        <li>ask a debt collection agency to collect this money for us</li>
+      </ul>
+
+      {{ govukButton({
+        text: "Continue with Direct Debit",
+        href: "/prototypes/09/views/repayment-plan/direct-debit-weekly.html"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

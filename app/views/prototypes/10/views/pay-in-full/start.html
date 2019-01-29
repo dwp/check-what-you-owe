@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home",
+        text: "Account home"
+      },
+      {
+        href: "/prototypes/09/views/your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Repay the full amount</h1>
+      <h2 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-4">£2,320</h2>
+
+      <p>Use this service if you owe money to DWP, no longer get benefits from DWP, and want to repay your balance in full.</p>
+      <p>You’ll need a debit or credit card.</p>
+
+
+      {{ govukButton({
+        text: 'Start',
+        href: "https://products.payments.service.gov.uk/pay/b0f8dce3766d46148419dcfefafb4240",
+        classes: "govuk-button--start"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m">Other ways to repay the full amount</h2>
+
+      <h3 class="govuk-heading-s">Bank transfer</h3>
+
+      <p>Use these details to repay the full amount by the date shown on the letter we sent you:</p>
+
+      <p>Sort code: 40 34 18<br/>
+        Account number: 51826107<br/>
+        Reference: QQ12 34 56 A</p>
+
+      <h3 class="govuk-heading-s">Telephone</h3>
+
+      <p>Call Debt Management to repay the full amount. Do this by the date shown on the letter we sent you.</p>
+
+      <p>Telephone: 0800 916 0614<br/>
+        Textphone: 0345 604 6697<br/>
+        Monday to Friday 8am to 7.30pm<br/>
+        Saturday 9am to 4pm</p>
+
+      {# <p>You can also call us if you cannot afford to repay.</p> #}
+
+      <!-- -->
+
+      <!-- <h2 class="govuk-heading-m">Other ways to check what you owe</h2> <p>If you have questions about why you owe this amount, contact:</p> <p><b>Universal Credit</b><br /> Telephone: 0800 328 5644<br /> Textphone: 0800 328 1344<br /> Monday to
+      Friday 8am to 6pm (closed on bank holidays)</p> -->
+
+    </div>
+  </div>
+{% endblock %}
