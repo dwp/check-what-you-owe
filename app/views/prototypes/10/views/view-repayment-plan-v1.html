@@ -1,0 +1,133 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-v1"
+  }) }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-v1",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your repayment plan</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Amount you owe"
+            },
+            value: {
+              text: "£2,320"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#0",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Next payment due"
+            },
+            value: {
+              text: "Friday 15th February"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#0",
+                  text: "Apply for payment holiday",
+                  visuallyHiddenText: "next payment due"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Repayment plan amount"
+            },
+            value: {
+              html: "£50 per month"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "repayment plan amount"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payment day"
+            },
+            value: {
+              html: '15th'
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "Payment day"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Expected final payment"
+            },
+            value: {
+              html: "15 December 2020"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "Expected final payment"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+{% endblock %}
