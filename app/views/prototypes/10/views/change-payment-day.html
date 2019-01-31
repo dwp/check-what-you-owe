@@ -39,9 +39,17 @@
 
         <form action="#0" method="post" class="form">
 
+          {# {{ govukInsetText({
+            text: "If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions."
+          }) }} #}
+
+          {{ govukInsetText({
+            text: "If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions."
+          }) }}
+
           {{ govukInput({
             label: {
-              text: ""
+              text: "Payment day"
             },
             hint: {
               text: "For example, for the third day of the month write 03"
@@ -52,6 +60,15 @@
           }) }}
 
           <p class="govuk-body">Please note that we are unable to process payments made on the 29th, 30th and 31st days of the month.</p>
+
+          {# {{ govukInsetText({
+            text: "If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions."
+          }) }} #}
+
+
+          {# <p class="govuk-body">
+            If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions.
+          </p> #}
 
           {{ govukButton({
             text: "Update payment day",
