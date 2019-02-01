@@ -21,16 +21,18 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Which day would you like the Direct Debit to be taken every month?</h1>
 
-      <form action="/prototypes/09/views/repayment-plan/final-check-monthly" method="post" class="form">
+      <form action="/prototypes/10/views/repayment-plan/final-check-monthly" method="post" class="form">
 
         {{ govukInput({
           label: {
-            text: ""
+            text: "Payment day"
           },
           hint: {
             text: "For example, for the third day of the month write 03"
           },
-          classes: "govuk-input--width-10",
+          classes: "govuk-input govuk-date-input__input govuk-input--width-2",
+          type: "number",
+          pattern:"[0-9]*",
           id: "direct-debit-date",
           name: "direct-debit-date"
         }) }}
