@@ -39,12 +39,8 @@
 
         <form action="#0" method="post" class="form">
 
-          {# {{ govukInsetText({
-            text: "If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions."
-          }) }} #}
-
           {{ govukInsetText({
-            text: "If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions."
+            text: "If you have a payment due in the next week it will be taken from your account before your new payment day is set up."
           }) }}
 
           {{ govukInput({
@@ -54,21 +50,14 @@
             hint: {
               text: "For example, for the third day of the month write 03"
             },
-            classes: "govuk-input--width-10",
+            classes: "govuk-input govuk-date-input__input govuk-input--width-2",
+            type: "number",
+            pattern:"[0-9]*",
             id: "direct-debit-date",
             name: "direct-debit-date"
           }) }}
 
-          <p class="govuk-body">Please note that we are unable to process payments made on the 29th, 30th and 31st days of the month.</p>
-
-          {# {{ govukInsetText({
-            text: "If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions."
-          }) }} #}
-
-
-          {# <p class="govuk-body">
-            If you have a payment due in the next five working days under your current repayment plan, it will be taken from your account before your new payment day is set up. Please contact us if you have any questions.
-          </p> #}
+          <p class="govuk-body">We cannot process payments made on the 29th, 30th and 31st days of the month.</p>
 
           {{ govukButton({
             text: "Update payment day",
