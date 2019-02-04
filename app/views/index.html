@@ -21,197 +21,207 @@
       <h1 class="govuk-heading-xl">
         Manage what you owe to DWP prototype
       </h1>
-    </div>
 
-    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-accordion" data-module="accordion" id="accordion-default">
 
-      <h2 class="govuk-heading-l">01 - View debt & pay debt</h2>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                01 - View debt & pay debt
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+              <ul class="govuk-list">
+                <li>
+                  <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/01/views/start">Check start</a></h3>
+                </li>
+                <li>
+                  <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/01/views/pay-start">Pay start</a></h3>
+                </li>
+              </ul>
+          </div>
+        </div>
 
-      <div class="app-panel app-panel--border app-panel--start">
-        <ul class="govuk-list">
-          <li>
-            <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/01/views/start">Check start</a></h3>
-          </li>
-          <li>
-            <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/01/views/pay-start">Pay start</a></h3>
-          </li>
-        </ul>
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                02 - Help and signposting
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body"><a href="https://docs.google.com/document/d/12jK4yxUmCZ-taxS07YT7qc4VQyCnjQT-m4zZA7bMNFY/edit?usp=sharing">Content changes</a></p>
+
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/02/views/start"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                03 - Manage account
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body"><a href="https://docs.google.com/document/d/1VLpN7doX4IUalpIp_f6fegeqFaCdCgNHCFSppEIQCKU/edit?usp=sharing">Content changes</a></p>
+            <p class="govuk-body"><a href="https://docs.google.com/presentation/d/1XYFxiXoAkzHwR5OMLpH9PaJi9OpT0rwV7gz1PgU_0a0/edit?usp=sharing">user research findings (from this prototype) - 23.10.18</a></p>
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/03/views/start"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                04 - User research improvements
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body">Improvements implemented to the prototype based on usability studies.</p>
+            <p class="govuk-body">Includes iterations to account home (v1-v4).</p>
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1s7TslrSYosobFBSBdEzmHZaqi4CvKo1O">user research findings (from this prototype) - 31.10.18</a></p>
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/04/views/start"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                05 - Combined start page
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            {{ govukWarningText({
+              text: "Prototype archived and not tested ",
+              iconFallbackText: "Warning"
+            }) }}
+            <p class="govuk-body">One link on the letter points towards a single start page, which filters out users based on the task they are trying to do.</p>
+            <p class="govuk-body">This wasn't taken any further, because our user research shows personas who have an affordable debt to pay off, don't want a continuing relationship with the DWP, they just want to pay off their debt. If we did this route, then all users would be required to use a login rather than a one time access code, which could cause drop off for this type of user.</p>
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/05/views/start-combined"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                06 - Display multiple debts
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body">Includes view amounts owed design options (v1-v4)</p>
+            <p class="govuk-body">This version aligns the account home screen with the payment statement design in Universal Credit. It allows users to see how much they owe as a snapshot, without having to go view amounts owed for details.</p>
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1QY_z0HgDYyZC4n7IbxYiF2ayWLdOvXZP">user research findings (from this prototype) - 16.11.18</a></p>
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/06/views/start"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                07 - Repayment plan
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body">Prototype to show how we can allow users to create a repayment plan online with the <b>happy path</b> non negotiable rate.</p>
+            <p class="govuk-body">This allows us to start small and understand users expectations of an online repayment plan.</p>
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1-Gs7se2CW2QU9KK81rPbPkHt_3G0tNGW">Content changes</a></p>
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1iPIISTHEGDVuayudEkPFKfPSjpWwgwhb">user research findings (from this prototype) - 7/12/18 & 13/12/18</a></p>
+
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/07/views/start"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                08 - Additional payment
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/08/views/account-home"
+            }) }}
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                09 - Consolidating prototype for user research improvements.
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body"><a href="https://docs.google.com/spreadsheets/d/1-gSQKpUwCPUDOilPr-Rxm3DrCWv1tXPUd0Xj4-6uXHM/edit?usp=sharing">Recommendations document</a></p>
+            <ul class="govuk-list">
+              <li>
+                <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/09/views/account-home">Account home</a></h3>
+              </li>
+              <li>
+                <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/09/views/start-pay-what-you-owe">Pay start</a></h3>
+              </li>
+              <li>
+                <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/09/views/start-check-what-you-owe">Check start</a></h3>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="govuk-accordion__section ">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                10 - Amending an existing repayment plan
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1KV34y3Cb7kNu2-h25698Fh6abDs6uvIF">Content changes 31/01/19</a></p>
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1yU9GdvFitsp2lW_ZmzXmO7SPAaXR3Kcn">Content changes 01/02/19</a></p>
+            <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=17X7W98dsYUOSLZJu7RTufxMXaDmn5mpr">Content changes 04/02/19</a></p>
+            {{ govukButton({
+              text: "View prototype",
+              href: "/prototypes/10/views/start-check-what-you-owe"
+            }) }}
+          </div>
+          </div>
+        </div>
+
       </div>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">02 - Help and signposting</h2>
-      <p class="govuk-body"><a href="https://docs.google.com/document/d/12jK4yxUmCZ-taxS07YT7qc4VQyCnjQT-m4zZA7bMNFY/edit?usp=sharing">Content changes</a></p>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/02/views/start"
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">03 - Manage account</h2>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body"><a href="https://docs.google.com/document/d/1VLpN7doX4IUalpIp_f6fegeqFaCdCgNHCFSppEIQCKU/edit?usp=sharing">Content changes</a></p>
-          <p class="govuk-body"><a href="https://docs.google.com/presentation/d/1XYFxiXoAkzHwR5OMLpH9PaJi9OpT0rwV7gz1PgU_0a0/edit?usp=sharing">user research findings (from this prototype) - 23.10.18</a></p>
-        </div>
-      </details>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/03/views/start"
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">04 - User research improvements</h2>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body">Improvements implemented to the prototype based on usability studies.</p>
-          <p class="govuk-body">Includes iterations to account home (v1-v4).</p>
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1s7TslrSYosobFBSBdEzmHZaqi4CvKo1O">user research findings (from this prototype) - 31.10.18</a></p>
-      </details>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/04/views/start"
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">05 - Combined start page </h2>
-
-      {{ govukWarningText({
-        text: "Prototype archived and not tested ",
-        iconFallbackText: "Warning"
-      }) }}
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body">One link on the letter points towards a single start page, which filters out users based on the task they are trying to do.</p>
-          <p class="govuk-body">This wasn't taken any further, because our user research shows personas who have an affordable debt to pay off, don't want a continuing relationship with the DWP, they just want to pay off their debt. If we did this route, then all users would be required to use a login rather than a one time access code, which could cause drop off for this type of user.</p>
-      </details>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/05/views/start-combined"
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">06 - Display multiple debts </h2>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body">Includes view amounts owed design options (v1-v4)</p>
-          <p class="govuk-body">This version aligns the account home screen with the payment statement design in Universal Credit. It allows users to see how much they owe as a snapshot, without having to go view amounts owed for details.</p>
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1QY_z0HgDYyZC4n7IbxYiF2ayWLdOvXZP">user research findings (from this prototype) - 16.11.18</a></p>
-        </div>
-      </details>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/06/views/start"
-      }) }}
-
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">07 - Repayment plan</h2>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body">Prototype to show how we can allow users to create a repayment plan online with the <b>happy path</b> non negotiable rate.</p>
-          <p class="govuk-body">This allows us to start small and understand users expectations of an online repayment plan.</p>
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1-Gs7se2CW2QU9KK81rPbPkHt_3G0tNGW">Content changes</a></p>
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1iPIISTHEGDVuayudEkPFKfPSjpWwgwhb">user research findings (from this prototype) - 7/12/18 & 13/12/18</a></p>
-        </div>
-      </details>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/07/views/start"
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">08 - Additional payment</h2>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/08/views/account-home"
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">09 - Consolidating prototype for user research improvements.</h2>
-      <p class="govuk-body"><a href="https://docs.google.com/spreadsheets/d/1-gSQKpUwCPUDOilPr-Rxm3DrCWv1tXPUd0Xj4-6uXHM/edit?usp=sharing">Recommendations document</a></p>
-
-      <div class="app-panel app-panel--start app-panel--border">
-        <ul class="govuk-list">
-          <li>
-            <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/09/views/account-home">Account home</a></h3>
-          </li>
-          <li>
-            <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/09/views/start-pay-what-you-owe">Pay start</a></h3>
-          </li>
-          <li>
-            <h3 class="govuk-heading-s"><a class="govuk-link" href="/prototypes/09/views/start-check-what-you-owe">Check start</a></h3>
-          </li>
-        </ul>
-      </div>
-
-      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-      <h2 class="govuk-heading-l">10 - Amending an existing repayment plan</h2>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            More information
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1KV34y3Cb7kNu2-h25698Fh6abDs6uvIF">Content changes 31/01/19</a></p>
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=1yU9GdvFitsp2lW_ZmzXmO7SPAaXR3Kcn">Content changes 01/02/19</a></p>
-          <p class="govuk-body"><a href="https://drive.google.com/uc?export=download&id=17X7W98dsYUOSLZJu7RTufxMXaDmn5mpr">Content changes 04/02/19</a></p>
-        </div>
-      </details>
-
-      {{ govukButton({
-        text: "View prototype",
-        href: "/prototypes/10/views/start-check-what-you-owe"
-      }) }}
-
-
     </div>
   </div>
 {% endblock %}
