@@ -37,7 +37,7 @@
           name: "direct-debit-date"
         }) }}
 
-        <p class="govuk-body">Please note that we are unable to process payments made on the 29th, 30th and 31st days of the month.</p>
+        <p class="govuk-body">We cannot process payments made on the 29th, 30th and 31st days of the month.</p>
 
         <p class="govuk-body">You will be sent an email with confirmation of this agreement before the first payment is collected from your account.</p>
 
@@ -51,7 +51,18 @@
     </form>
 
     <div class="govuk-grid-column-one-third">
-      {% include "includes/payment-summary--dd.html" %}
+      <div class="app-panel__payment-summary">
+        <h2 class="govuk-heading-m">Repayment summary</h2>
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid monthly</p>
+        <p class="govuk-body govuk-!-font-size-16">
+           First payment: {{ data['direct-debit-date'] }} Dec 18<br />
+           Final payment: {{ data['direct-debit-date'] }} Dec 22
+        </p>
+        <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-font-size-16">Amount:</p>
+        <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£{{ data['repayment-amount'] }}
+          <!-- <span class="govuk-!-font-weight-regular govuk-body govuk-!-font-size-16">per month</span>-->
+        </p>
+      </div>
     </div>
 
   </div>

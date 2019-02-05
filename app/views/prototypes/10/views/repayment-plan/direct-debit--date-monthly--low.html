@@ -25,17 +25,19 @@
 
         {{ govukInput({
           label: {
-            text: ""
+            text: "Payment day"
           },
           hint: {
             text: "For example, for the third day of the month write 03"
           },
-          classes: "govuk-input--width-10",
+          classes: "govuk-input govuk-date-input__input govuk-input--width-2",
+          type: "number",
+          pattern:"[0-9]*",
           id: "direct-debit-date",
           name: "direct-debit-date"
         }) }}
 
-        <p class="govuk-body">Please note that we are unable to process payments made on the 29th, 30th and 31st days of the month.</p>
+        <p class="govuk-body">We cannot process payments made on the 29th, 30th and 31st days of the month.</p>
 
         <p class="govuk-body">You will be sent an email with confirmation of this agreement before the first payment is collected from your account.</p>
 
@@ -57,7 +59,7 @@
            Final payment: {{ data['direct-debit-date'] }} Dec 22
         </p>
         <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-font-size-16">Amount:</p>
-        <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£50
+        <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£{{ data['repayment-amount'] }}
           <!-- <span class="govuk-!-font-weight-regular govuk-body govuk-!-font-size-16">per month</span>-->
         </p>
       </div>
