@@ -190,7 +190,7 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -203,7 +203,7 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly-lump-sum--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
@@ -230,7 +230,7 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--mont
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
