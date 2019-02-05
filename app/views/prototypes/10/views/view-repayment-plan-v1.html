@@ -98,7 +98,7 @@
               text: "Next payment"
             },
             value: {
-              text: "15 February 2019"
+              text: data['direct-debit-date'] + " February 2019"
             },
             actions: {
               items: [
@@ -115,7 +115,7 @@
               text: "Repayment plan amount"
             },
             value: {
-              html: "£50"
+              text: "£" + data['repayment-amount']
             },
             actions: {
               items: [
@@ -132,7 +132,7 @@
               text: "Payment day"
             },
             value: {
-              text: "15th of the month"
+              text: data['direct-debit-date'] + " of the month"
             },
             actions: {
               items: [
@@ -150,7 +150,7 @@
               text: "Expected final payment"
             },
             value: {
-              html: "15 December 2020"
+              text: data['direct-debit-date'] + " December 2020"
             },
             actions: {
               items: [
