@@ -20,22 +20,18 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your monthly payments</h1>
-      <p class="govuk-body govuk-!-font-size-24 govuk-!-font-weight-regular">Before your plan is set up we want to check you can afford <span class="govuk-!-font-weight-bold">£{{ data['repayment-amount'] }}</span>.</p>
-
-      <hr class="govuk-section-break govuk-section-break--m">
 
       <form action="/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--monthly-lump-sum" method="post" class="form">
 
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                   <h1 class="govuk-fieldset__heading">
-                    Can you afford to pay this amount every month?
+                    Can you afford to pay £{{ data['repayment-amount'] }} every month?
                   </h1>
                 </legend>
 
-                <div class="govuk-radios">
+                <div class="govuk-radios govuk-radios--conditional" data-module="radios">
 
                   <div class="govuk-radios__item">
                     <input class="govuk-radios__input" id="can-you-afford-this-yes" name="can-you-afford-this" type="radio" value="can-you-afford-this-yes">
@@ -45,10 +41,18 @@
                   </div>
 
                   <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="can-you-afford-this-no" name="can-you-afford-this" type="radio" value="can-you-afford-this-no">
-                    <label class="govuk-label govuk-radios__label" for="can-you-afford-this-no">
+                    <input class="govuk-radios__input" id="how-contacted-conditional-1" name="can-you-afford-this" type="radio" value="can-you-afford-this-no" data-aria-controls="conditional-how-contacted-conditional-1">
+                    <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-1">
                       No
                     </label>
+                  </div>
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="">
+                        How much would you like to repay?
+                      </label>
+                      <input class="govuk-input govuk-!-width-one-third" id="" name="repayment-amount" type="">
+                    </div>
                   </div>
 
                 </div>
