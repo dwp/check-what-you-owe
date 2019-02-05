@@ -57,7 +57,7 @@
             Payment breakdown:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             <span id="payment-breakdown"></span> payments of £50 <br />
+             <span id="payment-breakdown"></span> payments of £{{ data['repayment-amount'] }} <br />
              1 payment of £20
           </dd>
         </div>
@@ -76,9 +76,9 @@
 
       <p class="govuk-body"><a href="#0">Print a PDF</a></p>
 
-      <p class="govuk-body">We've sent you a confirmation email. Your account will be updated with your repayment plan details.</p>
+      <p class="govuk-body">We've sent you a confirmation email. <a class="govuk-link" href="../account-home-v1">Your account</a> will be updated with your repayment plan details.</p>
 
-      <p class="govuk-body">You can make an <a href="#0">additional payment</a> to your plan at any time.</p>
+      <p class="govuk-body">You can manage <a href="../account-home-v1">your account</a> to your plan at any time.</p>
     </div>
   </div>
 {% endblock %}
