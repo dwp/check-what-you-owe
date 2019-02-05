@@ -29,15 +29,15 @@ router.post('/views/additional-payments/additional-payment/additional-payment-ca
   const answer = parseFloat(submitted['additional-payment'] || 0)
 
   if (answer <= 100) {
-    res.redirect('/prototypes/09/views/additional-payments/additional-payment/small')
+    res.redirect('/prototypes/10/views/additional-payments/additional-payment/small')
   }
 
   if (answer <= 250) {
-    res.redirect('/prototypes/09/views/additional-payments/additional-payment/medium')
+    res.redirect('/prototypes/10/views/additional-payments/additional-payment/medium')
   }
 
   if (answer >= 251) {
-    res.redirect('/prototypes/09/views/additional-payments/additional-payment/large')
+    res.redirect('/prototypes/10/views/additional-payments/additional-payment/large')
   }
 })
 
@@ -52,11 +52,11 @@ router.post('/views/repayment-plan/initial-payment', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['initial-payment'] === 'false') {
-    res.redirect('/prototypes/09/views/repayment-plan/initial-payment-amount')
+    res.redirect('/prototypes/10/views/repayment-plan/initial-payment-amount')
   }
 
   if (submitted['initial-payment'] === 'true') {
-    res.redirect('/prototypes/09/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum')
   }
 })
 
@@ -68,7 +68,7 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 999999999999) {
-    res.redirect('/prototypes/09/views/repayment-plan/what-is-your-take-home-pay/lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/what-is-your-take-home-pay/lump-sum')
   }
 })
 
@@ -79,23 +79,23 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
 //   const submitted = req.session.data;
 //
 //   if (submitted['take-home-pay'] === 'take-home-pay-1') {
-//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//     res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency')
 //   }
 //
 //   if (submitted['take-home-pay'] === 'take-home-pay-2') {
-//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//     res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency')
 //   }
 //
 //   if (submitted['take-home-pay'] === 'take-home-pay-3') {
-//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//     res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency')
 //   }
 //
 //   if (submitted['take-home-pay'] === 'take-home-pay-4') {
-//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//     res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency')
 //   }
 //
 //   if (submitted['take-home-pay'] === 'take-home-pay-5') {
-//     res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+//     res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency')
 //   }
 // })
 
@@ -107,7 +107,7 @@ router.post('/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum', func
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 9999999999) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/monthly')
   }
 })
 
@@ -116,23 +116,23 @@ router.post('/views/repayment-plan/what-is-your-take-home-pay/lump-sum', functio
   const submitted = req.session.data;
 
   if (submitted['take-home-pay'] === 'take-home-pay-1') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency-lump-sum')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-2') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency-lump-sum')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-3') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency-lump-sum')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-4') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency-lump-sum')
   }
 
   if (submitted['take-home-pay'] === 'take-home-pay-5') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-frequency-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-frequency-lump-sum')
   }
 })
 
@@ -142,15 +142,15 @@ router.post('/views/repayment-plan/repayment-frequency', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['payment-frequency'] === 'monthly') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount/monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/monthly')
   }
 
   if (submitted['payment-frequency'] === 'fortnightly') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount/fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/fortnightly')
   }
 
   if (submitted['payment-frequency'] === 'weekly') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount/weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/weekly')
   }
 })
 
@@ -159,15 +159,15 @@ router.post('/views/repayment-plan/repayment-frequency-lump-sum', function (req,
   const submitted = req.session.data;
 
   if (submitted['payment-frequency'] === 'monthly') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount/monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/monthly-lump-sum')
   }
 
   if (submitted['payment-frequency'] === 'fortnightly') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount/fortnightly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/fortnightly-lump-sum')
   }
 
   if (submitted['payment-frequency'] === 'weekly') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount/weekly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/weekly-lump-sum')
   }
 })
 
@@ -180,15 +180,15 @@ router.post('/views/repayment-plan/repayment-amount/monthly', function (req, res
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--monthly')
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
   if (answer >= 75) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--monthly')
   }
 })
 
@@ -200,15 +200,15 @@ router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function 
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly-lump-sum')
   }
 
   if (answer >= 75) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--monthly-lump-sum')
   }
 })
 
@@ -220,15 +220,15 @@ router.post('/views/repayment-plan/repayment-amount/fortnightly', function (req,
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 24) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly')
   }
 
   if (answer <= 36) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/fortnightly')
   }
 
   if (answer >= 37) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--fortnightly')
   }
 })
 
@@ -240,15 +240,15 @@ router.post('/views/repayment-plan/repayment-amount/fortnightly-lump-sum', funct
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 24) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--fortnightly-lump-sum')
   }
 
   if (answer <= 36) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/fortnightly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/fortnightly-lump-sum')
   }
 
   if (answer >= 37) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--fortnightly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--fortnightly-lump-sum')
   }
 })
 
@@ -260,15 +260,15 @@ router.post('/views/repayment-plan/repayment-amount/weekly', function (req, res)
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 11) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--weekly')
   }
 
   if (answer <= 18) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/weekly')
   }
 
   if (answer >= 19) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--weekly')
   }
 })
 
@@ -280,15 +280,15 @@ router.post('/views/repayment-plan/repayment-amount/weekly-lump-sum', function (
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 11) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-low--weekly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--weekly-lump-sum')
   }
 
   if (answer <= 18) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/weekly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/weekly-lump-sum')
   }
 
   if (answer >= 19) {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/amount-too-high--weekly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--weekly-lump-sum')
   }
 })
 
@@ -297,11 +297,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 })
 
@@ -310,11 +310,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly-lump-sum--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly-lump-sum--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 })
 
@@ -323,11 +323,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--fortn
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/fortnightly--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/fortnightly--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
   }
 })
 
@@ -336,11 +336,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--fortn
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/fortnightly-lump-sum--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/fortnightly-lump-sum--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
   }
 })
 
@@ -349,11 +349,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--weekl
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/weekly--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/weekly--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--weekly')
   }
 })
 
@@ -362,11 +362,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--weekl
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/weekly-lump-sum--low')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/weekly-lump-sum--low')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--weekly')
   }
 })
 
@@ -376,11 +376,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--mont
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly')
   }
 })
 
@@ -389,11 +389,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--mont
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly-lump-sum')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--monthly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 })
 
@@ -402,11 +402,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--fort
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/fortnightly')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
   }
 })
 
@@ -415,11 +415,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--fort
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/fortnightly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/fortnightly-lump-sum')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--fortnightly')
   }
 })
 
@@ -428,11 +428,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--week
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/weekly')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--weekly')
   }
 })
 
@@ -441,11 +441,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-high--week
   const submitted = req.session.data;
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-yes') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-plan-summary/weekly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/weekly-lump-sum')
   }
 
   if (submitted['can-you-afford-this'] === 'can-you-afford-this-no') {
-    res.redirect('/prototypes/09/views/repayment-plan/repayment-amount-result/contact-us--weekly')
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/contact-us--weekly')
   }
 })
 
