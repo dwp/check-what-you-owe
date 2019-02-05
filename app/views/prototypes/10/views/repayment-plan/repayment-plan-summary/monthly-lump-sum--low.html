@@ -19,16 +19,54 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-xl">Your monthly repayment plan</h1>
 
-      <p class="govuk-body govuk-!-font-weight-bold">You will pay back the money you owe by November 2022.</p>
+      <dl class='app-check-your-answers app-check-your-answers--long'>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Amount you owe:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            £2,320
+          </dd>
+        </div>
 
-      <p class="govuk-body">You will make:</p>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            First payment:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            {{ data['direct-debit-date'] }} December 2018
+          </dd>
+        </div>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li><span id="payment-breakdown"></span> payments of <span>£50</span></li>
-        <li>1 payment of £20</li>
-      </ul>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment frequency:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            <span class="app-title-case">Monthly</span>
+          </dd>
+        </div>
 
-      <p class="govuk-body">Your first payment will be taken in December 2018.</p>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment breakdown:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             <span id="payment-breakdown"></span> payments of £{{ data['repayment-amount'] }} <br />
+             1 payment of £20
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Expected final payment date:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             {{ data['direct-debit-date'] }} December 2022
+          </dd>
+        </div>
+
+      </dl>
 
       <p class="govuk-body">
         Please note that if more debt is incurred your repayment plan may change.  We will let you know if this happens.
@@ -36,7 +74,7 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "/prototypes/10/views/repayment-plan/views/initial-payment-summary.html"
+        href: "/prototypes/10/views/repayment-plan/initial-payment-summary.html"
       }) }}
 
       <p class="govuk-body"><a href="#0">Pay it back sooner</a></p>
