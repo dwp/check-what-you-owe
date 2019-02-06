@@ -73,6 +73,18 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
 })
 
 // Branch users to different page based on numerical amount
+router.post('/views/repayment-plan/what-is-your-take-home-pay/lump-sum', function (req, res) {
+  const submitted = req.session.data;
+
+  // Format answer as whole number
+  const answer = parseFloat(submitted['repayment-amount'] || 0)
+
+  if (answer <= 9999999999) {
+    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount/monthly-lump-sum')
+  }
+})
+
+// Branch users to different page based on numerical amount
 router.post('/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum', function (req, res) {
   const submitted = req.session.data;
 
@@ -173,15 +185,15 @@ router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function 
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/initial-payment-summary')
   }
 
   if (answer <= 74) {
-    res.redirect('/prototypes/10/views/repayment-plan/repayment-plan-summary/monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/initial-payment-summary')
   }
 
   if (answer >= 75) {
-    res.redirect('/prototypes/10/views/repayment-plan/repayment-amount-result/amount-too-high--monthly-lump-sum')
+    res.redirect('/prototypes/10/views/repayment-plan/initial-payment-summary')
   }
 })
 
