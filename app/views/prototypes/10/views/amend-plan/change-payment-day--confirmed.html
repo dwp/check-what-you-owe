@@ -29,11 +29,11 @@
     Your payment day has been changed
   </h1>
 
-  <p class="govuk-body">Your payment day is now on the {{ data['direct-debit-date'] }}th of the month.</p>
+  <p class="govuk-body">Your payment day is now on the {{ data['direct-debit-date'] }} of the month.</p>
 
   {{ govukButton({
     text: "Back to your repayment plan",
-    href:"view-repayment-plan-v1--amended"
+    href:"../view-repayment-plan-v1--amended"
   }) }}
 
 {% endblock %}
