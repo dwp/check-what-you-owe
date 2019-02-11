@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan-v1",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Your repayment amount has been changed
+  </h1>
+
+  <p class="govuk-body">Your repayment amount is now £{{ data['repayment-amount'] }} per month.</p>
+
+  {{ govukButton({
+    text: "Back to your repayment plan",
+    href:"../view-repayment-plan-v1--amended"
+  }) }}
+
+{% endblock %}

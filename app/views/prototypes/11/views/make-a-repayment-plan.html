@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan-v1",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan-v1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Make a repayment</h1>
+
+        <!-- <h2 class="govuk-heading-xl govuk-!-margin-top-0 govuk-!-margin-bottom-4">£2,320</h2> -->
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-4"><a href="https://products.payments.service.gov.uk/pay/b0f8dce3766d46148419dcfefafb4240">Repay the full amount</a></h2>
+        <!-- <p class="govuk-body">Description about what you will need to repay in full</p> -->
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-0 govuk-!-margin-bottom-4"><a href="/prototypes/10/views/additional-payments/additional-payment/additional-payment-calculator">Make an extra payment</a></h2>
+        <!-- <p class="govuk-body">Description about what you will need to make an extra payment</p> -->
+
+
+    </div>
+</div>
+{% endblock %}
