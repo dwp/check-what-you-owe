@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">
+    Your payment day has been changed
+  </h1>
+
+  <p class="govuk-body">Your payment day is now on the {{ data['direct-debit-date'] }} of the month.</p>
+
+  {{ govukButton({
+    text: "Back to your repayment plan",
+    href:"../view-repayment-plan--amended"
+  }) }}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "/prototypes/11/views/account-home",
+        text: "Account home"
+      },
+      {
+        href: "/prototypes/11/views/your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/prototypes/11/views/make-a-repayment"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {# <span class="govuk-caption-xl">Manage the money you owe to DWP</span> #}
+      <h1 class="govuk-heading-xl">Create a repayment plan</h1>
+
+      <p class="govuk-body">Use this service if you owe money to the Department for Work and Pensions and want to set up a repayment plan for the full amount by by Direct Debit.</p>
+
+      <p>Before you start you'll need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your bank account number and sort code</li>
+        <li>to know how much you get paid in one month</li>
+      </ul>
+
+      {{ govukInsetText({
+        html: "The minimum amount you can repay online each month is £50."
+      }) }}
+
+      {# {{ govukInsetText({
+        html: "The total amount you need to repay is <b>£2,320</b>."
+      }) }} #}
+
+      {{ govukButton({
+        text: 'Start',
+        href: "initial-payment",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-m">Other ways to set up a repayment plan</h2>
+
+      <p class="govuk-body">You can get information, make payments, and arrange repayment plans by phone.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+    </div>
+  </div>
+{% endblock %}
