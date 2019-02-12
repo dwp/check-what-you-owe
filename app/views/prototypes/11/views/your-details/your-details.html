@@ -32,94 +32,126 @@
 
       <h2 class="govuk-heading-l">Personal details</h2>
 
-      {{ govukTable({
-        firstCellIsHeader: false,
+      {{ govukSummaryList({
         rows: [
-          [
           {
-            html: "<b>Name</b>"
-          },
-            {
+            key: {
+              text: "Name"
+            },
+            value: {
               text: "Ashley Atherton"
             },
-            {
-              html: "<a href='change-name'>Change</a>"
+            actions: {
+              items: [
+                {
+                  href: "change-name",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
             }
-          ],
-          [
-            {
-              html: "<b>Address</b>"
+          },
+          {
+            key: {
+              text: "Address"
             },
-            {
+            value: {
               html: "123 Oldham Road<br />
               Ancoats<br />
               Manchester<br />
               M2 3AA"
             },
-            {
-              html: "<a href='change-address'>Change</a>"
+            actions: {
+              items: [
+                {
+                  href: "change-address",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
             }
-          ],
-          [
-          {
-            html: "<b>Email</b>"
           },
-            {
-              text: "ashley.atherton@gmail.com"
-            },
-            {
-              html: "<a href='change-name'>Change</a>"
-            }
-          ],
-          [
           {
-            html: "<b>Phone number</b>"
-          },
-            {
-              text: "07700112233"
+            key: {
+              text: "Email"
             },
-            {
-              html: "<a href='change-name'>Change</a>"
+            value: {
+              html: "ashley.atherton@gmail.com"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
             }
-          ]
+          },
+          {
+            key: {
+              text: "Phone number"
+            },
+            value: {
+              html: "07700112233"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          }
         ]
       }) }}
 
       <hr class="govuk-section-break govuk-section-break--l">
 
-
       <h2 class="govuk-heading-l">Communication preferences</h2>
 
-      {{ govukTable({
-        firstCellIsHeader: false,
+      {{ govukSummaryList({
         rows: [
-          [
           {
-            html: "<b>How you receive<br />
-                  letters</b>"
+            key: {
+              text: "Letter format"
+            },
+            value: {
+              text: "Standard print"
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-letter-preference",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
           },
-            {
-              text: "None set"
+          {
+            key: {
+              text: "Notifications"
             },
-            {
-              html: "<a href='change-letter-preference'>Change</a>"
+            value: {
+              html: "Text message <br />
+                      Email"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
             }
-          ],
-          [
-            {
-              html: "<b>How you receive<br />
-                    notifications</b>"
-            },
-            {
-              html: "Text message<br />
-                    Email"
-            },
-            {
-              html: "<a href='change-address'>Change</a>"
-            }
-          ]
+          }
         ]
       }) }}
+
     </div>
   </div>
 {% endblock %}
