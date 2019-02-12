@@ -1,14 +1,81 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "your-details"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">Change your letter preferences</h1>
-    </div>
 
     <div class="govuk-grid-column-two-thirds">
-      Content
+
+      <form action="change-letter-preference-review" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              What format would you like your letters to be in?
+            </legend>
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letter-preference-1" name="letter-preference" type="radio" value="Standard print" {{ checked("letter-preference", "Standard print") }}>
+                <label class="govuk-label govuk-radios__label" for="letter-preference-1">
+                  Standard print
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letter-preference-2" name="letter-preference" type="radio" value="Large print" {{ checked("letter-preference", "Large print") }}>
+                <label class="govuk-label govuk-radios__label" for="letter-preference-2">
+                  Large print
+                </label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="letter-preference-3" name="letter-preference" type="radio" value="Braille" {{ checked("letter-preference", "Braille") }}>
+                <label class="govuk-label govuk-radios__label" for="letter-preference-3">
+                  Braille
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
     </div>
   </div>
 
