@@ -1,6 +1,6 @@
 function alertUser(evt) {
-evt.preventDefault();
-alert('Sorry, this hasn't been built yet');
+  evt.preventDefault();
+  alert('Sorry, this has not been built yet');
 }
 
 $('body').on('click', 'a[href="#"]', alertUser);
