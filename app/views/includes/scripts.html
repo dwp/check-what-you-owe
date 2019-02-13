@@ -2,6 +2,7 @@
 <script src="/public/javascripts/jquery-1.11.3.js"></script>
 <script src="/node_modules/govuk-frontend/all.js"></script>
 <script src="/public/javascripts/application.js"></script>
+<script src="/public/javascripts/sorry-not-built.js"></script>
 
 <script>
 function goBack() {
@@ -15,15 +16,6 @@ function goBack() {
   var y = {{ data['repayment-amount'] }};
   var z = Math.round(x / y);
   document.getElementById("payment-breakdown").innerHTML = z;
-</script>
-
-<script>
-    function alertUser(evt) {
-    evt.preventDefault();
-    alert('Sorry, this hasn't been built yet');
-  }
-
-  $('body').on('click', 'a[href="#"]', alertUser);
 </script>
 
 {% if useAutoStoreData %}
