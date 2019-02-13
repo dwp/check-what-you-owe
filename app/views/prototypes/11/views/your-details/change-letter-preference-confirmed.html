@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your letter preference has been changed.</h1>
+
+      <p class="govuk-body">We’ll update your details within 5 days.</p>
+
+      {{ govukButton({
+        text: "Back to your details",
+        href:"your-details"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
