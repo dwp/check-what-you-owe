@@ -39,7 +39,7 @@
       <form action="change-notification-preference-review" method="post" class="form">
 
         {{ govukCheckboxes({
-          name: "notification preference",
+          name: "notification-preference",
           fieldset: {
             legend: {
               text: "How would you like to be notified?",
@@ -55,7 +55,7 @@
               value: "Letter",
               text: "Letter",
               id: "notification-preference-letter",
-              checked: checked("notification", "Letter")
+              checked: checked("notification-preference", "Letter")
             },
             {
               value: "Text message",
