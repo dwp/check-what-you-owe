@@ -17,6 +17,15 @@ function goBack() {
   document.getElementById("payment-breakdown").innerHTML = z;
 </script>
 
+<script>
+    function alertUser(evt) {
+    evt.preventDefault();
+    alert('Sorry, this hasn't been built yet');
+  }
+
+  $('body').on('click', 'a[href="#"]', alertUser);
+</script>
+
 {% if useAutoStoreData %}
   <script src="/public/javascripts/auto-store-data.js"></script>
 {% endif %}
