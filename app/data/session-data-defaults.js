@@ -30,4 +30,6 @@ module.exports = {
 
   "title-personal-details": "None",
 
+  "telephone-number-personal-details": "078500011992",
+
 }
