@@ -23,14 +23,14 @@
 
       <h1 class="govuk-heading-xl">What is your new telephone number?</h1>
 
-      <form action="change-phone-number" class="form" method="post">
+      <form action="change-phone-number-review" class="form" method="post">
 
         {{ govukInput({
           label: {
             text: "UK telephone number"
           },
           id: "telephone-number",
-          name: "telephone-number",
+          name: "telephone-number-personal-details",
           type: "tel",
           autocomplete: "tel",
           classes: "govuk-input--width-20"
