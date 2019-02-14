@@ -22,4 +22,6 @@ module.exports = {
   // Insert values here
   "notification-preference": "Text message",
 
+  "letter-preference": "Standard print",
+
 }
