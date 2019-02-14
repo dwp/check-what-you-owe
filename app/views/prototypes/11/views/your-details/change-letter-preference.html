@@ -31,28 +31,37 @@
               What format would you like your letters to be in?
             </legend>
 
-            <div class="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="letter-preference-1" name="letter-preference" type="radio" value="Standard print" {{ checked("letter-preference", "Standard print") }}>
-                <label class="govuk-label govuk-radios__label" for="letter-preference-1">
-                  Standard print
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="letter-preference-2" name="letter-preference" type="radio" value="Large print" {{ checked("letter-preference", "Large print") }}>
-                <label class="govuk-label govuk-radios__label" for="letter-preference-2">
-                  Large print
-                </label>
-              </div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="letter-preference-3" name="letter-preference" type="radio" value="Braille" {{ checked("letter-preference", "Braille") }}>
-                <label class="govuk-label govuk-radios__label" for="letter-preference-3">
-                  Braille
-                </label>
-              </div>
-            </div>
+            {{ govukRadios({
+              idPrefix: "letter-preference",
+              name: "letter-preference",
+              fieldset: {
+                legend: {
+                  text: "Where do you live?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+                {
+                  value: "Standard print",
+                  text: "Standard print",
+                  checked: checked("letter-preference", "Standard print"),
+                  id: "standard"
+                },
+                {
+                  value: "Large print",
+                  text: "Large print",
+                  checked: checked("letter-preference", "Large print"),
+                  id: "large"
+                },
+                {
+                  value: "Braille",
+                  text: "Braille",
+                  checked: checked("letter-preference", "Braille"),
+                  id: "braille"
+                }
+              ]
+            }) }}
 
           </fieldset>
         </div>
