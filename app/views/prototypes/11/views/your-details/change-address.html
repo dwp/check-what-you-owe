@@ -9,10 +9,17 @@
   }) }}
 {% endblock %}
 
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "your-details"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <h1 class="govuk-heading-xl">
-    Report a change in address
+    What is your new address?
   </h1>
 
   {{ addressLookup({
