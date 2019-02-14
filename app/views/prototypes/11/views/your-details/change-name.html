@@ -1,5 +1,14 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -7,7 +16,7 @@
 
       <h1 class="govuk-heading-xl">Report a change in name</h1>
 
-      <form action="change-name-confirmed" class="form" method="post">
+      <form action="change-name-date-incurred" class="form" method="post">
 
         {{ govukSelect({
           id: "sort",
@@ -107,7 +116,7 @@
         </p>
 
         {{ govukButton({
-        text: "Confirm name change"
+        text: "Continue"
       }) }}
 
       </form>
