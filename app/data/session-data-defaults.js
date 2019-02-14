@@ -28,4 +28,6 @@ module.exports = {
 
   "last-name-personal-details": "Atherton",
 
+  "title-personal-details": "None",
+
 }
