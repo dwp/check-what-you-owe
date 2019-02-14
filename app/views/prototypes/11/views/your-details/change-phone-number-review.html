@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "change-phone-number"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Confirm your new telephone number</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Telephone number"
+            },
+            value: {
+              text: data['telephone-number-personal-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "#"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+      <p class="govuk-body">Information about whether this is an instant change or whether its a submission.</p>
+
+      {{ govukButton({
+        text: "Submit change",
+        href:"change-name-confirmed"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
