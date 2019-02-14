@@ -1,5 +1,14 @@
 {% extends "layout.html" %}
 
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
 {% block content %}
 
   <h1 class="govuk-heading-xl">
@@ -14,8 +23,5 @@
     text: "Back to your details",
     href:"your-details"
   }) }}
-
-
-
 
 {% endblock %}
