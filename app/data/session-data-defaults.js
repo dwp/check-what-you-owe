@@ -32,4 +32,6 @@ module.exports = {
 
   "telephone-number-personal-details": "078500011992",
 
+  "email-personal-details": "ashley.atherton@gmail.com",
+
 }
