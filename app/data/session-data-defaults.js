@@ -24,6 +24,8 @@ module.exports = {
 
   "letter-preference": "Standard print",
 
+  "language-preference": "English",
+
   "first-name-personal-details": "Ashley",
 
   "last-name-personal-details": "Atherton",
