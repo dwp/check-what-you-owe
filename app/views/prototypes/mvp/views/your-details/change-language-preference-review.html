@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "change-letter-preference"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Confirm your language preference</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Language"
+            },
+            value: {
+              text: data['language-preference']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-language-preference",
+                  text: "Change",
+                  visuallyHiddenText: "Language preference"
+                }
+              ]
+            }
+          }
+              ]
+      }) }}
+
+      <p class="govuk-body">Information about whether this is an instant change or whether its a submission.</p>
+
+      <p class="govuk-body">Any other information about the letter type.</p>
+
+      {{ govukButton({
+        text: "Confirm change",
+        href:"change-language-preference-confirmed"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

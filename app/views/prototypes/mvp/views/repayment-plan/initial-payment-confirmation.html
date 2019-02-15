@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+{% block beforeContent %}{% endblock %}
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel ({
+        headingLevel: 1,
+        titleText: "Your initial payment was successful",
+        classes: "outcome"
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Initial payment summary</h2>
+      <p>Amount: £100
+        <br>
+        Payment to: DWP Debt Management
+        <br>
+        Payment for: Initial payment to DWP
+        <br>
+        Payment reference: TV45FR5KKT
+        <br>
+        Date of payment: 08 February 2018 – 10:01:29</p>
+        <p class="govuk-body"><a href="#0">Save this as a PDF</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      {{ govukInsetText({
+        text: "You now need to set up your repayment plan."
+      }) }}
+
+      {{ govukButton({
+        text: "Set up repayment plan",
+        href:"/prototypes/mvp/views/repayment-plan/repayment-plan-terms-and-conditions"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
