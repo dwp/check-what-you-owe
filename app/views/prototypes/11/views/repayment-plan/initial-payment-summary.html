@@ -11,7 +11,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <a onclick="goBack()" href="#" class="govuk-back-link">Back</a>
+  {{ govukBackLink({
+    text: "Back",
+    href: "/prototypes/11/views/repayment-plan/initial-payment-amount" })
+  }}
 {% endblock %}
 
 {% block content %}
