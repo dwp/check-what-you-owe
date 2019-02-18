@@ -79,9 +79,14 @@ router.post('/views/repayment-plan/repayment-amount/monthly', function (req, res
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer >= 999999999999999999) {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/amount-too-high--monthly')
+  if (answer <= 49) {
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/amount-too-low--monthly')
   }
+
+  if (answer >= 50) {
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
+  }
+
 })
 
 // Branch users to different page based on numerical amount
@@ -91,7 +96,11 @@ router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer <= 999999999999) {
+  if (answer <= 49) {
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
+  }
+
+  if (answer >= 50) {
     res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
