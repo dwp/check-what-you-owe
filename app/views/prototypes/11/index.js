@@ -68,7 +68,7 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 999999999999) {
-    res.redirect('/prototypes/11/views/repayment-plan/what-is-your-take-home-pay/lump-sum')
+    res.redirect('/prototypes/11/views/repayment-plan/initial-payment-summary')
   }
 })
 
@@ -96,65 +96,7 @@ router.post('/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum', func
   }
 })
 
-// Lump sum what is your take home pay
-router.post('/views/repayment-plan/what-is-your-take-home-pay/lump-sum', function (req, res) {
-  const submitted = req.session.data;
 
-  if (submitted['take-home-pay'] === 'take-home-pay-1') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-frequency-lump-sum')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-2') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-frequency-lump-sum')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-3') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-frequency-lump-sum')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-4') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-frequency-lump-sum')
-  }
-
-  if (submitted['take-home-pay'] === 'take-home-pay-5') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-frequency-lump-sum')
-  }
-})
-
-
-// Send user to monthly, weekly or fortnightly branch
-router.post('/views/repayment-plan/repayment-frequency', function (req, res) {
-  const submitted = req.session.data;
-
-  if (submitted['payment-frequency'] === 'monthly') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/monthly')
-  }
-
-  if (submitted['payment-frequency'] === 'fortnightly') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/fortnightly')
-  }
-
-  if (submitted['payment-frequency'] === 'weekly') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/weekly')
-  }
-})
-
-// Send user to monthly, weekly or fortnightly branch after entering a lump sum
-router.post('/views/repayment-plan/repayment-frequency-lump-sum', function (req, res) {
-  const submitted = req.session.data;
-
-  if (submitted['payment-frequency'] === 'monthly') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/monthly-lump-sum')
-  }
-
-  if (submitted['payment-frequency'] === 'fortnightly') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/fortnightly-lump-sum')
-  }
-
-  if (submitted['payment-frequency'] === 'weekly') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/weekly-lump-sum')
-  }
-})
 
 
 // Branch users to different page based on numerical amount
@@ -184,17 +126,10 @@ router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer <= 49) {
-    res.redirect('/prototypes/11/views/repayment-plan/initial-payment-summary')
+  if (answer <= 999999999999) {
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
-  if (answer <= 74) {
-    res.redirect('/prototypes/11/views/repayment-plan/initial-payment-summary')
-  }
-
-  if (answer >= 75) {
-    res.redirect('/prototypes/11/views/repayment-plan/initial-payment-summary')
-  }
 })
 
 // Ask users if they can afford £50 after putting in a lower amount, send them to the relevant page based on answer.
