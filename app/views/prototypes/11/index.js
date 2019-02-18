@@ -51,12 +51,12 @@ router.post('/views/additional-payments/additional-payment/additional-payment-ca
 router.post('/views/repayment-plan/initial-payment', function (req, res) {
   const submitted = req.session.data;
 
-  if (submitted['initial-payment'] === 'false') {
+  if (submitted['initial-payment'] === 'true') {
     res.redirect('/prototypes/11/views/repayment-plan/initial-payment-amount')
   }
 
-  if (submitted['initial-payment'] === 'true') {
-    res.redirect('/prototypes/11/views/repayment-plan/what-is-your-take-home-pay/no-lump-sum')
+  if (submitted['initial-payment'] === 'false') {
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/monthly')
   }
 })
 
