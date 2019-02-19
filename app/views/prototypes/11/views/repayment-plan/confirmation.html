@@ -30,7 +30,8 @@
             First payment:
           </dt>
           <dd class='app-check-your-answers__answer'>
-            {{ data['direct-debit-date'] }} February 2018
+            <!-- GET-MONTH uses javascript to calculate current month  -->
+            {{ data['direct-debit-date'] }} <span id="get-month"></span> 2019
           </dd>
         </div>
 
@@ -67,7 +68,8 @@
             Expected final payment date:
           </dt>
           <dd class='app-check-your-answers__answer'>
-             {{ data['direct-debit-date'] }} February 2022
+            <!-- GET-MONTH-2 uses javascript to calculate current month (created 2 due to duplication on page and problems with ID)  -->
+           {{ data['direct-debit-date'] }} <span id="get-month-2"></span> 2022
           </dd>
         </div>
 

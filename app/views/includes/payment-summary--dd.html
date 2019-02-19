@@ -2,8 +2,10 @@
   <h2 class="govuk-heading-m">Repayment summary</h2>
   <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Repaid monthly</p>
   <p class="govuk-body govuk-!-font-size-16">
-     First payment: {{ data['direct-debit-date'] }} Feb 18<br />
-     Final payment: {{ data['direct-debit-date'] }} Feb 22
+    <!-- GET-MONTH uses javascript to calculate current month  -->
+    First payment: {{ data['direct-debit-date'] }} <span id="get-month"></span> 19<br />
+    <!-- GET-MONTH-2 uses javascript to calculate current month (created 2 due to duplication on page and problems with ID)  -->
+    Final payment: {{ data['direct-debit-date'] }} <span id="get-month-2"></span> 22
   </p>
   <p class="govuk-body govuk-!-margin-bottom-1 govuk-!-font-size-16">Amount:</p>
   <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-font-weight-bold govuk-body govuk-!-font-size-36">£{{ data['repayment-amount'] }} <!-- <span class="govuk-!-font-weight-regular govuk-body govuk-!-font-size-16">per month</span>--></p>
