@@ -56,7 +56,7 @@ router.post('/views/repayment-plan/initial-payment', function (req, res) {
   }
 
   if (submitted['initial-payment'] === 'false') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount/monthly')
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount')
   }
 })
 
@@ -73,7 +73,7 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
 })
 
 // Branch users to different page based on numerical amount
-router.post('/views/repayment-plan/repayment-amount/monthly', function (req, res) {
+router.post('/views/repayment-plan/repayment-amount', function (req, res) {
   const submitted = req.session.data;
 
   // Format answer as whole number
@@ -84,7 +84,7 @@ router.post('/views/repayment-plan/repayment-amount/monthly', function (req, res
   }
 
   if (answer >= 50) {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary')
   }
 
 })
@@ -111,7 +111,7 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
