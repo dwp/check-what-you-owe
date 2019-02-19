@@ -11,7 +11,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-<a onclick="goBack()" href="#" class="govuk-back-link">Back</a>
+  {{ govukBackLink({
+    text: "Back",
+    href: "/prototypes/11/views/repayment-plan/repayment-amount-result/amount-too-low--monthly" })
+  }}
 {% endblock %}
 
 {% block content %}
@@ -26,7 +29,6 @@
       Textphone: 0345 604 6697<br />
       Monday to Friday 8am to 7.30pm<br />
       Saturday 9am to 4pm</p>
-
 
     </div>
   </div>
