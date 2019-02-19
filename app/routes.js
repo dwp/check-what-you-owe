@@ -12,7 +12,7 @@ router.use('/', (req, res, next) => {
   const today = new Date()
 
   // Set a local (a variable available in the .html files) using the format function from date-fns
-  res.locals.todayDateFNS = format(today, 'D MMMM YYYY - hh:mm:ss')
+  res.locals.todayDateFNS = format(today, 'D MMMM YYYY - HH:mm:ss')
 
   // Set a local (a variable available in the .html files) using the format function from date-fns
   res.locals.currentMonth = format(today, 'MMMM')
