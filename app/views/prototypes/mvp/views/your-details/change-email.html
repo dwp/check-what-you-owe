@@ -4,15 +4,22 @@
   {% include "includes/cookie-banner.html" %}
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
-    serviceName: "",
-    serviceUrl: "#"
-  }) }}
-{% endblock %}
-
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "your-details"
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "/prototypes/mvp/views/account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "/prototypes/mvp/views/your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
   }) }}
 {% endblock %}
 
