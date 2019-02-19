@@ -23,6 +23,10 @@ var d = new Date();
 var n = month[d.getMonth()];
 document.getElementById("get-month").innerHTML = n;
 
+var d = new Date();
+var n = month[d.getMonth()];
+document.getElementById("get-month-2").innerHTML = n;
+
 // Year
 var year = d.getFullYear();
 
