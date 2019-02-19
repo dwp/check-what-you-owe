@@ -4,8 +4,22 @@
   {% include "includes/cookie-banner.html" %}
   {{ govukHeader({
     homepageUrl: "https://www.gov.uk/",
-    serviceName: "",
-    serviceUrl: "#"
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "/prototypes/11/views/account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "/prototypes/11/views/your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#0",
+        text: "Sign out"
+      }
+    ]
   }) }}
 {% endblock %}
 
@@ -41,7 +55,7 @@
 
         <p class="govuk-body">
           We will treat your personal information carefully. We’ll only use it as allowed under data protection law. To find out more, see the Department for Work and Pensions
-          <a href="#0">Personal Information Charter</a>.
+          <a href="#">Personal Information Charter</a>.
         </p>
 
         {{ govukButton({
