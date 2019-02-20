@@ -1,13 +1,6 @@
 {% extends "layout.html" %}
 {% set navActive = "owed" %}
 
-{% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "account-home-plan"
-  }) }}
-{% endblock %}
-
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {{ govukHeader({
@@ -28,6 +21,13 @@
         text: "Sign out"
       }
     ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
   }) }}
 {% endblock %}
 

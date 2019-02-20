@@ -1,55 +1,53 @@
 {% extends "layout.html" %}
 {% block header %}
-  <!-- Blank header with no service name for the start page -->
-  {{ govukHeader() }}
+<!-- Blank header with no service name for the start page -->
+{{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
 
-  {{ govukBreadcrumbs({
+{{ govukBreadcrumbs({
     items: [ {
-        text:'Home',
-        href: 'https://www.gov.uk/' },
-      {
-        text:'Money and tax',
-        href: 'https://www.gov.uk/browse/tax' },
-      {
-        text: 'Manage the money you owe to DWP' } ] }) }}
+    text:'Home',
+    href: 'https://www.gov.uk/' },
+  {
+    text:'Money and tax',
+    href: 'https://www.gov.uk/browse/tax' },
+  {
+    text: 'Manage the money you owe to DWP' } ]
+  }) }}
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Manage the money you owe to DWP
-      </h1>
-      <p>Use this service to:</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Manage the money you owe to DWP
+    </h1>
+    <p>Use this service to:</p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>get details of benefit overpayments, advances and loans that you have to repay</li>
-        <li>repay your balance in full</li>
-        <li>set up and manage a repayment plan</li>
-      </ul>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>get details of benefit overpayments, advances and loans that you have to repay</li>
+      <li>repay your balance in full</li>
+      <li>set up and manage a repayment plan</li>
+    </ul>
 
-      <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
+    <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
 
-      <p>This service is also available in Welsh
-        <a href="#">(Cymraeg)</a>.</p>
+    <p>This service is also available in Welsh<a href="#">(Cymraeg)</a>.</p>
 
-      {{ govukButton({
-        text: 'Start',
-        href: "sign-in",
-        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
-      }) }}
+    {{ govukButton({
+      text: 'Start',
+      href: "sign-in",
+      classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+    }) }}
 
-      <!-- -->
+    <h2 class="govuk-heading-m">Other ways to manage what you owe</h2>
 
-      <h2 class="govuk-heading-m">Other ways to manage what you owe</h2>
+    <p>If you have questions about why you owe this amount, contact:</p>
 
-      <p>If you have questions about why you owe this amount, contact:</p>
-
-      <p>
-        <b>Universal Credit</b><br/>
+    <p>
+      <b>Universal Credit</b><br/>
         Telephone: 0800 328 5644<br/>
         Textphone: 0800 328 1344<br/>
         Monday to Friday 8am to 6pm (closed on bank holidays)</p>
@@ -62,6 +60,6 @@
         iconFallbackText: 'Warning'
       }) }}
 
-    </div>
   </div>
+</div>
 {% endblock %}
