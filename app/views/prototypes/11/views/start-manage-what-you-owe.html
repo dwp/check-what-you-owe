@@ -31,6 +31,12 @@
         <li>set up and manage a repayment plan</li>
       </ul>
 
+      {{ govukWarningText({
+        classes: '',
+        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.',
+        iconFallbackText: 'Warning'
+      }) }}
+
       <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
 
       <p>This service is also available in Welsh
@@ -42,8 +48,6 @@
         classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
       }) }}
 
-      <!-- -->
-
       <h2 class="govuk-heading-m">Other ways to manage what you owe</h2>
 
       <p>If you have questions about why you owe this amount, contact:</p>
@@ -52,15 +56,8 @@
         <b>Universal Credit</b><br/>
         Telephone: 0800 328 5644<br/>
         Textphone: 0800 328 1344<br/>
-        Monday to Friday 8am to 6pm (closed on bank holidays)</p>
-
-      <hr class="govuk-section-break govuk-section-break--m">
-
-      {{ govukWarningText({
-        classes: '',
-        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.',
-        iconFallbackText: 'Warning'
-      }) }}
+        Monday to Friday 8am to 6pm (closed on bank holidays)
+      </p>
 
     </div>
   </div>
