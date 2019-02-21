@@ -31,7 +31,6 @@
   }) }}
 {% endblock %}
 
-
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -98,7 +97,7 @@
               text: "Next payment"
             },
             value: {
-              html: data['direct-debit-date'] + " " + [currentMonth] + " " + [currentYear]
+              html: data['direct-debit-date'] + " " + [currentMonth] + " " + [ currentYear]
             },
             actions: {
               items: [
@@ -120,7 +119,7 @@
             actions: {
               items: [
                 {
-                  href: "amend-plan/change-payment-amount--salary-question",
+                  href: "amend-plan/change-payment-amount",
                   text: "Change",
                   visuallyHiddenText: "repayment plan amount"
                 }
@@ -150,7 +149,7 @@
               text: "Expected final payment"
             },
             value: {
-              text: data['direct-debit-date'] + " " + [currentMonth] + " " + "2020"
+              html: data['direct-debit-date'] + " " + [ currentMonth] + " " + "2022"
             },
             actions: {
               items: [
