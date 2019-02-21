@@ -5,24 +5,23 @@
 {% endblock %}
 
 {% block beforeContent %}
-
   {{ govukBreadcrumbs({
     items: [ {
-        text:'Home',
-        href: 'https://www.gov.uk/' },
+      text:'Home',
+      href: 'https://www.gov.uk/' },
       {
-        text:'Money and tax',
-        href: 'https://www.gov.uk/browse/tax' },
+      text:'Money and tax',
+      href: 'https://www.gov.uk/browse/tax' },
       {
-        text: 'Manage the money you owe to DWP' } ] }) }}
+      text: 'Manage the money you owe to DWP' } ]
+  }) }}
 {% endblock %}
 
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Manage the money you owe to DWP
-      </h1>
+      <h1 class="govuk-heading-xl">Manage the money you owe to DWP</h1>
+
       <p>Use this service to:</p>
 
       <ul class="govuk-list govuk-list--bullet">
@@ -39,8 +38,7 @@
 
       <p>You can only use this service if you&rsquo;ve been given a username and password from the Department for Work and Pensions.</p>
 
-      <p>This service is also available in Welsh
-        <a href="#">(Cymraeg)</a>.</p>
+      <p>This service is also available in Welsh<a href="#">(Cymraeg)</a>.</p>
 
       {{ govukButton({
         text: 'Start',
