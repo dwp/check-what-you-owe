@@ -6,7 +6,19 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukBreadcrumbs({ items: [ { text:'Home', href: '#0' }, { text:'Money and tax', href: '#0' }, { text: 'Pay what you owe' } ] }) }}
+  {{ govukBreadcrumbs({
+    items: [ {
+      text:'Home',
+      href: '#0'
+    },
+    {
+    text:'Money and tax',
+    href: '#0'
+    },
+    {
+      text: 'Pay what you owe'
+    } ]
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -49,21 +61,5 @@
       <p>You can also call us if you cannot afford to repay.</p>
 
     </div>
-    {# <div class="govuk-grid-column-one-third">
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Related content
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="https://www.moneyadviceservice.org.uk/en/tools/debt-advice-locator">
-                Get debt advice
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-    </div> #}
   </div>
 {% endblock %}
