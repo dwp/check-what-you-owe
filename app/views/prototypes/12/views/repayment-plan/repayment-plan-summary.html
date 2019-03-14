@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "repayment-amount"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your monthly repayment plan</h1>
+
+      <dl class='app-check-your-answers app-check-your-answers--long'>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Amount you owe:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            £2,320
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            First payment:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            {{currentMonth}} {{currentYear}}
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment frequency:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            <span class="app-title-case">Monthly</span>
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment breakdown:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             <span id="payment-breakdown"></span> payments of £{{ data['repayment-amount'] }} <br />
+             1 payment of £20
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Expected final payment date:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            {{currentMonth}} 2022
+          </dd>
+        </div>
+
+      </dl>
+
+      <p class="govuk-body">
+        Please note that if more debt is incurred your repayment plan may change.  We will let you know if this happens.
+      </p>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "/prototypes/12/views/repayment-plan/repayment-plan-terms-and-conditions.html"
+      }) }}
+
+      <p class="govuk-body"><a href="#">Pay it back sooner</a></p>
+
+
+    </div>
+  </div>
+{% endblock %}

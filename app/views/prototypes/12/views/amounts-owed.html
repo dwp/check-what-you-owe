@@ -1,0 +1,532 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Amounts owed</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Total amount owed: £2,050</p>
+
+    {# UC 1  #}
+    <div class="app-panel app-panel--border">
+      <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Universal Credit overpayment</h3>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£500</h3>
+          </div>
+
+          <div class="govuk-grid-column-full">
+            <details class="govuk-details app-details__amounts-owed">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  More information
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">When you were paid Universal Credit you were given more than you should have. You now need to pay it back. If you appeal this decision you must keep paying us until your appeal is successful. If you have a question about this overpayment please call the <a href="https://www.universal-credit.service.gov.uk/contact">Universal Credit helpline</a>.</p>
+
+                <h2 class='govuk-heading-m'>
+                  Details
+                </h2>
+
+                <dl class='app-check-your-answers app-check-your-answers--long'>
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Tax year the overpayment occurred
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      2017-18
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £500
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      You've repaid
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £220
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount you have to repay
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £280
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {# UC 2  #}
+    <div class="app-panel app-panel--border">
+      <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Universal Credit new claim advance</h3>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£160</h3>
+          </div>
+
+          <div class="govuk-grid-column-full">
+            <details class="govuk-details app-details__amounts-owed">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  More information
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p class="govuk-body">When you claimed Universal Credit, we gave you an advance so that you had some money to live on while you waited for your first payment. When you took this advance, we told you that you would have to pay it back. You cannot appeal this decision. If you’d like to talk to an advisor about what you owe, please <a href="https://www.universal-credit.service.gov.uk/contact">contact us </a>.</p>
+
+                <h2 class='govuk-heading-m'>
+                  Details
+                </h2>
+
+                <dl class='app-check-your-answers app-check-your-answers--long'>
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Date the advance was made
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      03 Dec 17
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £480
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      You've repaid
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £320
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount you have to repay
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £160
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {# CP #}
+    <div class="app-panel app-panel--border">
+      <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Civil Penalty (Universal Credit)</h3>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£50</h3>
+          </div>
+
+          <div class="govuk-grid-column-full">
+            <details class="govuk-details app-details__amounts-owed">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  More information
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>You were given a civil penalty after failing to provide us with accurate, up to date information. If you would like to appeal this decision please contact the <a href="https://www.universal-credit.service.gov.uk/contact">Universal Credit helpline</a>.</p>
+
+                <h2 class='govuk-heading-m'>
+                  Details
+                </h2>
+
+                <dl class='app-check-your-answers app-check-your-answers--long'>
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      When you were notified of the penalty
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      3 Dec 17
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Type of Civil Penalty
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      Awaiting types
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £50
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      You've repaid
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £0
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount you have to repay
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £50
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    {# TCOP #}
+    <div class="app-panel app-panel--border">
+      <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Tax Credits Overpayment</h3>
+          </div>
+
+          <div class="govuk-grid-column-one-third">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£400</h3>
+          </div>
+
+          <div class="govuk-grid-column-full">
+            <details class="govuk-details app-details__amounts-owed">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  More information
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>When you were paid Tax Credits you were given more than you should have in a tax year. You now need to pay back the overpayment. HMRC carries out these checks at the end of every tax year.</p>
+                <p>If you want to ask a question about Tax Credits,
+                  <a href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries">contact HMRC</a>.</p>
+
+                <h2 class='govuk-heading-m'>
+                  Details
+                </h2>
+
+                <dl class='app-check-your-answers app-check-your-answers--long'>
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Tax year the overpayment occurred
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      2017-18
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £400
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      You've repaid
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £0
+                    </dd>
+                  </div>
+
+                  <div class='app-check-your-answers__contents'>
+                    <dt class='app-check-your-answers__question'>
+                      Amount you have to repay
+                    </dt>
+                    <dd class='app-check-your-answers__answer'>
+                      £400
+                    </dd>
+                  </div>
+                </dl>
+              </div>
+            </details>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  {# SF #}
+  <div class="app-panel app-panel--border">
+    <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m">Social Fund loans</h3>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+          <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£940</h3>
+        </div>
+
+        <div class="govuk-grid-column-full">
+          <details class="govuk-details app-details__amounts-owed">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                More information
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>You were given a crisis or budgeting loan to help you through an emergency or to pay for a one-off expense.  You now need to pay this back. If you dispute this loan you must keep paying us until your dispute is successful.  If you have a question about this loan please <a href="#">call debt management</a>.</p>
+              <h2 class='govuk-heading-m'>
+                Details
+              </h2>
+
+              <dl class='app-check-your-answers app-check-your-answers--long'>
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Amount
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    £940
+                  </dd>
+                </div>
+
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    You've repaid
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    £0
+                  </dd>
+                </div>
+
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Amount you have to repay
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    £940
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Previous amounts owed</p>
+
+  {% from "inset-text/macro.njk" import govukInsetText %}
+
+  {{ govukInsetText({
+    text: "These are payments that were previously collected by DWP but are now being collected by someone else."
+  }) }}
+
+  {# HBOP 2 #}
+  <div class="app-panel app-panel--border">
+    <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m">Housing Benefit Overpayment</h3>
+        </div>
+
+        <div class="govuk-grid-column-full">
+          <details class="govuk-details app-details__amounts-owed">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                More information
+              </span>
+            </summary>
+            <br>
+            <div class="govuk-warning-text">
+              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+              <strong class="govuk-warning-text__text">
+                <span class="govuk-warning-text__assistive">Warning</span>
+                This payment is now being collected by Manchester City Council because they told us they wanted to collect future payments.
+              </strong>
+            </div>
+
+            <div class="govuk-details__text">
+              <p class="govuk-body">When you were paid Housing Benefit from your local council, you were given more than you should have. You now need to pay back the overpayment.</p>
+
+              <p>If you want to ask a question about Housing Benefit, contact
+                <a href="https://www.manchester.gov.uk/info/500180/housing_benefit">Manchester City Council.</a>
+              </p>
+
+              <h2 class='govuk-heading-m'>
+                Details
+              </h2>
+
+              <dl class='app-check-your-answers app-check-your-answers--long'>
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Local authority
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    Manchester City Council
+                  </dd>
+                </div>
+
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Date the overpayment was referred to DWP
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    03 Nov 18
+                  </dd>
+                </div>
+
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Amount that was referred to DWP
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    £500
+                  </dd>
+                </div>
+
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Amount you paid
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    £50
+                  </dd>
+                </div>
+                </dl>
+
+                <h2 class='govuk-heading-m'>
+                  Referred to Manchester City Council
+                </h2>
+
+                <dl class='app-check-your-answers app-check-your-answers--long'>
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Date overpayment was referred back
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    21 February 2019
+                  </dd>
+                </div>
+
+                <div class='app-check-your-answers__contents'>
+                  <dt class='app-check-your-answers__question'>
+                    Amount that was referred back
+                  </dt>
+                  <dd class='app-check-your-answers__answer'>
+                    £450
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <h2 class="govuk-heading-m">How to make a repayment</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://products.payments.service.gov.uk/pay/50daf87550cf427aa0567928519025de">Repay the full amount</a>
+        </li>
+        <li>
+          <a class="govuk-link" href="repayment-plan/initial-payment">Create a repayment plan</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+{% endblock %}

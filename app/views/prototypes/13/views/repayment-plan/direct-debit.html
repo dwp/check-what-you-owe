@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "repayment-plan-terms-and-conditions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Set up a Direct Debit</h1>
+
+      <form action="/prototypes/12/views/repayment-plan/direct-debit--date" method="post" class="form">
+
+        <fieldset class="govuk-fieldset">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="">
+              Name on the account
+            </label>
+            <input class="govuk-input" id="name-on-account" type="text" name="name-on-account">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-10">
+              Sort code
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="sort-code" type="text" name="sort-code">
+          </div>
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="width-10">
+              Account number
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="account-number" type="text" name="account-number">
+          </div>
+
+        </fieldset>
+
+        <div class="govuk-fieldset govuk-!-margin-top-4">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Are you allowed to authorise Direct Debits on this account?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios govuk-!-margin-bottom-7">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="authorisde-direct-debit-yes" name="authorisde-direct-debit" type="radio" value="authorisde-direct-debit-yes">
+              <label class="govuk-label govuk-radios__label" for="authorisde-direct-debit-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="authorisde-direct-debit-no" name="authorisde-direct-debit" type="radio" value="authorisde-direct-debit-no">
+              <label class="govuk-label govuk-radios__label" for="authorisde-direct-debit-no">
+                No
+              </label>
+            </div>
+          </div>
+
+          {{ govukInput({
+            label: {
+              text: "Email address"
+            },
+            hint: {
+              text: "We’ll send your Direct Debit details and mandate reference number to this address"
+            },
+            classes: "",
+            id: "email-address",
+            name: "email-address"
+          }) }}
+
+        </div>
+
+        {{ govukButton({
+          text: "Continue",
+          classes: ""
+        }) }}
+
+        <p class="govuk-link">
+          <a href="start">Cancel payment</a>
+        </p>
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        {% include "includes/payment-summary--dd.html" %}
+      </div>
+
+    </div>
+
+  </form>
+
+{% endblock %}

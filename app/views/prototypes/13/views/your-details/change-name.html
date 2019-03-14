@@ -1,0 +1,148 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "your-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Report a change in name</h1>
+
+      <form action="change-name-review" class="form" method="post">
+
+        {{ govukSelect({
+          id: "sort",
+          name: "title-personal-details",
+          classes: "govuk-!-width-one-quarter",
+          label: {
+            text: "Title"
+          },
+          items: [
+            {
+              value: "None",
+              text: "None",
+              selected: true
+            },
+            {
+              value: "Mr.",
+              text: "Mr."
+            },
+            {
+              value: "Mrs.",
+              text: "Mrs."
+            },
+            {
+              value: "Miss",
+              text: "Miss"
+            },
+            {
+              value: "Ms.",
+              text: "Ms."
+            },
+            {
+              value: "Dr",
+              text: "Dr"
+            },
+            {
+              value: "Rev",
+              text: "Rev"
+            },
+            {
+              value: "Sir",
+              text: "Sir"
+            },
+            {
+              value: "Dame",
+              text: "Dame"
+            },
+            {
+              value: "Lord",
+              text: "Lord"
+            },
+            {
+              value: "Lady",
+              text: "Lady"
+            },
+            {
+              value: "Professor",
+              text: "Professor"
+            },
+            {
+              value: "Major",
+              text: "Major"
+            },
+            {
+              value: "Captain",
+              text: "Captain"
+            },
+            {
+              value: "Colonel",
+              text: "Colonel"
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        id: "first-name",
+        name: "first-name-personal-details",
+        classes: "govuk-!-width-two-thirds",
+        value: data['first-name-personal-details']
+      }) }}
+
+        {{ govukInput({
+        label: {
+          text: "Last name"
+        },
+        id: "last-name",
+        name: "last-name-personal-details",
+        classes: "govuk-!-width-two-thirds",
+        value: data['last-name-personal-details']
+      }) }}
+
+        <p class="govuk-body">
+          We will treat your personal information carefully. We’ll only use it as allowed under data protection law. To find out more, see the Department for Work and Pensions
+          <a href="#">Personal Information Charter</a>.
+        </p>
+
+        {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,427 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/prototypes/12/views/amounts-owed-plan"
+  }) }}
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <h1 class="govuk-heading-xl">Social Fund amounts owed</h1>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Total amount: £940</p>
+
+      {# CL 1  #}
+      <div class="app-panel app-panel--border">
+        <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+              <h3 class="govuk-heading-m">Crisis Loan</h3>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£80</h3>
+            </div>
+
+            <div class="govuk-grid-column-full">
+              <details class="govuk-details app-details__amounts-owed">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    More information
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Before receiving Universal Credit, we gave you a Crisis Loan. These are interest free loans that help you make essential or unexpected payments.</p>
+                  <p>When you took this loan, we told you that you would have to pay it back. You cannot appeal this decision.</p>
+                  <p>If you want to talk to us about your Crisis Loan, call us on 0800 916 0647.</p>
+                  <h2 class='govuk-heading-m'>
+                    Details
+                  </h2>
+
+                  <dl class='app-check-your-answers app-check-your-answers--long'>
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Date the loan was paid to you
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        02 January 2001
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £80
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        You've repaid
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £0
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount you have to repay
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £80
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </details>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {# CL 2  #}
+      <div class="app-panel app-panel--border">
+        <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+              <h3 class="govuk-heading-m">Crisis Loan</h3>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£110</h3>
+            </div>
+
+            <div class="govuk-grid-column-full">
+              <details class="govuk-details app-details__amounts-owed">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    More information
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Before receiving Universal Credit, we gave you a Crisis Loan. These are interest free loans that help you make essential or unexpected payments.</p>
+                  <p>When you took this loan, we told you that you would have to pay it back. You cannot appeal this decision.</p>
+                  <p>If you want to talk to us about your Crisis Loan, call us on 0800 916 0647.</p>
+
+                  <h2 class='govuk-heading-m'>
+                    Details
+                  </h2>
+
+                  <dl class='app-check-your-answers app-check-your-answers--long'>
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Date the loan was paid to you
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        24 June 2004
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £110
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        You've repaid
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £0
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount you have to repay
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £110
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </details>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {# CL 3  #}
+      <div class="app-panel app-panel--border">
+        <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+              <h3 class="govuk-heading-m">Crisis Loan</h3>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£100</h3>
+            </div>
+
+            <div class="govuk-grid-column-full">
+              <details class="govuk-details app-details__amounts-owed">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    More information
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Before receiving Universal Credit, we gave you a Crisis Loan. These are interest free loans that help you make essential or unexpected payments.</p>
+                  <p>When you took this loan, we told you that you would have to pay it back. You cannot appeal this decision.</p>
+                  <p>If you want to talk to us about your Crisis Loan, call us on 0800 916 0647.</p>
+
+                  <h2 class='govuk-heading-m'>
+                    Details
+                  </h2>
+
+                  <dl class='app-check-your-answers app-check-your-answers--long'>
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Date the loan was paid to you
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        22 November 2006
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £100
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        You've repaid
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £0
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount you have to repay
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £100
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </details>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {# CL 4  #}
+      <div class="app-panel app-panel--border">
+        <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+              <h3 class="govuk-heading-m">Crisis Loan</h3>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£90</h3>
+            </div>
+
+            <div class="govuk-grid-column-full">
+              <details class="govuk-details app-details__amounts-owed">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    More information
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">Before receiving Universal Credit, we gave you a Crisis Loan. These are interest free loans that help you make essential or unexpected payments.</p>
+                  <p>When you took this loan, we told you that you would have to pay it back. You cannot appeal this decision.</p>
+                  <p>If you want to talk to us about your Crisis Loan, call us on 0800 916 0647.</p>
+                  <h2 class='govuk-heading-m'>
+                    Details
+                  </h2>
+
+                  <dl class='app-check-your-answers app-check-your-answers--long'>
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Date the loan was paid to you
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        13 August 2008
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £110
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        You've repaid
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £0
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount you have to repay
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £110
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </details>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {# BL 1  #}
+      <div class="app-panel app-panel--border">
+        <div class="govuk-!-margin-bottom-0 govuk-!-padding-top-0">
+          <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+              <h3 class="govuk-heading-m">Budgeting Loan</h3>
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              <h3 class="govuk-heading-m govuk-!-margin-bottom-0">£460</h3>
+            </div>
+
+            <div class="govuk-grid-column-full">
+              <details class="govuk-details app-details__amounts-owed">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    More information
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p class="govuk-body">When you have been receiving benefits, we gave you a Budgeting Loan. These are interest free loans that help you make essential or unexpected payments.</p>
+                  <p>When you took this loan, we told you that you would have to pay it back. You cannot appeal this decision.</p>
+                  <p>If you want to talk to us about your Budgeting Loan, call us on 0800 916 0647.</p>
+
+                  <h2 class='govuk-heading-m'>
+                    Details
+                  </h2>
+
+                  <dl class='app-check-your-answers app-check-your-answers--long'>
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Date the loan was paid to you
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        04 November 2016
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £460
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        You've repaid
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £0
+                      </dd>
+                    </div>
+
+                    <div class='app-check-your-answers__contents'>
+                      <dt class='app-check-your-answers__question'>
+                        Amount you have to repay
+                      </dt>
+                      <dd class='app-check-your-answers__answer'>
+                        £460
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </details>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+    <div class="govuk-grid-column-one-third">
+
+      <h2 class="govuk-heading-m">How to make a repayment</h2>
+      <ul class="govuk-list">
+        <li>
+          <a class="govuk-link" href="https://products.payments.service.gov.uk/pay/50daf87550cf427aa0567928519025de">Repay the full amount</a>
+        </li>
+        <!-- <li>
+          <a class="govuk-link" href="#">Make an extra payment</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+
+
+{% endblock %}

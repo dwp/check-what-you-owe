@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "direct-debit"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Which day would you like the Direct Debit to be taken every month?</h1>
+
+      <form action="/prototypes/12/views/repayment-plan/final-check" method="post" class="form">
+
+        {{ govukInput({
+          label: {
+            text: "Payment day"
+          },
+          hint: {
+            text: "For example, for the third day of the month write 03"
+          },
+          classes: "govuk-input govuk-date-input__input govuk-input--width-2",
+          type: "number",
+          pattern:"[0-9]*",
+          id: "direct-debit-date",
+          name: "direct-debit-date"
+        }) }}
+
+        <p class="govuk-body">You will be sent an email with confirmation of this agreement before the first payment is collected from your account.</p>
+
+        <hr class="govuk-section-break govuk-section-break--m">
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </div>
+
+    </form>
+
+    <div class="govuk-grid-column-one-third">
+      {% include "includes/payment-summary--dd.html" %}
+    </div>
+
+  </div>
+{% endblock %}

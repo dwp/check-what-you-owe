@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "your-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="change-language-preference-review" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            {{ govukRadios({
+              idPrefix: "language-preference",
+              name: "language-preference",
+              fieldset: {
+                legend: {
+                  text: "What language would you like us to communicate with you in?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              hint: {
+                text: "This will change your letters, notifications and online account."
+              },
+              items: [
+                {
+                  value: "English",
+                  text: "English",
+                  checked: checked("language-preference", "English"),
+                  id: "english"
+                },
+                {
+                  value: "Welsh",
+                  text: "Welsh",
+                  checked: checked("language-preference", "Welsh"),
+                  id: "welsh"
+                }
+              ]
+            }) }}
+
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

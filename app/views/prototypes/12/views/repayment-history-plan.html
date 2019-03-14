@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% set navActive = "repayments" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Repayment history
+      </h1>
+
+      <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Total repaid: £320</p>
+      <p class="govuk-!-font-size-27 govuk-!-margin-bottom-6 govuk-!-font-weight-bold">Total amount owed: <span class="govuk-!-font-size-27 govuk-!-font-weight-bold">£3310</span></p>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date"
+          },
+          {
+            text: "Repayment for"
+          },
+          {
+            text: "Amount",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "24 Oct 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "26 Sept 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "29 Aug 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Jul 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Jun 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "2 May 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Apr 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Mar 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "-£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Mar 2018"
+            },
+            {
+              html: "New owings added"
+            },
+            {
+              text: "+£140",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+
+
+    </div>
+  </div>
+{% endblock %}

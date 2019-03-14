@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "../your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "change-payment-amount"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Confirm your repayment plan amount</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Current repayment amount"
+            },
+            value: {
+              text: "£50 per month"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "New repayment amount"
+            },
+            value: {
+              text: "£" + data['repayment-amount'] + " per month"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body">If you cannot make a payment you must contact us as soon as possible.</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">If you miss a payment, we will:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>contact your employer to make deductions from your pay</li>
+        <li>ask a debt collection agency to collect this money for us</li>
+      </ul>
+
+      {{ govukButton({
+        text: 'Confirm',
+        href: "change-payment-amount--confirmed"
+      }) }}
+
+
+    </div>
+  </div>
+{% endblock %}

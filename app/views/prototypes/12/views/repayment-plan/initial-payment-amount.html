@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "initial-payment" })
+  }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/prototypes/12/views/repayment-plan/initial-payment-amount" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-fieldset__heading">
+              How much would you like to pay today?
+            </h2>
+          </legend>
+
+          <p class="govuk-body">This payment will be taken from your bank account within 3 to 5 days. Make sure you have enough money to cover this payment.</p>
+
+          <div id="example-question" class="form-group inline">
+            <span class="c-form-input-denote govuk-body">£</span>
+            <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" aria-labelledby="legend-heading" type="text" name="initial-amount">
+          </div>
+
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: 'Continue',
+          classes: ""
+        }) }}
+      </form>
+
+      <p class="govuk-body">
+        <a href="#">Get help with this page</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}

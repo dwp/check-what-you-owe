@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        headingLevel: 1,
+        titleText: "Your payment was successful",
+        html: "Your payment reference<br><strong>HDJ2123F</strong>",
+        classes: "outcome"
+      }) }}
+
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m">Payment summary</h2>
+
+      <p>Amount: £2,320
+        <br>
+        Payment to: DWP Debt Management
+        <br>
+        Payment for: Repayment to DWP
+        <br>
+        Date of payment: {{todayDate}}</p>
+        <p class="govuk-body"><a href="#">Save this as a PDF</a>
+      </p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>You do not need to do anything else.</p>
+      <p>It may take a few days to process the payment.</p>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Contact us</h2>
+
+      <p>If you have questions about your repayment, contact:</p>
+
+      <p>
+        <b>Debt Management</b><br/>
+        Telephone: 0800 916 0614<br/>
+        Textphone: 0345 604 6697<br/>
+        Monday to Friday 8am to 7.30pm<br/>
+        Saturday 9am to 4pm
+      </p>
+
+      <p><a href="#">What did you think of this service?</a>(takes 30 seconds)</p>
+
+    </div>
+  </div>
+{% endblock %}

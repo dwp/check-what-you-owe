@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "initial-payment-amount" })
+  }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">You are about to make an initial payment of £{{ data['initial-amount'] }}</h1>
+
+      {{ govukInsetText({
+        text: "After you make an initial payment, you will need to complete your repayment plan. "
+      }) }}
+
+      {# <p class="govuk-body">After you make an initial payment, you will then be asked to complete your repayment plan.</p> #}
+
+      {{ govukButton({
+        text: "Make initial payment",
+        href: "https://products.payments.service.gov.uk/pay/0470866f5c584c1384dea58bc4c68ce9"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

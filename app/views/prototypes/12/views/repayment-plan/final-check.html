@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "direct-debit--date"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Check your details are correct</h1>
+
+        <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Account name:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              {{ data['name-on-account'] }}
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Sort code:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              {{ data['sort-code'] }}
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Account number:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              {{ data['account-number'] }}
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Email address:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              {{ data['email-address'] }}
+            </dd>
+          </div>
+        </dl>
+
+        {{ govukInsetText({
+          html: "<b>‘DWP CRG DD’</b> will appear on your bank statement"
+        }) }}
+
+        {{ govukButton({
+          text: "Confirm",
+          href: "confirmation",
+          classes: "govuk-!-margin-top-2"
+        }) }}
+
+        <p class="govuk-link"><a href="/prototypes/12/views/repayment-plan/start">Cancel</a></p>
+
+        <img src="https://dd-payment-pages.cloudapps.digital/public/images/directdebit.png" class="govuk-!-margin-bottom-2 govuk-!-margin-top-4" alt="">
+
+        <p class="govuk-body">Your payments are protected by the <a href="direct-debit-guarantee" class="govuk-link">Direct Debit guarantee</a>.</p>
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+      {% include "includes/payment-summary--dd.html" %}
+    </div>
+  </div>
+{% endblock %}

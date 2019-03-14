@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "../your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../view-repayment-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Change your payment day</h1>
+
+        <form action="/prototypes/12/views/amend-plan/change-payment-day--confirmed" method="post" class="form">
+
+          {{ govukInsetText({
+            text: "If you have a payment due in the next week it will be taken from your account before your new payment day is set up."
+          }) }}
+
+          {{ govukInput({
+            label: {
+              text: "Payment day"
+            },
+            hint: {
+              text: "For example, for the third day of the month write 03"
+            },
+            classes: "govuk-input govuk-date-input__input govuk-input--width-2",
+            type: "number",
+            pattern:"[0-9]*",
+            id: "direct-debit-date",
+            name: "direct-debit-date"
+          }) }}
+
+          <p class="govuk-body">We cannot process payments made on the 29th, 30th and 31st days of the month.</p>
+
+          {{ govukButton({
+            text: "Update payment day"
+          }) }}
+
+        </form>
+
+    </div>
+</div>
+{% endblock %}

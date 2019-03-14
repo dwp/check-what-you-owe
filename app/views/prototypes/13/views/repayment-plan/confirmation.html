@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      
+      {{ govukPanel ({
+        headingLevel: 1,
+        titleText: "Your repayment plan has been set up",
+        classes: "outcome"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <dl class='app-check-your-answers app-check-your-answers--long govuk-!-margin-bottom-0'>
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Amount you owe:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            £2,320
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            First payment:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            {{ data['direct-debit-date'] }} {{currentMonth}} {{currentYear}}
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment frequency:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+            <span class="app-title-case">Monthly</span>
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment day:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             {{ data['direct-debit-date'] }}
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Payment breakdown:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+             <span id="payment-breakdown"></span> payments of £{{ data['repayment-amount'] }} <br />
+             1 payment of £20
+          </dd>
+        </div>
+
+        <div class='app-check-your-answers__contents'>
+          <dt class='app-check-your-answers__question'>
+            Expected final payment date:
+          </dt>
+          <dd class='app-check-your-answers__answer'>
+           {{ data['direct-debit-date'] }} {{currentMonth}} 2022
+          </dd>
+        </div>
+
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p class="govuk-body"><a href="#">Print a PDF</a></p>
+
+      <p class="govuk-body">We've sent you a confirmation email. <a class="govuk-link" href="../account-home-plan">Your account</a> will be updated with your repayment plan details.</p>
+
+      <p class="govuk-body">You can manage your <a href="../view-repayment-plan">repayment plan</a> at any time.</p>
+    </div>
+  </div>
+{% endblock %}

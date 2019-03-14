@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="change-notification-preference-review" method="post" class="form">
+
+        {{ govukCheckboxes({
+          name: "notification-preference",
+          fieldset: {
+            legend: {
+              text: "How would you like to be notified?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          hint: {
+            text: "Select all that apply"
+          },
+          items: [
+            {
+              value: "Letter",
+              text: "Letter",
+              id: "notification-preference-letter",
+              checked: checked("notification-preference", "Letter")
+            },
+            {
+              value: "Text message",
+              text: "Text message",
+              id: "notification-preference-text",
+              checked: checked("notification-preference", "Text message")
+            },
+            {
+              value: "Email",
+              text: "Email",
+              id: "notification-preference-email",
+              checked: checked("notification-preference", "Email")
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../make-a-repayment" })
+  }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="/prototypes/12/views/repayment-plan/initial-payment" method="post" class="form">
+
+      {{ govukRadios({
+        idPrefix: "initial-payment",
+        name: "initial-payment",
+        fieldset: {
+          legend: {
+            text: "Would you like to make an initial payment?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        hint: {
+          text: "You can choose to make a single payment now before setting up a repayment plan for the rest of the money you owe."
+        },
+        items: [
+          {
+            value: "true",
+            text: "Yes"
+          },
+          {
+            value: "false",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: 'Continue',
+        classes: ""
+      }) }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

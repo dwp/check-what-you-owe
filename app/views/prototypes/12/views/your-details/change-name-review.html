@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "change-name"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Submit your change in name</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['first-name-personal-details'] + ' ' + data['last-name-personal-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "#"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date the change took effect"
+            },
+            value: {
+              text: data['change-name-date-incurred-day'] + ' ' + data['change-name-date-incurred-month'] + ' ' + data['change-name-date-incurred-year']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "#"
+                }
+              ]
+            }
+          }
+        ]
+        }) }}
+
+      <p class="govuk-body">Information about whether this is an instant change or whether its a submission.</p>
+
+      {{ govukButton({
+        text: "Submit change",
+        href:"change-name-confirmed"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

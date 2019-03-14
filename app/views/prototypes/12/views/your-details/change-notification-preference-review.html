@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "change-notification-preference"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+      <h1 class="govuk-heading-xl">Confirm your notification preferences</h1>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Notifications"
+            },
+            value: {
+              text: data['notification-preference']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-notification-preference",
+                  text: "Change",
+                  visuallyHiddenText: "Letter preference"
+                }
+              ]
+            }
+          }
+              ]
+      }) }}
+
+      {{ govukButton({
+        text: "Confirm change",
+        href:"change-notification-preference-confirmed"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

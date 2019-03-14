@@ -1,0 +1,173 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Your details</h1>
+
+      <h2 class="govuk-heading-l">Personal details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: data['first-name-personal-details'] + ' ' + data['last-name-personal-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-name",
+                  text: " ",
+                  visuallyHiddenText: "Name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "123 Oldham Road<br />
+              Ancoats<br />
+              Manchester<br />
+              M2 3AA"
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-address",
+                  text: "Change",
+                  visuallyHiddenText: "Address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: data['email-personal-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-email",
+                  text: "Change",
+                  visuallyHiddenText: "Email"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Telephone number"
+            },
+            value: {
+              text: data['telephone-number-personal-details']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-phone-number",
+                  text: "Change",
+                  visuallyHiddenText: "Phone"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l">
+
+      <h2 class="govuk-heading-l">Communication preferences</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Letter format"
+            },
+            value: {
+              text: data['letter-preference']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-letter-preference",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Notifications"
+            },
+            value: {
+              text: data['notification-preference']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-notification-preference",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Language"
+            },
+            value: {
+              text: data['language-preference']
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-language-preference",
+                  text: "Change",
+                  visuallyHiddenText: ""
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

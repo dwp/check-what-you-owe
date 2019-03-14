@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Make a repayment</h1>
+
+        <h2 class="govuk-heading-m"><a href="https://products.payments.service.gov.uk/pay/50daf87550cf427aa0567928519025de">Repay in full with a debit or credit card</a></h2>
+
+        <p class="govuk-body">Before you start you'll need a debit or credit card.</p>
+
+        <h2 class="govuk-heading-s">Other ways to repay the full amount</h2>
+
+        <h3 class="govuk-heading-s">Bank transfer</h3>
+
+        <p>Use these details to repay the full amount by the date shown on the letter we sent you:</p>
+
+        <p>Sort code: 40 34 18<br/>
+          Account number: 51826107<br/>
+          Reference: QQ12 34 56 A</p>
+
+        <h3 class="govuk-heading-s">Telephone</h3>
+
+        <p>Call Debt Management to repay the full amount. Do this by the date shown on the letter we sent you.</p>
+
+        <p>Telephone: 0800 916 0614<br/>
+          Textphone: 0345 604 6697<br/>
+          Monday to Friday 8am to 7.30pm<br/>
+          Saturday 9am to 4pm</p>
+
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+          <h2 class="govuk-heading-m"><a href="additional-payments/additional-payment/additional-payment-calculator">Make an additional payment with a debit or credit card</a></h2>
+
+          <p class="govuk-body">Before you start you'll need a debit or credit card.</p>
+
+    </div>
+</div>
+{% endblock %}

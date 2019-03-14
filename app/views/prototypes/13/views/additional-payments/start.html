@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "../your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Make an extra payment
+      </h1>
+
+      <p class="govuk-body">Use this service if you owe money to the Department for Work and Pensions and want to make an extra payment.</p>
+
+      <p>You’ll need a debit or credit card.</p>
+
+      {{ govukButton({
+        text: 'Start',
+        href: "additional-payment/additional-payment-calculator",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <!--  -->
+
+      <h2 class="govuk-heading-m">Other ways to make an extra payment</h2>
+
+      <p class="govuk-body">You can get information, make payments, and arrange payment plans by phone.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "../your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../view-repayment-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="/prototypes/12/views/amend-plan/change-payment-amount--check-your-answers" method="post" class="form">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h2 class="govuk-fieldset__heading">
+                How much would you like to pay every month?
+              </h2>
+            </legend>
+
+            <p class="govuk-body">If you make higher payments, your debt will be paid off more quickly.</p>
+
+            <p class="govuk-body">You will need to make sure you have enough money in your bank account to cover payments.</p>
+
+            <div id="example-question" class="form-group inline">
+              <span class="c-form-input-denote govuk-body">£</span>
+              <input class="form-control c-form-input-denote__input govuk-input form-control-1-4 govuk-input--width-10" type="text" name="repayment-amount">
+            </div>
+
+            </fieldset>
+          </div>
+
+          {{ govukButton({
+            text: 'Continue'
+          }) }}
+
+        </form>
+
+      </div>
+</div>
+{% endblock %}

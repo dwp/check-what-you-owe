@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel ({
+        headingLevel: 1,
+        titleText: "Your payment was successful",
+        classes: "outcome"
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Payment summary</h2>
+      <p>Amount: £90
+        <br>
+        Payment to: Pay what you owe
+        <br>
+        Payment for: Repayment to DWP
+        <br>
+        Reference: TV45FR5KKT
+        <br>
+        Date of payment: {{todayDate}}
+      </p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>You do not need to do anything else.</p>
+
+      <p>We've sent you a confirmation email. It may take a few days for the amount you’ve paid to be taken off your balance.</p>
+
+      <p><a href="">Save this as a PDF</a></p>
+
+      <p><a href="">What did you think of this service? </a> (takes 30 seconds)</p>
+    </div>
+  </div>
+{% endblock %}

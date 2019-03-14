@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Contact us</h1>
+
+        <h2 class="govuk-heading-m">Arrange a repayment plan</h2>
+
+        <p>Telephone: 0800 916 0614<br />
+        Textphone: 0345 604 6697<br />
+        Monday to Friday 8am to 7.30pm<br />
+        Saturday 9am to 4pm </p>
+
+        <p>You can also call us if you cannot afford to repay.</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Information</h2>
+
+        <p class="govuk-body">For information about what you owe, you will need to contact the relevant organisation directly.</p>
+
+        <p><b>Universal Credit advance</b><br />
+        North Manchester Universal Credit Service Centre<br />
+        Telephone: 0800 328 5644<br />
+        Textphone: 0800 328 1344<br />
+        Monday to Friday 8am to 6pm (closed on bank holidays)</p>
+
+        <hr class="govuk-section-break govuk-section-break--m">
+
+        <p><b>Recoverable Hardship Payment</b><br />
+        North Manchester Universal Credit Service Centre<br />
+        Telephone: 0800 328 5644<br />
+        Textphone: 0800 328 1344<br />
+        Monday to Friday 8am to 6pm (closed on bank holidays)</p>
+
+        <hr class="govuk-section-break govuk-section-break--m">
+
+        <p><b>Housing Benefit</b><br />
+        Manchester City Council<br />
+        Telephone: 0161 234 5003<br />
+        Textphone: 0161 953 8301<br />
+        Monday to Friday 9am to 6pm</p>
+
+        <hr class="govuk-section-break govuk-section-break--m">
+
+        <p><b>Tax credit</b><br />
+        HMRC<br />
+        Telephone: 0345 300 3900<br />
+        Textphone: 0345 300 3909 <br />
+        Monday to Friday 8am-8pm<br />
+        Saturday 8am-4pm<br />
+        Sunday 9am -5pm (closed Christmas Day, Boxing Day and New Year's Day)</p>
+
+        <hr class="govuk-section-break govuk-section-break--m">
+
+        <p><b>Social Fund</b><br />
+        DWP<br />
+        Telephone: 0800 916 0647<br />
+        Textphone: 0161 916 0651 <br />
+        Monday to Friday 8am-6:30pm</p>
+    </div>
+</div>
+{% endblock %}

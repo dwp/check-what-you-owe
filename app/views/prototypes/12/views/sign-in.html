@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink ({
+    text: "Back",
+    href: "start-manage-what-you-owe"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action='account-home' method='post' class='form' autocomplete='off'>
+      <h1 class="govuk-heading-xl">
+          Sign in
+        </h1>
+      <p class="govuk-body">Enter the username and password in the letter we sent you. If you’d like us to send the letter again, please <a class="govuk-link" href="contact-us">contact us</a>.</p>
+
+      {{ govukInput({
+        label: {
+          text: 'Username',
+          isPageHeading: false },
+          hint: { text: '' },
+          id: 'username',
+          name: 'username',
+          classes: 'govuk-input--width-20'
+        })
+      }}
+
+      {{ govukInput({
+        label: {
+          text: 'Password',
+          isPageHeading: false },
+          hint: { text: '' },
+          id: 'password',
+          name: 'password',
+          classes: 'govuk-input--width-20'
+        })
+      }}
+
+      {{ govukButton({
+        text: "Sign in",
+        classes: "govuk-!-margin-bottom-8" })
+      }}
+    </form>
+
+    <h2 class="govuk-heading-m">Problems signing in</h2>
+    <ul class="govuk-list">
+      <li><a href="#">Help with signing in</a></li>
+      <li><a href="#">I have forgotten my password</a></li>
+      <li><a href="#">I have forgotten my username</a></li>
+      <li><a href="#">I have forgotten my username and password</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

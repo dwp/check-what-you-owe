@@ -1,0 +1,168 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your repayment plan</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Starting balance"
+            },
+            value: {
+              text: "£2,320"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Amount repaid"
+            },
+            value: {
+              text: "£300"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Amount left to repay"
+            },
+            value: {
+              text: "£2,020"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Next payment"
+            },
+            value: {
+              html: data['direct-debit-date'] + " " + [currentMonth] + " " + [ currentYear]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "next payment due"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Repayment plan amount"
+            },
+            value: {
+              text: "£" + data['repayment-amount']
+            },
+            actions: {
+              items: [
+                {
+                  href: "amend-plan/change-payment-amount",
+                  text: "Change",
+                  visuallyHiddenText: "repayment plan amount"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payment day"
+            },
+            value: {
+              text: data['direct-debit-date'] + " of the month"
+            },
+            actions: {
+              items: [
+                {
+                  href: "amend-plan/change-payment-day",
+                  text: "Change",
+                  visuallyHiddenText: "Payment day"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Expected final payment"
+            },
+            value: {
+              html: data['direct-debit-date'] + " " + [ currentMonth] + " " + "2022"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "Expected final payment"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+{% endblock %}

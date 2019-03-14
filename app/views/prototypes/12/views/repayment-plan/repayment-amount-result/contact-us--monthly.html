@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "amount-too-low--monthly" })
+  }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Please contact us</h1>
+      <p>We need to talk to you about the amount you’d like to pay.  Please call an advisor and speak to us on the phone to discuss your repayment plan.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p>Telephone: 0800 916 0614<br />
+      Textphone: 0345 604 6697<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+    </div>
+  </div>
+{% endblock %}

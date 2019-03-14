@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back to payment",
+    href: "final-check"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Direct Debit guarantee</h1>
+
+      <p class="govuk-body">The Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.</p>
+      <p class="govuk-body">If there are any changes to the amount, date or frequency of your Direct Debit GOV.UK Pay will notify you (normally 3 working days) in advance of your account being debited or as otherwise agreed. If you request GOV.UK Pay to collect a payment, confirmation of the amount and date will be given to you at the time of the request.</p>
+      <p class="govuk-body">If an error is made in the payment of your Direct Debit, by GOV.UK Pay or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society.</p>
+      <p class="govuk-body">If you receive a refund you are not entitled to, you must pay it back when GOV.UK Pay asks you to.</p>
+      <p class="govuk-body">You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify GOV.UK Pay.</p>
+
+      {{ govukButton({
+        text: "Back to payment",
+        href: "final-check"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

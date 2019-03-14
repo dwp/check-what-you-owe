@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "../account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "your-details"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="change-letter-preference-review" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            {{ govukRadios({
+              idPrefix: "letter-preference",
+              name: "letter-preference",
+              fieldset: {
+                legend: {
+                  text: "What format would you like your letters to be in?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--xl"
+                }
+              },
+              items: [
+                {
+                  value: "Standard print",
+                  text: "Standard print",
+                  checked: checked("letter-preference", "Standard print"),
+                  id: "standard"
+                },
+                {
+                  value: "Large print",
+                  text: "Large print",
+                  checked: checked("letter-preference", "Large print"),
+                  id: "large"
+                },
+                {
+                  value: "Braille",
+                  text: "Braille",
+                  checked: checked("letter-preference", "Braille"),
+                  id: "braille"
+                }
+              ]
+            }) }}
+
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
