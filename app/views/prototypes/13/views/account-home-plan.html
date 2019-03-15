@@ -14,7 +14,7 @@
         active: true
       },
       {
-        href: "your-details/your-details",
+        href: "your-details-plan/your-details",
         text: "Your details"
       },
       {
@@ -31,7 +31,7 @@
   <div class="govuk-grid-column-full">
 
     <div class="govuk-panel govuk-panel--amount-owed">
-      <p class="govuk-body govuk-!-font-size-27">Ashley Atherton</p>
+      <p class="govuk-body govuk-!-font-size-27">{{ data['first-name-personal-details'] }} {{ data['last-name-personal-details'] }}</p>
       <div class="govuk-panel__body">
 
         <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-6 govuk-!-margin-bottom-2">Your repayment plan is</p>
@@ -89,23 +89,9 @@
 
       <div class="govuk-card__flex-item govuk-grid-column-one-half">
         <div class="govuk-card govuk-card--contained govuk-card--selectable">
-          <a href="make-a-repayment-plan"></a>
+          <a href="start-in-full-plan"></a>
           <div class="govuk-card__content">
             <h3 class="govuk-heading-m"><a href="start-in-full-plan">Repay the full amount</a></h3>
-            <p class="govuk-body govuk-!-margin-bottom-2">You can:</p>
-            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
-              <li>Repay the full amount</li>
-              <li>Make an extra payment</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="govuk-card__flex-item govuk-grid-column-one-half">
-        <div class="govuk-card govuk-card--contained govuk-card--selectable">
-          <a href="make-a-repayment-plan"></a>
-          <div class="govuk-card__content">
-            <h3 class="govuk-heading-m"><a href="additional-payments/start">Make an extra payment</a></h3>
             <p class="govuk-body govuk-!-margin-bottom-2">You can:</p>
             <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
               <li>Repay the full amount</li>

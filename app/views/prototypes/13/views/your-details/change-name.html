@@ -8,7 +8,7 @@
     serviceUrl: "#",
     navigation: [
       {
-        href: "../account-home-plan",
+        href: "../account-home",
         text: "Account home"
       },
       {
@@ -37,7 +37,7 @@
 
       <h1 class="govuk-heading-xl">Report a change in name</h1>
 
-      <form action="change-name-review" class="form" method="post">
+      <form action="change-name-date" class="form" method="post">
 
         {{ govukSelect({
           id: "sort",
@@ -130,6 +130,8 @@
         classes: "govuk-!-width-two-thirds",
         value: data['last-name-personal-details']
       }) }}
+
+
 
         <p class="govuk-body">
           We will treat your personal information carefully. We’ll only use it as allowed under data protection law. To find out more, see the Department for Work and Pensions
