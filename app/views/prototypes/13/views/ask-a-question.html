@@ -37,36 +37,7 @@
     <div class="govuk-grid-column-two-thirds">
         <form action="ask-a-question-confirmed" class="form" method="post">
         <h1 class="govuk-heading-xl">Ask a question</h1>
-
-        {% from "select/macro.njk" import govukSelect %}
-
-        {{ govukSelect({
-          id: "select",
-          name: "select",
-          label: {
-            text: "Select a reason for contacting us"
-          },
-          items: [
-            {
-              value: "help",
-              text: "I need help using this service"
-            },
-            {
-              value: "query",
-              text: "I have a query about what I owe",
-              selected: true
-            },
-            {
-              value: "full",
-              text: "I want help making a payment in full"
-            },
-            {
-              value: "plan",
-              text: "I want help setting up a repayment plan"
-            }
-          ]
-        }) }}
-
+        
         {% from "textarea/macro.njk" import govukTextarea %}
 
         {{ govukTextarea({
