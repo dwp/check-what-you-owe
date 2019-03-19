@@ -29,15 +29,15 @@ router.post('/views/additional-payments/additional-payment/additional-payment-ca
   const answer = parseFloat(submitted['additional-payment'] || 0)
 
   if (answer <= 110) {
-    res.redirect('/prototypes/11/views/additional-payments/additional-payment/small')
+    res.redirect('/prototypes/13/views/additional-payments/additional-payment/small')
   }
 
   if (answer <= 250) {
-    res.redirect('/prototypes/11/views/additional-payments/additional-payment/medium')
+    res.redirect('/prototypes/13/views/additional-payments/additional-payment/medium')
   }
 
   if (answer >= 251) {
-    res.redirect('/prototypes/11/views/additional-payments/additional-payment/large')
+    res.redirect('/prototypes/13/views/additional-payments/additional-payment/large')
   }
 })
 
@@ -52,11 +52,11 @@ router.post('/views/repayment-plan/initial-payment', function (req, res) {
   const submitted = req.session.data;
 
   if (submitted['initial-payment'] === 'true') {
-    res.redirect('/prototypes/11/views/repayment-plan/initial-payment-amount')
+    res.redirect('/prototypes/13/views/repayment-plan/initial-payment-amount')
   }
 
   if (submitted['initial-payment'] === 'false') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-plan-summary')
   }
 })
 
@@ -68,7 +68,7 @@ router.post('/views/repayment-plan/initial-payment-amount', function (req, res) 
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 999999999999) {
-    res.redirect('/prototypes/11/views/repayment-plan/initial-payment-summary')
+    res.redirect('/prototypes/13/views/repayment-plan/initial-payment-summary')
   }
 })
 
@@ -80,11 +80,11 @@ router.post('/views/repayment-plan/repayment-amount', function (req, res) {
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/amount-too-low--monthly')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 
   if (answer >= 50) {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary')
+    res.redirect('/prototypes/13/views/repayment-plan/initial-payment')
   }
 
 })
@@ -97,11 +97,11 @@ router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function 
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
   if (answer <= 49) {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
   }
 
   if (answer >= 50) {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
 })
@@ -111,11 +111,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-plan-summary')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/contact-us--monthly')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 })
 
@@ -124,11 +124,11 @@ router.post('/views/repayment-plan/repayment-amount-result/amount-too-low--month
   const submitted = req.session.data;
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-yes') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-plan-summary/monthly')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
   if (submitted['can-you-pay-50'] === 'can-you-pay-50-no') {
-    res.redirect('/prototypes/11/views/repayment-plan/repayment-amount-result/contact-us--monthly')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 })
 
