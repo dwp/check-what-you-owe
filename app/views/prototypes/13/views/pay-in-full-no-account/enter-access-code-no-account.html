@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "start-pay-in-full-no-account"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="ask-a-question-confirmed-plan" class="form" method="post">
+
+        <h1 class="govuk-heading-xl">What is your access code?</h1>
+
+        <p>This is a code that you will have received when you inputted a new let us know that you wanted to repay in full</p>
+
+        {{ govukInput({
+          label: {
+            text: "Enter your access code"
+          },
+          classes: "govuk-input--width-10",
+          id: "width-10",
+          name: "width-10"
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}
