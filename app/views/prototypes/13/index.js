@@ -47,6 +47,19 @@ router.post('/views/additional-payments/additional-payment/additional-payment-ca
 //
 //
 
+// Branch users to make an initial payment or just setup direct debit
+router.post('/views/repayment-plan/what-do-you-want-to-do', function (req, res) {
+  const submitted = req.session.data;
+
+  if (submitted['initial-payment'] === 'false') {
+    res.redirect('/prototypes/13/views/repayment-plan/initial-payment-amount')
+  }
+
+  if (submitted['initial-payment'] === 'true') {
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-amount')
+  }
+})
+
 // Branch users to lump sum or repayment plan only
 router.post('/views/repayment-plan/initial-payment', function (req, res) {
   const submitted = req.session.data;
@@ -84,7 +97,7 @@ router.post('/views/repayment-plan/repayment-amount', function (req, res) {
   }
 
   if (answer >= 50) {
-    res.redirect('/prototypes/13/views/repayment-plan/initial-payment')
+    res.redirect('/prototypes/13/views/repayment-plan/repayment-plan-summary')
   }
 
 })

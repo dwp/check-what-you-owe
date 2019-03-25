@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  {{serviceName}}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../start" })
+  }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form action="/prototypes/13/views/repayment-plan/what-do-you-want-to-do" method="post" class="form">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <h2 class="govuk-fieldset__heading">
+              What do you want to do?
+            </h2>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initial-payment-no" name="initial-payment" type="radio" value="false">
+              <label class="govuk-label govuk-radios__label" for="initial-payment-no">
+                Make a payment today and set up a repayment plan
+              </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">Making a payment today will reduce the amount in your repayment plan</span>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initial-payment-yes" name="initial-payment" type="radio" value="true">
+              <label class="govuk-label govuk-radios__label" for="initial-payment-yes">
+                Set up a repayment plan without making an extra payment
+              </label>
+            </div>
+          </div>
+          </fieldset>
+        </div>
+
+        {{ govukButton({
+          text: 'Continue',
+          classes: ""
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
