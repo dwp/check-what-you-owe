@@ -434,13 +434,14 @@
                     More information
                   </span>
                 </summary>
-                <br>
-                {{ govukWarningText({
-                  text: "This payment is now being collected by Manchester City Council because they told us they wanted to collect future payments.",
-                  iconFallbackText: "Warning"
-                }) }}
 
                 <div class="govuk-details__text">
+
+                  {{ govukWarningText({
+                    text: "This payment is now being collected by Manchester City Council because they told us they wanted to collect future payments.",
+                    iconFallbackText: "Warning"
+                  }) }}
+
                   <p class="govuk-body">When you were paid Housing Benefit from your local council, you were given more than you should have. You now need to pay back the overpayment.</p>
 
                   <p>If you want to ask a question about Housing Benefit, contact
