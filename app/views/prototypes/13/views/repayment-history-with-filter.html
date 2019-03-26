@@ -1,0 +1,241 @@
+{% extends "layout.html" %}
+
+{% set navActive = "repayments" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Repayment history
+      </h1>
+
+      <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Total repaid: £320</p>
+
+      <hr class="govuk-section-break govuk-section-break--l">
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+
+      <h3 class="govuk-heading-m">Filter</h3>
+
+      {{ govukCheckboxes({
+        idPrefix: "year",
+        name: "year",
+        fieldset: {
+          legend: {
+            text: "Year",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "2019",
+            text: "2019"
+          },
+          {
+            value: "2018",
+            text: "2018"
+          },
+          {
+            value: "2017",
+            text: "2017"
+          }
+        ]
+        }) }}
+
+        {{ govukCheckboxes({
+          idPrefix: "type",
+          name: "type",
+          fieldset: {
+            legend: {
+              text: "Repayment type",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "deduction-from-benefit",
+              text: "Deduction from benefit"
+            },
+            {
+              value: "deduction-from-wages",
+              text: "Deduction from wages"
+            }
+          ]
+          }) }}
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date"
+          },
+          {
+            text: "Repayment for"
+          },
+          {
+            text: "Amount",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "24 Mar 2019"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "26 Feb 2019"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "29 Jan 2019"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Dec 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Nov 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "2 Oct 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from wages</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Sept 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from wages</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Aug 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Jul 2018"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ]
+
+        ]
+      }) }}
+
+
+
+    </div>
+  </div>
+{% endblock %}
