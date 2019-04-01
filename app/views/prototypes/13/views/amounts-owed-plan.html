@@ -403,7 +403,7 @@
               </dl>
             </div>
             <br>
-            <p><a href="social-fund-breakdown">View a breakdown of your Social Fund loans</a></p>
+            <p><a href="social-fund-breakdown-plan">View a breakdown of your Social Fund loans</a></p>
           </details>
         </div>
 
@@ -435,16 +435,14 @@
                 More information
               </span>
             </summary>
-            <br>
-            <div class="govuk-warning-text">
-              <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-              <strong class="govuk-warning-text__text">
-                <span class="govuk-warning-text__assistive">Warning</span>
-                This payment is now being collected by Manchester City Council because they told us they wanted to collect future payments.
-              </strong>
-            </div>
 
             <div class="govuk-details__text">
+
+              {{ govukWarningText({
+                text: "This payment is now being collected by Manchester City Council because they told us they wanted to collect future payments.",
+                iconFallbackText: "Warning"
+              }) }}
+
               <p class="govuk-body">When you were paid Housing Benefit from your local council, you were given more than you should have. You now need to pay back the overpayment.</p>
 
               <p>If you want to ask a question about Housing Benefit, contact
