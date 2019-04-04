@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="ask-a-question" class="form" method="post">
+
+        {% from "radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "what-is-your-question-about",
+          name: "what-is-your-question-about",
+          fieldset: {
+            legend: {
+              text: "What is your question about?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--xl"
+            }
+          },
+          items: [
+            {
+              value: "help",
+              text: "I need help using this service"
+            },
+            {
+              value: "amounts-owed",
+              text: "I have a query about the amounts I owe"
+            },
+            {
+              value: "in-full",
+              text: "I want help making a payment in full"
+            },
+            {
+              value: "repayment-plan",
+              text: "I want help setting up a repayment plan"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+        text: "Continue"
+        }) }}
+
+    </div>
+</div>
+{% endblock %}

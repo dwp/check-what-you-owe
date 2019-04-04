@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../make-additional-payment"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        How much do you want to pay?
+      </h1>
+
+      <form action="#" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <p class="govuk-body">The amount you pay now will affect the date of your final payment.  Enter an amount below and click “update” to see when your last payment will be.</p>
+
+            <div class="form-group inline govuk-!-width-one-half">
+              <span class="c-form-input-denote govuk-body">£</span>
+              <input class="form-control c-form-input-denote__input govuk-input" type="text" name="additional-payment">
+            </div>
+
+            <button type="submit" class="govuk-button inline app-button--secondary govuk-!-margin-bottom-0">
+              Update
+            </button>
+          </fieldset>
+        </div>
+      </form>
+
+      <div class="govuk-panel--amount-owed app-panel">
+        <p class="govuk-body govuk-!-margin-bottom-4">You will repay what you currently owe in:<br />
+          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">July 22</span>
+        </p>
+
+        <p class="govuk-body govuk-!-margin-bottom-0">Your new final payment date is:<br />
+          <span class="govuk-!-font-size-36 govuk-!-font-weight-bold" id="">March 20</span>
+        </p>
+        <p class="govuk-body-s govuk-!-margin-top-6 govuk-!-margin-bottom-0">
+          Please note that if you incur other loans or overpayments this end date may change.  We will contact you to rearrange repayment if this happens.
+        </p>
+      </div>
+
+      {{ govukButton({
+        text: "Continue",
+        href:"../review-additional-payment",
+        classes: ""
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
