@@ -1,9 +1,33 @@
 {% extends "layout.html" %}
 
 {% block header %}
-  <!-- Blank header with no service name for the sign in page -->
-  {{ govukHeader() }}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "#",
+      text: "Account home"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+    ]
+  }) }}
 {% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
 
 {% block content %}
   <div class="govuk-grid-row">
