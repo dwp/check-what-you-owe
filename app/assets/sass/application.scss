@@ -24,4 +24,7 @@ $govuk-global-styles: true;
 @import "components/app-forms";
 @import "components/typography";
 
+// HMCTS styles
+@import "node_modules/@hmcts/frontend/all";
+
 @import "global";

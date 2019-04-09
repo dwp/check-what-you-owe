@@ -25,11 +25,11 @@
       <h1 class="govuk-heading-xl">
           Sign in
         </h1>
-      <p class="govuk-body">Enter the pin number in the letter we sent you. If you’d like us to send the letter again, please <a class="govuk-link" href="contact-us">contact us</a>.</p>
+      <p class="govuk-body">Enter the pin number in the letter we sent you.</p>
 
       {{ govukInput({
         label: {
-          text: 'pin number',
+          text: 'Pin number',
           isPageHeading: false },
           hint: { text: '' },
           id: 'pin',
@@ -44,11 +44,6 @@
       }}
     </form>
 
-    <h2 class="govuk-heading-m">Problems signing in</h2>
-    <ul class="govuk-list">
-      <li><a href="#">Help with signing in</a></li>
-      <li><a href="#">I have forgotten my pin number</a></li>
-    </ul>
   </div>
 </div>
 {% endblock %}

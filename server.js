@@ -350,6 +350,10 @@ app.use(function (err, req, res, next) {
   res.send(err.message)
 })
 
+//HMCTS prototype Kit
+app.use('/assets', express.static(path.join(__dirname, '/node_modules/@hmcts/frontend/assets')));
+app.use('/node_modules/hmcts-frontend', express.static(path.join(__dirname, '/node_modules/@hmcts/frontend')))
+
 console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
 

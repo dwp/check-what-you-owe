@@ -44,15 +44,28 @@
 
       <h2 class="govuk-heading-m">Payment summary</h2>
 
-      <p>Amount: £760
-        <br>
-        Payment to: DWP Debt Management
-        <br>
-        Payment for: Repayment to DWP
-        <br>
-        Date of payment: {{todayDate}}</p>
-        <p class="govuk-body"><a href="#">Save this as a PDF</a>
-      </p>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Amount</th>
+            <td class="govuk-table__cell">£760</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Payment to</th>
+            <td class="govuk-table__cell">DWP Debt Management</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Payment for</th>
+            <td class="govuk-table__cell">Repayment to DWP</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Date of payment</th>
+            <td class="govuk-table__cell">{{todayDate}}</td>
+          </tr>
+        </tbody>
+      </table>
 
       <hr class="govuk-section-break govuk-section-break--m">
 
@@ -75,7 +88,7 @@
         Saturday 9am to 4pm
       </p>
 
-      <p><a href="#">What did you think of this service?</a>(takes 30 seconds)</p>
+      <p><a href="#">What did you think of this service?</a> (takes 30 seconds)</p>
 
     </div>
   </div>
