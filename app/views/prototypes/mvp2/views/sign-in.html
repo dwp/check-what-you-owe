@@ -25,15 +25,15 @@
       <h1 class="govuk-heading-xl">
           Sign in
         </h1>
-      <p class="govuk-body">Enter the pin number in the letter we sent you.</p>
+      <p class="govuk-body">Enter the security code in the letter we sent you.</p>
 
       {{ govukInput({
         label: {
-          text: 'Pin number',
+          text: 'Security code',
           isPageHeading: false },
           hint: { text: '' },
-          id: 'pin',
-          name: 'pin',
+          id: 'security-code',
+          name: 'security-code',
           classes: 'govuk-input--width-20'
         })
       }}
