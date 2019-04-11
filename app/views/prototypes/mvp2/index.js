@@ -92,11 +92,11 @@ router.post('/views/repayment-plan/repayment-amount', function (req, res) {
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer <= 49) {
+  if (answer <= 9) {
     res.redirect('/prototypes/mvp2/views/repayment-plan/repayment-amount-result/contact-us--monthly')
   }
 
-  if (answer >= 50) {
+  if (answer >= 10) {
     res.redirect('/prototypes/mvp2/views/repayment-plan/repayment-plan-summary')
   }
 
@@ -109,11 +109,11 @@ router.post('/views/repayment-plan/repayment-amount/monthly-lump-sum', function 
   // Format answer as whole number
   const answer = parseFloat(submitted['repayment-amount'] || 0)
 
-  if (answer <= 49) {
+  if (answer <= 9) {
     res.redirect('/prototypes/mvp2/views/repayment-plan/repayment-amount-result/amount-too-low--monthly-lump-sum')
   }
 
-  if (answer >= 50) {
+  if (answer >= 10) {
     res.redirect('/prototypes/mvp2/views/repayment-plan/repayment-plan-summary/monthly')
   }
 
