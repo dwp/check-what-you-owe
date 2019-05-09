@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [ {
+      text:'Home',
+      href: 'https://www.gov.uk/' },
+      {
+      text:'Money and tax',
+      href: 'https://www.gov.uk/browse/tax' },
+      {
+      text: 'Pay what you owe in full' } ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel ({
+        headingLevel: 1,
+        titleText: "Your payment was successful",
+        classes: "outcome"
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Payment summary</h2>
+      <p>Amount: £875
+        <br>
+        Payment to: DWP Debt Management
+        <br>
+        Payment for: Repayment in full to DWP
+        <br>
+        Payment reference: TV45FR5KKT
+        <br>
+        Date of payment: {{todayDate}} </p>
+
+        <p class="govuk-body"><a href="#">Save this as a PDF</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+    </div>
+  </div>
+
+{% endblock %}

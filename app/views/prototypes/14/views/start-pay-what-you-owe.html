@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [ {
+      text:'Home',
+      href: '#0'
+    },
+    {
+    text:'Money and tax',
+    href: '#0'
+    },
+    {
+      text: 'Pay what you owe'
+    } ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Pay what you owe</h1>
+      <p>Use this service if you owe money to DWP, no longer get benefits from DWP, and want to repay your balance in full.</p>
+      <p>You'll need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>a debit or credit card</li>
+        <li>your National Insurance number</li>
+        <li>the access code on the letter we sent you</li>
+      </ul>
+
+      {{ govukButton({
+        text: 'Start',
+        href: "pay-in-full/access",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-m">Other ways to repay what you owe</h2>
+
+      <h3 class="govuk-heading-s">Bank transfer</h3>
+
+      <p>Use these details to repay the full amount by the date shown on the letter we sent you:</p>
+
+      <p>Sort code: 40 34 18<br />
+      Account number: 51826107</p>
+      <p>Use your National Insurance number as the reference, for example<br /> QQ 12 34 56 A.</p>
+
+      <h3 class="govuk-heading-s">Telephone</h3>
+
+      <p>Call Debt Management to repay the full amount or arrange a repayment plan. Do this by the date shown on the letter we sent you.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Textphone: 0345 604 6697<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm</p>
+
+      <p>You can also call us if you cannot afford to repay.</p>
+
+    </div>
+  </div>
+{% endblock %}

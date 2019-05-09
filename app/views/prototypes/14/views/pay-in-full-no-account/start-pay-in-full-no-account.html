@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [ {
+      text:'Home',
+      href: 'https://www.gov.uk/' },
+      {
+      text:'Money and tax',
+      href: 'https://www.gov.uk/browse/tax' },
+      {
+      text: 'Pay what you owe in full' } ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Pay what you owe in full</h1>
+
+      <p>Use this service if you owe money to the Department for Work and Penaions and want to repay your balance in full</p>
+
+      <p>You'll need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>your access code </li>
+        <li>your bank account number and sort code</li>
+      </ul>
+
+      <p>This service is also available in Welsh <a href="#">(Cymraeg)</a>.</p>
+
+      {{ govukButton({
+        text: 'Start',
+        href: "enter-ni-no-account",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-m">Other ways to manage what you owe</h2>
+
+      <p>If you have questions about why you owe this amount, contact:</p>
+
+      <p>
+        <b>Universal Credit</b><br/>
+        Telephone: 0800 328 5644<br/>
+        Textphone: 0800 328 1344<br/>
+        Monday to Friday 8am to 6pm (closed on bank holidays)
+      </p>
+
+    </div>
+  </div>
+{% endblock %}
