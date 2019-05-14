@@ -52,7 +52,7 @@
             text: "Date"
           },
           {
-            text: "Repayment for"
+            text: "Repayment method"
           },
           {
             text: "Amount",
@@ -60,6 +60,29 @@
           }
         ],
         rows: [
+          [
+            {
+              text: "24 May 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],[
+            {
+              text: "24 Apr 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
           [
             {
               text: "24 Mar 19"
@@ -95,85 +118,225 @@
               text: "£40",
               format: "numeric"
             }
-          ],
-          [
-            {
-              text: "1 Dec 18"
-            },
-            {
-              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
-            },
-            {
-              text: "£40",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              text: "3 Nov 18"
-            },
-            {
-              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
-            },
-            {
-              text: "£40",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              text: "2 Oct 18"
-            },
-            {
-              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from wages</span>"
-            },
-            {
-              text: "£40",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              text: "1 Sept 18"
-            },
-            {
-              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from wages</span>"
-            },
-            {
-              text: "£40",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              text: "3 Aug 18"
-            },
-            {
-              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
-            },
-            {
-              text: "£40",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              text: "3 Jul 18"
-            },
-            {
-              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Deduction from benefit</span>"
-            },
-            {
-              text: "£40",
-              format: "numeric"
-            }
           ]
-
         ]
       }) }}
 
 
+      {{ govukAccordion({
+          id: "accordion-with-summary-sections",
+          items: [
+            {
+              heading: {
+                text: "Repayments in 2018"
+              },
+              summary: {
+                text: "You made 12 repayments in total."
+              },
+              content: {
+                html:
+                '<table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Date</th>
+                      <th class="govuk-table__header" scope="col">Repayment method</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Dec 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Nov 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Oct 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Sep 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
 
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Aug 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jul 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jun 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 May 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Apr 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Mar 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Feb 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jan 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                  </tbody>
+                </table>'
+              }
+            },
+                {
+              heading: {
+                text: "Repayments in 2017"
+              },
+              summary: {
+                text: "You made 12 repayments in total."
+              },
+              content: {
+                html:
+                '<table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Date</th>
+                      <th class="govuk-table__header" scope="col">Repayment method</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Dec 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Nov 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Oct 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Sep 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Aug 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jul 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jun 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 May 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Apr 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Mar 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Feb 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jan 18</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                  </tbody>
+                </table>'
+              }
+            },
+                    {
+              heading: {
+                text: "Repayments in 2016"
+              },
+              summary: {
+                text: "You made 4 repayments in total."
+              },
+              content: {
+                html:
+                '<table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Date</th>
+                      <th class="govuk-table__header" scope="col">Repayment method</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Dec 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Nov 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Oct 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Sep 17</td>
+                      <td class="govuk-table__cell">Payment received - deduction from benefit</td>
+
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£40</td>
+                    </tr>
+                  </tbody>
+                </table>'
+              }
+            }
+          ]
+        }) }}
     </div>
   </div>
 {% endblock %}
