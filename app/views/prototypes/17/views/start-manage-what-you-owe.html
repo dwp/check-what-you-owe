@@ -1,0 +1,109 @@
+{% extends "layout.html" %}
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [ {
+      text:'Home',
+      href: 'https://www.gov.uk/' },
+      {
+      text:'Money and tax',
+      href: 'https://www.gov.uk/browse/tax' },
+      {
+      text: 'Manage the money you owe to DWP' } ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Manage the money you owe to DWP</h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>get details of benefit overpayments, advances and loans that you have to repay</li>
+        <li>repay your balance in full</li>
+        <li>set up and manage a repayment plan</li>
+      </ul>
+
+      {{ govukWarningText({
+        classes: '',
+        text: 'If you do not arrange to repay what you owe, we may contact your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.',
+        iconFallbackText: 'Warning'
+      }) }}
+
+      <p>You can only use this service if you&rsquo;ve been given log in details from the Department for Work and Pensions.</p>
+
+      {{ govukButton({
+        text: 'Start',
+        href: "sign-in",
+        classes: "govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-l">Help and support</h2>
+
+      {{ govukAccordion({
+  id: "accordion-default",
+  items: [
+    {
+      heading: {
+        text: "Other ways to manage what you owe"
+      },
+      content: {
+        html: "<p class='govuk-body'>If you have questions about why you owe this amount, or do not have the letter we sent you, contact:</p>
+        <p>
+          <b>Debt Management</b><br/>
+          Telephone: 0800 916 0614<br/>
+          Textphone: 0345 604 6697<br/>
+          Monday to Friday 8am to 7.30pm <br/>
+          Saturday 9am to 4pm
+        </p>"
+      }
+    },
+    {
+      heading: {
+        text: "If you’d like independent advice"
+      },
+      content: {
+        html: '<h3 class="govuk-heading-s"> <a href="https://www.citizensadvice.org.uk/">Citizens Advice</a></h3>
+        <p>For help and advice on dealing with debt, budgeting and more, contact <a href="https://www.citizensadvice.org.uk/debt-and-money/">Citizens Advice</a>.</p>
+        <p>They are a network of charities who can help you stay on top of your finances.  You can get help over the phone, online, or in person.</p>
+
+        <h3 class="govuk-heading-s"> <a href="https://www.citizensadvice.org.uk/">StepChange</a></h3>
+        <p>You can also contact <a href="https://www.stepchange.org/">StepChange</a> for expert advice on debt.  They are a charity who can help you look at your debt and set up a solution.  You can get help by letter, email, phone, or online, and their online chat service is open 24 hours a day.</p>
+        <p>They are a network of charities who can help you stay on top of your finances.  You can get help over the phone, online, or in person.</p>
+
+        <p>
+          StepChange Debt Charity<br/>
+          Wade House<br/>
+          Merrion Centre<br/>
+          Leeds<br/>
+          LS2 8NG
+        </p>
+
+        <p>
+          Telephone: 0800 138 1111<br/>
+          Monday to Friday 8am to 8pm<br/>
+          Saturday 8am to 4pm
+        </p>
+
+        <h3 class="govuk-heading-s"> <a href="https://www.moneyadviceservice.org.uk">Money Advice Service</a></h3>
+        <p>Set up by the government, the <a href="https://www.moneyadviceservice.org.uk">Money Advice Service</a> can help you manage your money.</p> <p>You can use online tools and calculators to manage your finances, or get help by phone or online. </p>
+
+        <p>
+          Telephone: 0800 138 7777<br/>
+          Textphone: 0800 915 4622<br/>
+          Monday to Friday 8am to 6pm (not including public holidays)
+        </p>'
+      }
+    }
+  ]
+}) }}
+
+    </div>
+  </div>
+{% endblock %}

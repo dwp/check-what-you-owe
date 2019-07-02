@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Your repayment plan</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Starting balance"
+            },
+            value: {
+              text: "£1,010"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Amount repaid"
+            },
+            value: {
+              text: "£220"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Amount left to repay"
+            },
+            value: {
+              text: "£790"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "amount you owe"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Next payment"
+            },
+            value: {
+              html: data['direct-debit-date'] + " " + [currentMonth] + " " + [ currentYear]
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "next payment due"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Repayment plan amount"
+            },
+            value: {
+              text: "£" + data['repayment-amount']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "repayment plan amount"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Payment day"
+            },
+            value: {
+              text: data['direct-debit-date'] + " of the month"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "",
+                  visuallyHiddenText: "Payment day"
+                }
+              ]
+            }
+          },
+
+          {
+            key: {
+              text: "Expected final payment"
+            },
+            value: {
+              html: data['direct-debit-date'] + " " + [ currentMonth] + " " + "2022"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "Expected final payment"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <div class="govuk-inset-text">
+        <h3 class="govuk-heading-m">Change your details</h3>
+
+        <p class="govuk-body">If you want to make a change to your Direct Debit or personal details, <a href="contact-us-plan">contact us</a>.</p>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

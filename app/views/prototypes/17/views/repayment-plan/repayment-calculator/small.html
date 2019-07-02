@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../make-additional-payment"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        How much would you like to pay every month?
+      </h1>
+
+      <form action="#" method="post" class="form">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+
+            <p class="govuk-body">If you make higher payments, your debt will be paid off more quickly.</p>
+
+            <p class="govuk-body">You will need to make sure you have enough money in your bank account to cover payments.</p>
+
+            <div class="form-group inline govuk-!-width-one-half">
+              <span class="c-form-input-denote govuk-body">£</span>
+              <input class="form-control c-form-input-denote__input govuk-input" type="text" name="repayment-amount">
+            </div>
+
+            <button type="submit" class="govuk-button inline app-button--secondary govuk-!-margin-bottom-0">
+              Update
+            </button>
+          </fieldset>
+        </div>
+      </form>
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          We need to talk to you about the amount you’d like to pay.
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+
+            <p>Please call an advisor and speak to us on the phone to discuss your repayment plan. You will need details of your income and expenditure, including:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Monthly income/wages</li>
+              <li>Rent or mortgage details</li>
+              <li>Savings/investments</li>
+              <li>Bills/outgoings</li>
+            </ul>
+
+            <hr class="govuk-section-break govuk-section-break--m">
+
+            <p>Telephone: 0800 916 0614<br />
+            Textphone: 0345 604 6697<br />
+            Monday to Friday 8am to 7.30pm<br />
+            Saturday 9am to 4pm</p>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+{% endblock %}

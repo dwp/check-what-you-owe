@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink ({
+    text: "Back",
+    href: "../start-pay-what-you-owe"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action='' method='post' class='form' autocomplete='off'>
+        <h1 class="govuk-heading-l">Enter your National Insurance number and access code</h1>
+
+        <h2 class="govuk-heading-s">National Insurance number
+          <p class="govuk-hint">It’s on the letter we sent you about your balance, your National Insurance card, payslip or P60. For example, ‘QQ 12 34 56 A’.</p>
+        </h2>
+
+        {{ govukInput({
+          label: { text: '',
+          isPageHeading: false },
+          hint: { text: '' },
+          id: 'nino',
+          name: 'nino',
+          classes: 'govuk-input--width-20'
+        }) }}
+
+        <h2 class="govuk-heading-s">Access code
+          <p class="govuk-hint">It's on the letter we sent you about your balance. For example, '1234 5668'.</p>
+        </h2>
+
+        {{ govukInput({
+          label: {
+            text: '',
+            isPageHeading: false },
+            hint: { text: '' },
+            id: 'password',
+            name: 'password',
+            classes: 'govuk-input--width-20'
+          }) }}
+
+        {{ govukButton({
+          text: "Continue",
+          href: "https://products.payments.service.gov.uk/pay/50daf87550cf427aa0567928519025de",
+          classes: "govuk-!-margin-bottom-8"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
