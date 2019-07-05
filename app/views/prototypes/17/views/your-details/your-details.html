@@ -40,35 +40,6 @@
             },
             value: {
               text: data['first-name-personal-details'] + ' ' + data['last-name-personal-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-name",
-                  text: "Change",
-                  visuallyHiddenText: "Name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Address"
-            },
-            value: {
-              html: "123 Oldham Road<br />
-              Ancoats<br />
-              Manchester<br />
-              M2 3AA"
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-address",
-                  text: "Change",
-                  visuallyHiddenText: "Address"
-                }
-              ]
             }
           },
           {
@@ -76,16 +47,7 @@
               text: "Email"
             },
             value: {
-              text: data['email-personal-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-email",
-                  text: "Change",
-                  visuallyHiddenText: "Email"
-                }
-              ]
+              text: "as*****@***.com"
             }
           },
           {
@@ -93,16 +55,7 @@
               text: "Telephone number"
             },
             value: {
-              text: data['telephone-number-personal-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-phone-number",
-                  text: "Change",
-                  visuallyHiddenText: "Phone"
-                }
-              ]
+              text: "079*******45"
             }
           }
         ]
@@ -116,49 +69,15 @@
         rows: [
           {
             key: {
-              text: "Letter format"
-            },
-            value: {
-              text: data['letter-preference']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-letter-preference",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
-          },
-          {
-            key: {
               text: "Notifications"
             },
             value: {
-              text: data['notification-preference']
+              text: "Text message and Email"
             },
             actions: {
               items: [
                 {
-                  href: "change-notification-preference",
-                  text: "Change",
-                  visuallyHiddenText: ""
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Language"
-            },
-            value: {
-              text: data['language-preference']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-language-preference",
+                  href: "#",
                   text: "Change",
                   visuallyHiddenText: ""
                 }
