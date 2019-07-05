@@ -30,22 +30,30 @@
 
         <p class="govuk-body">If you don't want to enter any contact details, you can <a href="account-home">skip this step</a>.</p>
 
-        {{ govukInput({
-          label: {
-            text: "Email address"
+        {{ govukCheckboxes({
+          "name": "with-conditional-items",
+          "idPrefix": "how-contacted",
+          "fieldset": {
+            "legend": {
+              "text": "How do you want to be contacted?"
+            }
           },
-          classes: "govuk-input--width-20",
-          id: "email-address",
-          name: "email-address"
-        }) }}
-
-        {{ govukInput({
-          label: {
-            text: "Telephone"
-          },
-          classes: "govuk-input--width-20",
-          id: "telephone",
-          name: "telephone"
+          "items": [
+            {
+              "value": "email",
+              "text": "Email",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n"
+              }
+            },
+            {
+              "value": "text",
+              "text": "Text message",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"contact-text-message\">Mobile phone number</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-text-message\" type=\"text\" id=\"contact-text-message\">\n"
+              }
+            }
+          ]
         }) }}
 
       {{ govukButton({
