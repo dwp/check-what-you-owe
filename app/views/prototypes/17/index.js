@@ -33,7 +33,7 @@ router.post('/views/repayment-plan/repayment-amount', function (req, res) {
   }
 
   if (answer >= 11) {
-    res.redirect('/prototypes/17/views/repayment-plan/repayment-calculator/large')
+    res.redirect('/prototypes/17/views/repayment-plan/repayment-plan-summary')
   }
 })
 
@@ -49,7 +49,7 @@ router.post('/views/repayment-plan/repayment-calculator/small', function (req, r
   }
 
   if (answer >= 11) {
-    res.redirect('/prototypes/17/views/repayment-plan/repayment-calculator/large')
+    res.redirect('/prototypes/17/views/repayment-plan/repayment-plan-summary')
   }
 })
 
