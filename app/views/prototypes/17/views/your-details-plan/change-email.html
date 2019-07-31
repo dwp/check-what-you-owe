@@ -32,39 +32,39 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">What is your new email address?</h1>
+    <h1 class="govuk-heading-xl">What is your new email address?</h1>
 
-      <form action="change-email-review" class="form" method="post">
+    <form action="change-email-review" class="form" method="post">
 
-        {{ govukInput({
-          label: {
-            text: "Email address"
-          },
-          hint: {
-            text: ""
-          },
-          id: "email",
-          name: "email-personal-details",
-          type: "email",
-          autocomplete: "email",
-          classes: ""
-        }) }}
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        hint: {
+          text: ""
+        },
+        id: "email",
+        name: "email-personal-details",
+        type: "email",
+        autocomplete: "email",
+        classes: ""
+      }) }}
 
-        <p class="govuk-body">
-          We will treat your personal information carefully. We’ll only use it as allowed under data protection law. To find out more, see the Department for Work and Pensions
-          <a href="#">Personal Information Charter</a>.
-        </p>
+      <p class="govuk-body">
+        We will treat your personal information carefully. We’ll only use it as allowed under data protection law. To find out more, see the Department for Work and Pensions
+        <a href="#">Personal Information Charter</a>.
+      </p>
 
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
 
-      </form>
+    </form>
 
-    </div>
   </div>
+</div>
 
 {% endblock %}

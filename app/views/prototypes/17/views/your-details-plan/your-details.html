@@ -26,148 +26,94 @@
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">Your details</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Your details</h1>
 
-      <h2 class="govuk-heading-l">Personal details</h2>
+    <h2 class="govuk-heading-l">Personal details</h2>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Name"
-            },
-            value: {
-              text: data['first-name-personal-details'] + ' ' + data['last-name-personal-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-name",
-                  text: "Change",
-                  visuallyHiddenText: "Name"
-                }
-              ]
-            }
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Name"
           },
-          {
-            key: {
-              text: "Address"
-            },
-            value: {
-              html: "123 Oldham Road<br />
-              Ancoats<br />
-              Manchester<br />
-              M2 3AA"
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-address",
-                  text: "Change",
-                  visuallyHiddenText: "Address"
-                }
-              ]
-            }
+          value: {
+            text: data['first-name-personal-details'] + ' ' + data['last-name-personal-details']
           },
-          {
-            key: {
-              text: "Email"
-            },
-            value: {
-              text: data['email-personal-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-email",
-                  text: "Change",
-                  visuallyHiddenText: "Email"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Telephone number"
-            },
-            value: {
-              text: data['telephone-number-personal-details']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-phone-number",
-                  text: "Change",
-                  visuallyHiddenText: "Phone"
-                }
-              ]
-            }
+          actions: {
+            items: [
+              {
+                href: "",
+                text: "",
+                visuallyHiddenText: ""
+              }
+            ]
           }
-        ]
-      }) }}
-
-      <hr class="govuk-section-break govuk-section-break--l">
-
-      <h2 class="govuk-heading-l">Communication preferences</h2>
-
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Letter format"
-            },
-            value: {
-              text: data['letter-preference']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-letter-preference",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
-              ]
-            }
+        },
+        {
+          key: {
+            text: "Email"
           },
-          {
-            key: {
-              text: "Notifications"
-            },
-            value: {
-              text: data['notification-preference']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-notification-preference",
-                  text: "Change",
-                  visuallyHiddenText: ""
-                }
-              ]
-            }
+          value: {
+            text: "as*****@***.com"
           },
-          {
-            key: {
-              text: "Language"
-            },
-            value: {
-              text: data['language-preference']
-            },
-            actions: {
-              items: [
-                {
-                  href: "change-language-preference",
-                  text: "Change",
-                  visuallyHiddenText: ""
-                }
-              ]
-            }
+          actions: {
+            items: [
+              {
+                href: "change-email",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
           }
-        ]
-      }) }}
+        },
+        {
+          key: {
+            text: "Telephone number"
+          },
+          value: {
+            text: "079*******45"
+          },
+          actions: {
+            items: [
+              {
+                href: "change-phone-number",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
 
-    </div>
+    <hr class="govuk-section-break govuk-section-break--l">
+
+    <h2 class="govuk-heading-l">Communication preferences</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Notifications"
+          },
+          value: {
+            text: "Text message and Email"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: ""
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
   </div>
+</div>
 {% endblock %}
