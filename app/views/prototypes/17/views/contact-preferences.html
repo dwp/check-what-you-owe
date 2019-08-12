@@ -26,13 +26,13 @@
           Your contact details
         </h1>
 
-        <p class="govuk-body">If you want to receive notifications about your account,  enter an email address and telephone number.</p>
+        <p class="govuk-body">You can now receive correspondence from Debt Management by email.</p>
 
-        <p class="govuk-body">The quickest and easiest way to receive notifications is by email and text message.</p>
+        <p class="govuk-body">This means that future correspondence about the what and how much you owe will be sent by email.</p>
 
-        {{ govukCheckboxes({
-          "name": "with-conditional-items",
+        {{ govukRadios({
           "idPrefix": "how-contacted",
+          "name": "how-contacted",
           "fieldset": {
             "legend": {
               "text": "How do you want to be contacted?"
@@ -46,10 +46,10 @@
                 "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n"
               }
             },
-              {
-                value: "letter",
-                text: "Letter"
-              }
+            {
+              "value": "letter",
+              "text": "Letter"
+            }
           ]
         }) }}
 
