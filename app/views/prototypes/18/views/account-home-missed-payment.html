@@ -1,0 +1,155 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "account-home",
+      text: "Account home",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        Your last Direct Debit payment was rejected.
+      </h2>
+      <div class="govuk-error-summary__body">
+        <p class="govuk-body">Call Debt Management on 0800 916 0614 to make a payment and bring your plan up to date.</p>
+      </div>
+    </div>
+
+    <div class="govuk-panel govuk-panel--amount-owed">
+      <p class="govuk-body govuk-!-font-size-27">{{ data['first-name-personal-details'] }} {{ data['last-name-personal-details'] }}</p>
+      <div class="govuk-panel__body">
+        <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-6 govuk-!-margin-bottom-2">The amount you owe is</p>
+        <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-top-0 govuk-!-margin-bottom-0"><strong>£760</strong></p>
+      </div>
+    </div>
+
+    <div class="govuk-card__flex-container govuk-grid-row">
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-half">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="#"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m"><a href="#">View your repayment plan</a></h3>
+            <p class="govuk-body govuk-!-margin-bottom-2">You can see</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>when you next payment is due</li>
+              <li>how much you have left to repay</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-half">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="#"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m"><a href="#">View your repayment history</a></h3>
+            <p class="govuk-body govuk-!-margin-bottom-2">You can see</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>what date you made a repayment</li>
+              <li>how the repayment was made</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-half">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="#"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m"><a href="#">Help and support</a></h3>
+            <p class="govuk-body govuk-!-margin-bottom-2">You can</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>get contact details of free, independent sources of advice</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-half">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="#"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m"><a href="#">Contact us</a></h3>
+            <p class="govuk-body govuk-!-margin-bottom-2">Contact Debt Management if</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>you have questions about the amount you owe</li>
+              <li>you cannot afford to pay</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+<!--
+    <h2 class="govuk-heading-l">Help and support</h2>
+
+      {{ govukAccordion({
+        id: "accordion-default",
+        items: [
+          {
+            heading: {
+              text: "If you think we’ve made a mistake "
+            },
+            content: {
+              html: "<p class='govuk-body'>If there are debts here that you don’t recognise or that you think might have been added to your account by mistake, contact Debt Management immediately.</p>
+
+              <p>
+                Telephone: 0800 916 0614<br/>
+                Textphone: 0345 604 6697<br/>
+                Monday to Friday 8am to 7.30pm <br/>
+                Saturday 9am to 4pm
+              </p>"
+            }
+          },
+          {
+            heading: {
+              text: "If you’re struggling to pay"
+            },
+            content: {
+              html: "<p class='govuk-body'>Contact Debt Management immediately if you think you might miss a payment.  You can call us to ask for a payment holiday, change the amount you pay each month or to ask for help and advice.</p>
+
+              <p>
+                Telephone: 0800 916 0614<br/>
+                Textphone: 0345 604 6697<br/>
+                Monday to Friday 8am to 7.30pm <br/>
+                Saturday 9am to 4pm
+              </p>"
+            }
+          }
+        ]
+      }) }}
+-->
+  </div>
+</div>
+
+{% endblock %}

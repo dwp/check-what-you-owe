@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "additional-payment/additional-payment-calculator"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Payment summary</h1>
+
+        <dl class='app-check-your-answers app-check-your-answers--long'>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Amount:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              £200
+            </dd>
+          </div>
+
+          <!-- <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Next Direct Debit payment:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              28 Dec 2018
+            </dd>
+          </div> -->
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              Current end date:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              November 2022
+            </dd>
+          </div>
+
+          <div class='app-check-your-answers__contents'>
+            <dt class='app-check-your-answers__question'>
+              New end date:
+            </dt>
+            <dd class='app-check-your-answers__answer'>
+              September 2022
+            </dd>
+          </div>
+
+        </dl>
+
+        <!-- <h3 class="govuk-heading-m">Changes to your Direct Debit</h3> -->
+        <p class="govuk-body">Making this payment now will not affect your existing Direct Debit agreement.</p>
+        <!-- <img src="https://dd-payment-pages.cloudapps.digital/public/images/directdebit.png" class="govuk-!-margin-bottom-2 govuk-!-margin-top-4" alt="">
+
+        <p class="govuk-link">Your payments are protected by the <a href="#">Direct Debit guarantee</a>.</p> -->
+
+        {{ govukButton({
+          text: "Continue",
+          href: "https://products.payments.service.gov.uk/pay/f392080aba6e4c41a3e10d74eba652e0",
+          classes: "govuk-!-margin-top-2"
+        }) }}
+
+        <p class="govuk-link"><a href="#">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}

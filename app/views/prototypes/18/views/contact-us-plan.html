@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details-plan/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Contact us</h1>
+
+      <p class="govuk-body">To change your Direct Debit, make an extra payment or to change your contact details, please call Debt Management.</p>
+
+      <p>Telephone: 0800 916 0614<br />
+      Textphone: 0345 604 6697<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm <br />
+
+      <p>You can also call us if you are struggling to make a payment.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m">Information</h2>
+
+      <p>Debt Management can only handle the repayment of what you owe. To understand why you owe this money, you will need to contact the relevant organisation directly.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p><b>Debt Management</b><br />
+      Telephone: 0800 916 0614<br />
+      Textphone: 0345 604 6697<br />
+      Monday to Friday 8am to 7.30pm<br />
+      Saturday 9am to 4pm </p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p><b>Universal Credit</b><br />
+      North Manchester Universal Credit Service Centre<br />
+      Telephone: 0800 328 5644<br />
+      Textphone: 0800 328 1344<br />
+      Monday to Friday 8am to 6pm (closed on bank holidays)</p>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p><b>Tax credits</b><br />
+      HMRC<br />
+      Telephone: 0345 300 3900<br />
+      Textphone: 0345 300 3909 <br />
+      Monday to Friday 8am-8pm<br />
+      Saturday 8am-4pm<br />
+      Sunday 9am -5pm (closed Christmas Day, Boxing Day and New Year's Day)</p>
+    </div>
+</div>
+{% endblock %}

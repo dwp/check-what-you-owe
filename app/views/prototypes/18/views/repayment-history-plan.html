@@ -1,0 +1,338 @@
+{% extends "layout.html" %}
+
+{% set navActive = "repayments" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-plan",
+        text: "Account home"
+      },
+      {
+        href: "your-details-plan/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-plan"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        View your repayment history
+      </h1>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date"
+          },
+          {
+            text: "Repayment method"
+          },
+          {
+            text: "Amount",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "29 Jun 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "£25",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 May 19"
+            },
+            {
+              html: "Direct Debit set up"
+            },
+            {
+              text: "",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 May 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Card payment</span>"
+            },
+            {
+              text: "£25",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 May 19"
+            },
+            {
+              html: 'Payment missed <br />
+              <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16"><a href="repayment-missed-information">Find out more about this payment</a></span>'
+            },
+            {
+              text: "",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "29 Apr 19"
+            },
+            {
+              html: "Direct Debit cancelled"
+            },
+            {
+              text: "",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Apr 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "£25",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Apr 19"
+            },
+            {
+              html: "New amount added"
+            },
+            {
+              text: "£45",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "2 Mar 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "£25",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Feb 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "£25",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Jan 19"
+            },
+            {
+              html: "Payment received <br /><span class='govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16'>Direct Debit</span>"
+            },
+            {
+              text: "£25",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Jan 19"
+            },
+            {
+              html: "Direct Debit set up"
+            },
+            {
+              text: "",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukAccordion({
+          id: "accordion-with-summary-sections",
+          items: [
+            {
+              heading: {
+                text: "Repayments in 2018"
+              },
+              summary: {
+                text: "You made 12 repayments in total."
+              },
+              content: {
+                html:
+                '<table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Date</th>
+                      <th class="govuk-table__header" scope="col">Repayment method</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Dec 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Nov 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Oct 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Sep 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Aug 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jul 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jun 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 May 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Apr 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Mar 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Feb 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Jan 18</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                  </tbody>
+                </table>'
+              }
+            },
+                {
+              heading: {
+                text: "Repayments in 2017"
+              },
+              summary: {
+                text: "You made 2 repayments in total."
+              },
+              content: {
+                html:
+                '<table class="govuk-table">
+                  <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                      <th class="govuk-table__header" scope="col">Date</th>
+                      <th class="govuk-table__header" scope="col">Repayment method</th>
+                      <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Dec 17</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell">1 Nov 17</td>
+                      <td class="govuk-table__cell">Payment received<br>
+                      <span class="govuk-hint govuk-!-margin-top-1 govuk-!-margin-bottom-1 govuk-!-font-size-16">Deduction from benefit</span></td>
+                      <td class="govuk-table__cell govuk-table__cell--numeric">£5</td>
+                    </tr>
+                  </tbody>
+                </table>'
+              }
+            }
+          ]
+        }) }}
+
+    </div>
+  </div>
+{% endblock %}
