@@ -107,6 +107,18 @@
 
       <p class="govuk-body">We've sent you a confirmation email. <a class="govuk-link" href="../account-home-plan">Your account</a> will be updated with your repayment plan details.</p>
 
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <h2 class="govuk-heading-m">Keeping up with your payments</h2>
+
+      <p class="govuk-body">If you cannot make a payment you must contact us as soon as possible.</p>
+
+      {{ govukWarningText({
+        classes: '',
+        text: 'If you do not arrange to repay what you owe, we may ask your employer to make deductions from your pay or ask a debt collection agency to collect this money for us.',
+        iconFallbackText: 'Warning'
+      }) }}
+
     </div>
   </div>
 {% endblock %}
