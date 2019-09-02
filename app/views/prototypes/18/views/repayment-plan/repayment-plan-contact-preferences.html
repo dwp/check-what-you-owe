@@ -23,10 +23,15 @@
   <div class="govuk-grid-column-two-thirds">
     <form action='account-home' method='post' class='form' autocomplete='off'>
       <h1 class="govuk-heading-xl">
-          Your contact details
+          Notifications about your repayment plan
         </h1>
 
-        <p class="govuk-body">You can now receive correspondence from debt management by email or text message.</p>
+        <p class="govuk-body">We can send you information about your repayment plan, including:</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>upcoming payment reminders</li>
+        <li>payment confirmations </li>
+        <li>missed payments </li>
+        </ul>
 
         {{ govukRadios({
           "idPrefix": "how-contacted",
@@ -41,7 +46,8 @@
               "value": "email",
               "text": "Email",
               "conditional": {
-                "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n"
+                "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\" value=\"ashleyatherton@gmail.com\">\n",
+                "value": "email@email.com"
               }
             },
             {
@@ -59,9 +65,9 @@
         }) }}
 
       {{ govukButton({
-        text: "Save preferences",
+        text: "Confirm",
         classes: "govuk-!-margin-bottom-8",
-        href: "account-home"})
+        href: "../account-home-plan"})
       }}
 
     </form>
