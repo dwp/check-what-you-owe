@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink ({
+    text: "Back",
+    href: "start-manage-what-you-owe"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action='contact-preferences' method='post' class='form' autocomplete='off'>
+      <h1 class="govuk-heading-xl">
+          Enter the security code in the letter we sent you
+        </h1>
+
+        <p>You'll need to use this code every time you sign in.</p>
+
+      {{ govukInput({
+        label: {
+          text: 'Security code',
+          isPageHeading: false },
+          hint: { text: '' },
+          id: 'security-code',
+          name: 'security-code',
+          classes: 'govuk-input--width-20'
+        })
+      }}
+
+      {{ govukButton({
+        text: "Sign in",
+        classes: "govuk-!-margin-bottom-8" })
+      }}
+    </form>
+
+    <h2 class="govuk-heading-m">If you do not have your code</h2>
+
+    <p class="govuk-body">Your security code is on the letter sent to you by our debt management team.</p>
+
+    <p>If you have lost or forgotten your code, contact us.</p>
+
+    <p>
+      Telephone: 0800 916 0647<br/>
+      Textphone: 0800 916 0651<br/>
+      Monday to Friday 8am to 7.30pm <br/>
+      Saturday 9am to 4pm
+    </p>
+
+  </div>
+</div>
+{% endblock %}

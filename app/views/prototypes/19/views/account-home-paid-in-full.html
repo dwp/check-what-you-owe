@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "account-home",
+      text: "Account home",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Your details"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--amount-owed">
+      <p class="govuk-body govuk-!-font-size-27">{{ data['first-name-personal-details'] }} {{ data['last-name-personal-details'] }}</p>
+      <div class="govuk-panel__body">
+        <p class="govuk-body govuk-!-font-size-27 govuk-!-margin-top-6 govuk-!-margin-bottom-2">The amount you owe is</p>
+        <p class="govuk-body govuk-!-font-size-48 govuk-!-margin-top-0 govuk-!-margin-bottom-0"><strong>£0</strong></p>
+      </div>
+    </div>
+
+    <div class="govuk-card__flex-container govuk-grid-row">
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-half">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="repayment-history-paid-in-full"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m"><a href="repayment-history-paid-in-full">View your repayment history</a></h3>
+            <p class="govuk-body govuk-!-margin-bottom-2">You can see:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>what date you made a repayment</li>
+              <li>how the repayment was made</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-card__flex-item govuk-grid-column-one-half">
+        <div class="govuk-card govuk-card--contained govuk-card--selectable">
+          <a href="contact-us-paid-in-full"></a>
+          <div class="govuk-card__content">
+            <h3 class="govuk-heading-m"><a href="contact-us-paid-in-full">Contact us</a></h3>
+            <p class="govuk-body govuk-!-margin-bottom-2">Contact Debt Management if:</p>
+            <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-0">
+              <li>you have questions about the amount you owe</li>
+              <li>you cannot afford to pay</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

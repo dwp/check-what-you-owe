@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+    {
+      href: "../account-home-paid-in-full",
+      text: "Account home"
+    },
+    {
+      href: "#",
+      text: "Sign out"
+    }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukPanel({
+        headingLevel: 1,
+        titleText: "Your payment was successful",
+        html: "Your payment reference<br><strong>HDJ2123F</strong>",
+        classes: "outcome"
+      }) }}
+
+      <p class="govuk-body">We have sent you a confirmation email. <a href="../account-home-paid-in-full">Your account</a> has been updated.</p>
+
+      <h2 class="govuk-heading-m">Payment summary</h2>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Amount</th>
+            <td class="govuk-table__cell">£760</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Payment to</th>
+            <td class="govuk-table__cell">DWP Debt Management</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Payment for</th>
+            <td class="govuk-table__cell">Repayment to DWP</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="row">Date of payment</th>
+            <td class="govuk-table__cell">{{todayDate}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr class="govuk-section-break govuk-section-break--m">
+
+      <p><a href="#">What did you think of this service?</a> (takes 30 seconds)</p>
+
+    </div>
+  </div>
+{% endblock %}

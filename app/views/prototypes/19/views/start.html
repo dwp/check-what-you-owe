@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Set up a repayment plan
+      </h1>
+
+      <p class="govuk-body">Before you start, you'll need your bank account number and sort code.</p>
+
+      {{ govukButton({
+        text: 'Start',
+        href: "repayment-plan/repayment-amount",
+        classes: "govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+      <h2 class="govuk-heading-m">
+        Check how much you can afford
+      </h2>
+
+      <p class=govuk-body">For help and advice on dealing with debt, budgeting and more, contact:
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="https://www.citizensadvice.org.uk/">Citizens Advice</a></li>
+          <li><a href="https://www.stepchange.org/">StepChange Debt Charity</a></li>
+          <li><a href="https://www.moneyadviceservice.org.uk">Money Advice Service</a></li>
+        </ul>
+      </p>
+
+    </div>
+  </div>
+
+{% endblock %}

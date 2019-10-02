@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% set navActive = "owed" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home",
+        text: "Account home"
+      },
+      {
+        href: "your-details/your-details",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Pay the full amount of £760
+      </h1>
+
+      <p class="govuk-body">Before you start, you'll need a debit or credit card.</p>
+
+      {{ govukButton({
+        text: 'Pay now',
+        href: "https://products.payments.service.gov.uk/pay/b50c9509f8d34255aa43e1d7ffdbd0f2",
+        classes: "govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8"
+      }) }}
+
+</div>
+</div>
+{% endblock %}

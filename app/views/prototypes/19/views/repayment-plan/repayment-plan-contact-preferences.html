@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink ({
+    text: "Back",
+    href: "sign-in"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action='account-home' method='post' class='form' autocomplete='off'>
+      <h1 class="govuk-heading-xl">
+          Notifications about your repayment plan
+        </h1>
+
+        <p class="govuk-body">We can send you information about your repayment plan, including:</p>
+        <ul class="govuk-list govuk-list--bullet">
+        <li>upcoming payment reminders</li>
+        <li>payment confirmations </li>
+        <li>missed payments </li>
+        </ul>
+
+        {{ govukCheckboxes({
+          "name": "with-conditional-items",
+          "idPrefix": "how-contacted",
+          "fieldset": {
+            "legend": {
+              "text": "How do you want to be contacted?"
+            }
+          },
+          "items": [
+            {
+              "value": "email",
+              "text": "Email",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\" value=\"ashleyatherton@gmail.com\">\n"
+              }
+            },
+            {
+              "value": "text",
+              "text": "Text message",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"contact-phone\">Mobile phone number</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-phone\" type=\"text\" id=\"contact-phone\">\n"
+              }
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Confirm",
+        classes: "govuk-!-margin-bottom-8",
+        href: "../account-home-plan"})
+      }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink ({
+    text: "Back",
+    href: "sign-in"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action='account-home' method='post' class='form' autocomplete='off'>
+      <h1 class="govuk-heading-xl">
+          Your contact details
+        </h1>
+
+        <p class="govuk-body">You can now receive letters from our debt management team, by email or text message.</p>
+
+        {{ govukCheckboxes({
+          "name": "with-conditional-items",
+          "idPrefix": "how-contacted",
+          "fieldset": {
+            "legend": {
+              "text": "How do you want to be contacted?"
+            }
+          },
+          "items": [
+            {
+              "value": "email",
+              "text": "Email",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n"
+              }
+            },
+            {
+              "value": "text",
+              "text": "Text message",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"contact-phone\">Mobile phone number</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-phone\" type=\"text\" id=\"contact-phone\">\n"
+              }
+            },
+            {
+              "value": "letter",
+              "text": "Letter"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Save and continue",
+        classes: "govuk-!-margin-bottom-8",
+        href: "account-home"})
+      }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

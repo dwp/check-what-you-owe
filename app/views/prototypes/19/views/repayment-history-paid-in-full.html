@@ -1,0 +1,182 @@
+{% extends "layout.html" %}
+
+{% set navActive = "repayments" %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "https://www.gov.uk/",
+    serviceName: "Manage the money you owe to DWP",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "account-home-paid-in-full",
+        text: "Account home"
+      },
+      {
+        href: "#",
+        text: "Your details"
+      },
+      {
+        href: "#",
+        text: "Sign out"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "account-home-paid-in-full"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Repayment history
+      </h1>
+
+      <p class="govuk-!-font-size-36 govuk-!-font-weight-bold">Total amount repaid: £1,010</p>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Date"
+          },
+          {
+            text: "Repayment method"
+          },
+          {
+            text: "Amount",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "10 Apr 19"
+            },
+            {
+              html: "Card payment"
+            },
+            {
+              text: "£760",
+              format: "numeric"
+            }
+          ],
+        [
+          {
+            text: "24 Oct 18"
+          },
+          {
+            html: "Direct Debit"
+          },
+          {
+            text: "£40",
+            format: "numeric"
+          }
+        ],
+          [
+            {
+              text: "26 Sept 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "29 Aug 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Jul 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Jun 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "2 May 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "1 Apr 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "3 Mar 18"
+            },
+            {
+              html: "Direct Debit"
+            },
+            {
+              text: "£40",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+
+
+    </div>
+  </div>
+{% endblock %}

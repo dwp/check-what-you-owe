@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block header %}
+  <!-- Blank header with no service name for the sign in page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+  {{ govukBackLink ({
+    text: "Back",
+    href: "sign-in"
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action='account-home' method='post' class='form' autocomplete='off'>
+      <h1 class="govuk-heading-xl">
+          Update your contact details
+        </h1>
+
+        <p class="govuk-body">You can now receive correspondence from debt management by email or text message.</p>
+
+        {{ govukRadios({
+          "idPrefix": "how-contacted",
+          "name": "how-contacted",
+          "fieldset": {
+            "legend": {
+              "text": "How do you want to be contacted?"
+            }
+          },
+          "items": [
+            {
+              "value": "email",
+              "text": "Email",
+              "conditional": {
+                "html": "<label class=\"govuk-label\" for=\"context-email\">Email address</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"context-email\" type=\"text\" id=\"context-email\">\n"
+              }
+            },
+            {
+                  "value": "text",
+                  "text": "Text message",
+                  "conditional": {
+                    "html": "<label class=\"govuk-label\" for=\"contact-text-message\">Mobile phone number</label>\n<input class=\"govuk-input govuk-!-width-one-third\" name=\"contact-text-message\" type=\"text\" id=\"contact-text-message\">\n"
+                  }
+                },
+            {
+              "value": "letter",
+              "text": "Letter"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Save preferences",
+        classes: "govuk-!-margin-bottom-8",
+        href: "account-home"})
+      }}
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}
